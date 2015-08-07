@@ -19,8 +19,8 @@ namespace TechTrialClient.Client.View
 
         private void FakeCardReaderForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            e.Handled = false;
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;            
             this.Close();
         }
 
