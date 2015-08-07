@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTrialBackEnd", "TechTrialBackEnd\TechTrialBackEnd.csproj", "{D19547C6-D429-4E40-B998-AEC692CF725E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTrialClient", "TechTrialClient\TechTrialClient.csproj", "{A05C9A2D-EAE6-46E5-8C72-B8AEE5AFC893}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D19547C6-D429-4E40-B998-AEC692CF725E} = {D19547C6-D429-4E40-B998-AEC692CF725E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTrialDAL", "TechTrialDAL\TechTrialDAL.csproj", "{D9DD599E-498C-47B8-AC7E-301ABDA382AA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TechTrialClientSetup", "TechTrialClientSetup\TechTrialClientSetup.vdproj", "{2D5D730A-8677-41B4-9AA8-30573D27DA69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTrialFrontEnd", "TechTrialFrontEnd\TechTrialFrontEnd.csproj", "{4F59E842-AEE3-4E3E-8C44-807113BCEDAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D19547C6-D429-4E40-B998-AEC692CF725E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D19547C6-D429-4E40-B998-AEC692CF725E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D19547C6-D429-4E40-B998-AEC692CF725E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D19547C6-D429-4E40-B998-AEC692CF725E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05C9A2D-EAE6-46E5-8C72-B8AEE5AFC893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05C9A2D-EAE6-46E5-8C72-B8AEE5AFC893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05C9A2D-EAE6-46E5-8C72-B8AEE5AFC893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05C9A2D-EAE6-46E5-8C72-B8AEE5AFC893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9DD599E-498C-47B8-AC7E-301ABDA382AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9DD599E-498C-47B8-AC7E-301ABDA382AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9DD599E-498C-47B8-AC7E-301ABDA382AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9DD599E-498C-47B8-AC7E-301ABDA382AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D5D730A-8677-41B4-9AA8-30573D27DA69}.Debug|Any CPU.ActiveCfg = Debug
+		{2D5D730A-8677-41B4-9AA8-30573D27DA69}.Release|Any CPU.ActiveCfg = Release
+		{4F59E842-AEE3-4E3E-8C44-807113BCEDAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F59E842-AEE3-4E3E-8C44-807113BCEDAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F59E842-AEE3-4E3E-8C44-807113BCEDAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F59E842-AEE3-4E3E-8C44-807113BCEDAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
