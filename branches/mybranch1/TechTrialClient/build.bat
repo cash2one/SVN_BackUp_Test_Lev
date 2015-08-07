@@ -7,17 +7,17 @@ set msBuildDir=%WINDIR%\Microsoft.NET\Framework64\v4.0.30319
 REM check if any msconfig exists at all
 REM dir /s %WINDIR%\Microsoft.NET\msbuild.exe
 
-REM CD %CUR_DIR%\project\
+CD %CUR_DIR%\TechTrialClient\
 
 REM call msbuild on the solution
 REM call %msBuildDir%\msbuild.exe  PassValueToForm.sln /p:Configuration=Debug /l:FileLogger,Microsoft.Build.Engine;logfile=Manual_MSBuild_ReleaseVersion_LOG.log
 
 
 REM to check without any build option
-call %msBuildDir%\msbuild.exe  %CUR_DIR%\TechTrialClient.csproj /property:Configuration=Debug
+call %msBuildDir%\msbuild.exe  TechTrialClient.csproj /property:Configuration=Debug
 
 REM change back to orig directory
-REM CD %CUR_DIR%
+CD %CUR_DIR%
 
 REM call %msBuildDir%\msbuild.exe .\project\PassValueToForm\PassValueToForm.csproj /p:Config=Debug
 
