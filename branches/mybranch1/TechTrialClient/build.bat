@@ -1,5 +1,3 @@
-msbuild TechTrialClient.csproj /property:Configuration=Debug
-
 REM store current working directory in order to get back after build
 set CUR_DIR=%CD%
 
@@ -16,7 +14,7 @@ REM call %msBuildDir%\msbuild.exe  PassValueToForm.sln /p:Configuration=Debug /l
 
 
 REM to check without any build option
-call %msBuildDir%\msbuild.exe  TechTrialClient.csproj /property:Configuration=Debug
+call %msBuildDir%\msbuild.exe  %CUR_DIR%\TechTrialClient.csproj /property:Configuration=Debug
 
 REM change back to orig directory
 REM CD %CUR_DIR%
