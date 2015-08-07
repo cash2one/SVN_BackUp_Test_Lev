@@ -1,0 +1,1 @@
+msbuild TechTrialClient.csproj /property:Configuration=Debug
