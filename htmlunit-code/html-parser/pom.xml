@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.sourceforge.htmlunit</groupId>
+	<artifactId>html-parser</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>HtmlUnit HTML Parser</name>
+	<url>http://htmlunit.sourceforge.net</url>
+	<description>
+		HTML Parser for use by HtmlUnit.
+	</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                    <additionalConfig>
+                        <file>
+                            <name>.settings/org.eclipse.core.resources.prefs</name>
+                            <content>
+                                <![CDATA[eclipse.preferences.version=1${line.separator}encoding/<project>=${project.build.sourceEncoding}${line.separator}]]>
+                            </content>
+                        </file>
+                    </additionalConfig>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+	<dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+            <scope>test</scope>
+        </dependency>
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.17</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>nu.validator.htmlparser</groupId>
+			<artifactId> htmlparser</artifactId>
+			<version>1.4</version>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+	<scm>
+		<connection>
+			scm:svn:https://htmlunit.svn.sourceforge.net/svnroot/htmlunit/trunk/html-parser
+		</connection>
+		<developerConnection>
+			scm:svn:https://htmlunit.svn.sourceforge.net/svnroot/htmlunit/trunk/html-parser
+		</developerConnection>
+		<url>http://htmlunit.svn.sourceforge.net/viewvc/htmlunit</url>
+	</scm>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>htmlunit-m2-repo-snapshots</id>
+			<url>
+				sftp://web.sourceforge.net/home/groups/h/ht/htmlunit/htdocs/m2-repo-snapshots
+			</url>
+			<name>HtmlUnit Maven 2 Snapshots Repository</name>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<developers>
+		<developer>
+			<name>HtmlUnit Team</name>
+			<id>HtmlUnitTeam</id>
+		</developer>
+	</developers>
+</project>

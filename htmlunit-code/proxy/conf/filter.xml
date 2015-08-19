@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<filters>
+    <filter status="active" type="httpProxy">
+        <name>JavaScript Beautifier Filter</name>
+        <description>Beautifies JavaScript files, it can allow instrumenting JavaScript.
+The following configuration parameters are used:
+
+[beautifier]
+The fully qualified class name of JavaScriptBeautifier, or a subclass.</description>
+        <removable>true</removable>
+        <id>JavaScriptBeautifierFilter</id>
+        <files />
+        <params>
+            <param name="JavaScriptBeautifierFilter.class" value="net.sourceforge.htmlunit.proxy.JavaScriptBeautifierFilter" />
+            <param name="JavaScriptBeautifierFilter.beautifier" value="net.sourceforge.htmlunit.proxy.JavaScriptFunctionLogger" />
+        </params>
+    </filter>
+    <filter status="inactive" type="httpProxy">
+        <name>Visualization Filter</name>
+        <description>Logs HTTP Protocol conversation between Client and Server.
+Output is written to logfile.
+Should only be used for debugging, because logfile can get very large.
+@URL "html/filters/visualization_filter.html"</description>
+        <removable>true</removable>
+        <id>VisualizeFilter</id>
+        <files />
+        <params>
+            <param name="VisualizeFilter.class" value="org.paw.filter.VisualizeFilter" />
+        </params>
+    </filter>
+</filters>
+
+

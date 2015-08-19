@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<handlers>
+    <handler status="active">
+        <name>Junkbuster Blocklist</name>
+        <description>Filters unwanted websites.
+If such a site is found only a transparent GIF is returned,
+leaving the page empty.
+Blocked sites can be configured in the file  blockfile.
+@URL "html/handlers/junkbuster_blocklist.html"</description>
+        <removable>true</removable>
+        <id>junk</id>
+        <files>
+            <file>blockfile</file>
+        </files>
+        <params>
+            <param name="junk.class" value="sunlabs.brazil.proxy.JunkBusterHandler" />
+            <param name="junk.image" value="images/ad_transp.gif" />
+            <param name="junk.hosts" value="@conf/blockfile" />
+            <param name="mime.gif" value="image/gif" />
+        </params>
+    </handler>
+    <handler status="active">
+        <name>Request Headers</name>
+        <description>Allows the manipulation of request headers
+@URL "html/handlers/request_headers.html"</description>
+        <removable>true</removable>
+        <id>header</id>
+        <files>
+            <file>headers-request</file>
+        </files>
+        <params>
+            <param name="header.class" value="org.paw.handler.HeaderHandler" />
+            <param name="header.headers" value="conf/headers-request" />
+        </params>
+    </handler>
+    <handler status="active">
+        <name>Redirector</name>
+        <description>Redirects URLs
+@URL "html/handlers/redirector.html"</description>
+        <removable>true</removable>
+        <id>redirect</id>
+        <files>
+            <file>redirects</file>
+        </files>
+        <params>
+            <param name="redirect.class" value="org.paw.handler.RedirectHandler" />
+            <param name="redirect.rules" value="conf/redirects" />
+        </params>
+    </handler>
+</handlers>
+
+

@@ -1,0 +1,18 @@
+#---------------------------------------------------------------#
+# Response Headers
+#---------------------------------------------------------------#
+# Allows the manipulation of response headers.
+# Headers left blank will be deleted from the 
+# request.
+#---------------------------------------------------------------#
+
+# Don not receive cookies
+#Set-Cookie:
+
+
+
+
+
+
+
+

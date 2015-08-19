@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<handlers>
+  <handler status="active">
+    <name>URL Filter</name>
+    <description>
+Filters unwanted websites.
+If such a site is found a html page is returned explaining
+to the user why the site is blocked.
+Blocked sites can be configured in the file urlfile.
+</description>
+    <removable>true</removable>
+    <id>urlfilter</id>
+    <files>
+      <file>urlfile</file>
+    </files>
+    <params>
+      <param name="urlfilter.class" value="org.paw.filter.PawUrlFilter" />
+      <param name="urlfilter.hosts" value="@conf/urlfile" />
+    </params>
+  </handler>
+</handlers>

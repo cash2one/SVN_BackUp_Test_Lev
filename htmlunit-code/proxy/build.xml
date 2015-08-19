@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HtmlUnit-Proxy" default="" basedir=".">
+
+    <property name="build.dir" value="bin"/>
+    <property name="build.srcDir" value="src/main/java"/>
+    <property name="build.resourceDir" value="src/main/resources"/>
+    <property name="build.testDir" value="src/test/java"/>
+    <property name="build.testResourceDir" value="src/test/resources"/>
+
+    <path id="build.classpath">
+        <pathelement location="${basedir}/lib/paw-gui-26Feb2010.jar"/>
+        <pathelement location="${basedir}/lib/paw-server-26Feb2010.jar"/>
+        <pathelement location="${basedir}/lib/jetty-6.1.22.jar"/>
+        <pathelement location="${basedir}/lib/jetty-servlet-tester-6.1.22.jar"/>
+        <pathelement location="${basedir}/lib/jetty-util-6.1.22.jar"/>
+        <pathelement location="${basedir}/lib/servlet-api-2.5-20081211.jar"/>
+        <pathelement location="${basedir}/lib/brazil-2.3-patched.jar"/>
+        <pathelement location="${basedir}/lib/commons-codec-1.3.jar"/>
+        <pathelement location="${basedir}/lib/gnu-regexp-1.1.4.jar"/>
+        <pathelement location="${basedir}/lib/jdom-1.1.jar"/>
+        <pathelement location="${basedir}/lib/xerces-2.9.1.jar"/>
+        <pathelement location="${basedir}/lib/htmlunit-core-js-2.7.jar"/>
+        <pathelement location="${basedir}/lib/commons-collections-3.2.1.jar"/>
+    </path>
+
+    <target name="clean" description="Clean the output directory">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="check-java-version">
+        <condition property="version-check">
+            <matches pattern="1.5|1.6" string="${java.specification.version}"/>
+        </condition>
+        <fail message="You must use Java 5 or higher" unless="version-check"/>
+    </target>
+
+    <target name="compile" description="Compile the code" depends="check-java-version">
+        <mkdir dir="${build.dir}"/>
+        <javac destdir="${build.dir}"
+                nowarn="false"
+                debug="true"
+                optimize="false"
+                deprecation="true"
+                target="1.5"
+                verbose="false"
+                fork="false"
+                source="1.5">
+            <src>
+                <pathelement location="${build.srcDir}"/>
+            </src>
+            <classpath refid="build.classpath"/>
+        </javac>
+        <copy todir="${build.dir}">
+            <fileset dir="${build.resourceDir}"/>
+        </copy>
+    </target>
+
+    <target name="compile-tests"
+            depends="junit-missing, compile"
+            description="Compile the test code">
+        <javac destdir="${build.dir}"
+            nowarn="false"
+            debug="true"
+            optimize="false"
+            deprecation="true"
+            target="1.6"
+            verbose="false"
+            fork="false"
+            source="1.6">
+            <src>
+                <pathelement location="${build.testDir}"/>
+            </src>
+            <classpath>
+                <path refid="build.classpath"/>
+            </classpath>
+        </javac>
+        <copy todir="${build.dir}">
+            <fileset dir="${build.testResourceDir}"/>
+        </copy>
+    </target>
+
+    <target name="test-junit-present">
+        <available classname="org.junit.Test" property="junit.present"/>
+    </target>
+
+    <target name="junit-missing" depends="test-junit-present"  unless="junit.present">
+        <fail message="JUnit 4 is not present in your $ANT_HOME/lib directory"/>
+    </target>
+
+    <target name="test" depends="compile-tests" description="Run the test cases">
+        <junit printSummary="yes" haltonerror="true" haltonfailure="true" fork="true" dir=".">
+            <sysproperty key="basedir" value="."/>
+            <classpath>
+                <path refid="build.classpath"/>
+                <pathelement location="${build.dir}"/>
+            </classpath>
+            <batchtest>
+                <fileset dir="${build.testDir}">
+                    <include name="**/Test*.java"/>
+                    <include name="**/*Test.java"/>
+                    <include name="**/*TestCase.java"/>
+                    <exclude name="**/*Abstract*Test.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+    <target name="checkstyle" description="Checks the constistency of the source code">
+        <taskdef resource="checkstyletask.properties" classpath="${basedir}/lib/checkstyle-all-5.0.jar"/>
+        <checkstyle config="checkstyle.xml" maxWarnings="0">
+            <property key="checkstyle.suppressions.file" file="${basedir}/checkstyle_suppressions.xml"/>
+            <property key="checkstyle.header.file" file="${basedir}/LICENSE.txt"/>
+            <fileset dir="${build.srcDir}" includes="**/*.java"/>
+            <fileset dir="${build.testDir}" includes="**/*.java"/>
+        </checkstyle>
+    </target>
+
+    <target name="run-server" depends="compile" description="Runs the server">
+        <java classname="org.paw.server.PawMain" classpathref="build.classpath"
+            classpath="${build.dir}" fork="true"/>
+    </target>
+
+    <target name="run-gui" depends="compile" description="Runs the GUI">
+        <java classname="org.paw.gui.PawGui" classpathref="build.classpath" fork="true"/>
+    </target>
+</project>

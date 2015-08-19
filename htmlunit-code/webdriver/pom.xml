@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.sourceforge.htmlunit</groupId>
+	<artifactId>webdriver</artifactId>
+	<version>2.16-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>HtmlUnitDriver</name>
+	<url>http://htmlunit.sourceforge.net</url>
+	<description>
+		HtmlUnit implementation of WebDriver.
+	</description>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+       	<dependency>
+    		<groupId>org.seleniumhq.selenium</groupId>
+    		<artifactId>selenium-api</artifactId>
+    		<version>2.42.2</version>
+		</dependency>
+       	<dependency>
+    		<groupId>org.seleniumhq.selenium</groupId>
+    		<artifactId>selenium-remote-driver</artifactId>
+    		<version>2.42.2</version>
+		</dependency>
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>2.15</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+	<scm>
+		<connection>
+			scm:svn:https://htmlunit.svn.sourceforge.net/svnroot/htmlunit/trunk/webdriver
+		</connection>
+		<developerConnection>
+			scm:svn:https://htmlunit.svn.sourceforge.net/svnroot/htmlunit/trunk/webdriver
+		</developerConnection>
+		<url>http://htmlunit.svn.sourceforge.net/viewvc/htmlunit</url>
+	</scm>
+
+	<distributionManagement>
+        <repository>
+            <id>htmlunit-m2-repo</id>
+            <url>
+                sftp://web.sourceforge.net/home/groups/h/ht/htmlunit/htdocs/m2-repo
+            </url>
+            <name>HtmlUnit Maven 2 Repository</name>
+        </repository>
+		<snapshotRepository>
+			<id>htmlunit-m2-repo-snapshots</id>
+			<url>
+				sftp://web.sourceforge.net/home/groups/h/ht/htmlunit/htdocs/m2-repo-snapshots
+			</url>
+			<name>HtmlUnit Maven 2 Snapshots Repository</name>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <id>HtmlUnitSnapshots</id>
+            <name>HtmlUnit Snapshots</name>
+            <url>http://htmlunit.sourceforge.net/m2-repo-snapshots</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+</project>

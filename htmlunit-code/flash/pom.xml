@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.sourceforge.htmlunit</groupId>
+	<artifactId>flash</artifactId>
+	<version>2.11-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>HtmlUnit Flash</name>
+	<url>http://htmlunit.sourceforge.net</url>
+	<description>
+		HtmlUnit adaptation of Apache Flex.
+	</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+	<licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+	</licenses>
+
+	<scm>
+		<connection>
+			scm:svn:https://htmlunit.svn.sourceforge.net/svnroot/htmlunit/trunk/flash
+		</connection>
+		<developerConnection>
+			scm:svn:https://htmlunit.svn.sourceforge.net/svnroot/htmlunit/trunk/flash
+		</developerConnection>
+		<url>http://htmlunit.svn.sourceforge.net/viewvc/htmlunit</url>
+	</scm>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <links>
+                        <link>http://docs.oracle.com/javase/6/docs/api/</link>
+                    </links>
+                    <stylesheet>maven</stylesheet>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+	<dependencies>
+		<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+		</dependency>
+	</dependencies>
+	<developers>
+		<developer>
+			<name>Apache Flex Team</name>
+			<id>ApacheFlexTeam</id>
+		</developer>
+		<developer>
+			<name>HtmlUnit Team</name>
+			<id>HtmlUnitTeam</id>
+		</developer>
+	</developers>
+</project>

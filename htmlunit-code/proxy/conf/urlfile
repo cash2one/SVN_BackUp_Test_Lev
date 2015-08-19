@@ -1,0 +1,13 @@
+###########################################################
+# URL file for PawUrlFilter                               #
+#                                                         #
+# Notes:                                                  #
+#    - Do not include http:// or trailing URL paths       #
+#    - 'domain.org' will block *.domain.org               #
+#                                                         #
+###########################################################
+# Blocks all Christmas Island sites
+cx
+# Blocks Mail sites
+mail.yahoo.com
+hotmail.com

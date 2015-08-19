@@ -1,0 +1,11 @@
+#firetrace-trigger-button {
+  list-style-image: url("chrome://firetrace/skin/trigger-button-start.png");
+}
+
+#firetrace-save-button {
+  list-style-image: url("chrome://firetrace/skin/save-button.png");
+}
+
+#firetrace-clear-button {
+  list-style-image: url("chrome://firetrace/skin/clear-button.png");
+}

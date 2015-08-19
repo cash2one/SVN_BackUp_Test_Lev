@@ -1,0 +1,5 @@
+content	firetrace	content/
+locale	firetrace	en-US	locale/en-US/
+skin	firetrace	classic/1.0	skin/
+overlay	chrome://browser/content/browser.xul	chrome://firetrace/content/firefoxOverlay.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://firetrace/skin/overlay.css

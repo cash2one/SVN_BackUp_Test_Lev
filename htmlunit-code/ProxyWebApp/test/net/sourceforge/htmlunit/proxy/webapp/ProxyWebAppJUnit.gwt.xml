@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='net.sourceforge.htmlunit.proxy.webapp.ProxyWebApp'/>
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/proxywebapp/getLog" class="net.sourceforge.htmlunit.proxy.webapp.server.LogServiceImpl" />
+
+</module>

@@ -1,0 +1,6 @@
+<!ENTITY firetraceTrigger.label "Enable/Disable Tracing">
+<!ENTITY firetraceTrigger.tooltip "Enable/Disable Tracing">
+<!ENTITY firetraceSave.label "Save Trace Log to File">
+<!ENTITY firetraceSave.tooltip "Save Trace Log to File">
+<!ENTITY firetraceClear.label "Clear Trace Log">
+<!ENTITY firetraceClear.tooltip "Clear Trace Log">
