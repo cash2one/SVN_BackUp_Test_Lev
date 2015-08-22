@@ -1,5 +1,3 @@
-cp aline-devfactory-scripts/tools/dfbuild/dfbuild.jar /home/alinebuild
-chown alinebuild /home/alinebuild/dfbuild.jar
 cd /opt/dfinstaller/src
 ant download_jars
 chown -R alinebuild /opt/dfinstaller
