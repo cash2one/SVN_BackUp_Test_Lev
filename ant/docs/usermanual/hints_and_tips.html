@@ -1,0 +1,124 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=iso-8859-15"><title>Apache JMeter
+          -
+          User's Manual: Hints and Tips</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="http://fonts.googleapis.com/css?family=Merriweather:400normal" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="../css/new-style.css"></head><body role="document"><a href="#content" class="hidden">Main content</a><div class="header"><!--
+            APACHE LOGO
+          --><div><a href="http://www.apache.org"><img title="Apache Software Foundation" width="290" height="75" src="../images/asf-logo.png" alt="Logo ASF"></a></div><!--
+              PROJECT LOGO
+            --><div><a href="http://jmeter.apache.org/"><img src="../images/logo.jpg" alt="Apache JMeter"></a></div><div class="twitter"><div><a href="https://twitter.com/share" class="twitter-share-button" data-text="Powerful Load Testing with Apache #JMeter" data-via="ApacheJMeter" data-lang="en-gb" data-size="large">Tweet</a><script>
+            (function(d,s,id){
+              var js,
+                  fjs=d.getElementsByTagName(s)[0],
+                  p=/^http:/.test(d.location)?'http':'https';
+              if (!d.getElementById(id)) {
+                  js=d.createElement(s);
+                  js.id=id;
+                  js.src=p+'://platform.twitter.com/widgets.js';
+                  fjs.parentNode.insertBefore(js,fjs);
+              }
+            })(document, 'script', 'twitter-wjs');
+              </script></div><div><a href="https://twitter.com/ApacheJMeter" class="twitter-follow-button" data-show-count="false" data-lang="en-gb" data-size="large">Follow</a><script>(function(d,s,id){
+                var js,
+                    fjs=d.getElementsByTagName(s)[0],
+                    p=/^http:/.test(d.location)?'http':'https';
+                if (!d.getElementById(id)) {
+                    js=d.createElement(s);
+                    js.id=id;
+                    js.src=p+'://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js,fjs);
+                }
+            })(document, 'script', 'twitter-wjs');
+              </script></div></div><div class="banner"><iframe src="http://www.apache.org/ads/bannerbar.html" style="border-width:0;" frameborder="0" scrolling="no"></iframe><div class="clear"></div></div></div><div class="nav"><ul class="menu"><li><div class="menu-title">About</div><ul><li><a href="../index.html">Overview</a></li><li><a href="http://twitter.com/ApacheJMeter">JMeter on Twitter<img src="../images/twitter.png" alt="Icon for JMeter on Twitter"></a></li><li><a href="../issues.html">Issue Tracking</a></li><li><a href="http://projects.apache.org/feeds/rss/jmeter.xml">Subscribe to What's New</a></li><li><a href="http://www.apache.org/licenses/">License</a></li></ul></li></ul><ul class="menu"><li><div class="menu-title">Download</div><ul><li><a href="../download_jmeter.cgi">Download Releases</a></li><li><a href="../nightly.html">Developer (Nightly) Builds</a></li></ul></li></ul><ul class="menu"><li><div class="menu-title">Documentation</div><ul><li><a href="../changes.html">Changes per version</a></li><li><a href="../usermanual/get-started.html">Get Started</a></li><li><a href="../usermanual/index.html">User Manual</a></li><li><a href="../usermanual/best-practices.html">Best Practices</a></li><li><a href="../usermanual/component_reference.html">Component Reference</a></li><li><a href="../usermanual/functions.html">Functions Reference</a></li><li><a href="../api/index.html">Javadocs</a></li><li><a href="../building.html">Building JMeter and Add-Ons</a></li><li><a href="http://wiki.apache.org/jmeter">JMeter Wiki</a></li><li><a href="http://wiki.apache.org/jmeter/JMeterFAQ">FAQ (Wiki)</a></li></ul></li></ul><ul class="menu"><li><div class="menu-title">Tutorials (PDF format)</div><ul><li><a href="../usermanual/jmeter_distributed_testing_step_by_step.pdf">Distributed Testing</a></li><li><a href="../usermanual/jmeter_proxy_step_by_step.pdf">Recording Tests</a></li><li><a href="../usermanual/junitsampler_tutorial.pdf">JUnit Sampler</a></li><li><a href="../usermanual/jmeter_accesslog_sampler_step_by_step.pdf">Access Log Sampler</a></li><li><a href="../extending/jmeter_tutorial.pdf">Extending JMeter</a></li></ul></li></ul><ul class="menu"><li><div class="menu-title">Community</div><ul><li><a href="http://wiki.apache.org/jmeter/JMeterCommitters">Contributors</a></li><li><a href="../mail.html">Mailing Lists</a></li><li><a href="../svnindex.html">SVN Repositories</a></li></ul></li></ul><ul class="menu"><li><div class="menu-title">Foundation</div><ul><li><a href="http://www.apache.org/">ASF</a></li><li><a href="http://www.apache.org/foundation/getinvolved.html">Get Involved in the ASF</a></li><li><a href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li><li><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li></ul></li></ul></div><div class="main" id="content"><ul class="pagelinks"><li><a href="regular_expressions.html">&lt; Prev</a></li><li><a href="../index.html">Index</a></li><li><a href="glossary.html">Next &gt;</a></li></ul><div class="section"><h1 id="hints">21. Hints and Tips<a class="sectionlink" href="#hints" title="Link to here">&para;</a></h1>
+<p>
+This section is a collection of various hints and tips that have been suggested by various questions on the JMeter User list.
+If you don't find what you are looking for here, please check the <a href="http://wiki.apache.org/jmeter">JMeter Wiki</a>.
+Also, try search the JMeter User list; someone may well have already provided a solution.
+</p>
+<div class="subsection"><h2>21.1 Passing variables between threads<a class="sectionlink" href="#variable_and_threads" title="Link to here">&para;</a></h2>
+<p>
+JMeter variables have thread scope. This is deliberate, so that threads can act indepently.
+However sometimes there is a need to pass variables between different threads, in the same or different Thread Groups.
+</p>
+<p>
+One way to do this is to use a property instead. 
+Properties are shared between all JMeter threads, so if one thread <a href="functions.html#__setProperty">sets a property</a>,
+another thread can <a href="functions.html#__P">read</a> the updated value.
+</p>
+<p>
+If there is a lot of information that needs to be passed between threads, then consider using a file.
+For example you could use the <a href="component_reference.html#Save_Responses_to_a_file">Save Responses to a file</a>
+listener or perhaps a BeanShell PostProcessor in one thread, and read the file using the HTTP Sampler "file:" protocol,
+and extract the information using a PostProcessor or BeanShell element.
+</p>
+<p>
+If you can derive the data before starting the test, then it may well be better to store it in a file,
+read it using CSV Dataset.
+</p>
+</div>
+
+<div class="subsection"><h2>21.2 Enabling Debug logging<a class="sectionlink" href="#debug_logging" title="Link to here">&para;</a></h2>
+<p>
+Most test elements include debug logging. If running a test plan from the GUI, 
+select the test element and use the Help Menu to enable or disable logging.
+The Help Menu also has an option to display the GUI and test element class names.
+You can use these to determine the correct property setting to change the logging level.
+</p>
+
+<p>
+It is sometimes very useful to see Log messages to debug dynamic scripting languages like BeanShell or
+groovy used in JMeter.
+Since version 2.6, you can view log messages directly in JMeter GUI, to do so:
+<ul>
+<li>use menu Options &gt; Log Viewer, a log console will appear at the bottom of the interface</li>
+<li>Or click on the Warning icon in the upper right corner of GUI</li>
+</ul>
+By default this log console is disabled, you can enable it by changing in jmeter.properties:
+<ul>
+<li>jmeter.loggerpanel.display=true</li>
+</ul>
+
+To avoid using too much memory, this components limits the number of characters used by this panel:
+<ul>
+<li>jmeter.loggerpanel.maxlength=80000</li>
+</ul>
+</p>
+</div>
+
+<div class="subsection"><h2>21.3 Searching<a class="sectionlink" href="#searching" title="Link to here">&para;</a></h2>
+<p>
+It is sometimes hard to find in a Test Plan tree and elements using a variable or containing a certain URL or parameter.
+A new feature is now available since 2.6, you can access it in Menu Search.
+It provides search with following options:
+<ul>
+<li>Case Sensitive : Makes search case sensitive</li>
+<li>Regexp : Is text to search a regexp, if so Regexp will be searched in Tree of components, example "\btest\b" will match any component that contains test in searchable elements of the component</li>
+</ul>
+</p>
+
+<figure><a href="../images/screenshots/searching/raw-search.png"><img src="../images/screenshots/searching/raw-search.png" width="663" height="300" alt="Figure 1 - Search raw text in TreeView"></a><figcaption>Figure 1 - Search raw text in TreeView</figcaption></figure>
+<figure><a href="../images/screenshots/searching/raw-search-result.png"><img src="../images/screenshots/searching/raw-search-result.png" width="667" height="319" alt="Figure 2 - Result in TreeView"></a><figcaption>Figure 2 - Result in TreeView</figcaption></figure>
+<figure><a href="../images/screenshots/searching/regexp-search.png"><img src="../images/screenshots/searching/regexp-search.png" width="642" height="307" alt="Figure 3 - Search Regexp in TreeView (in this example we search whole word)"></a><figcaption>Figure 3 - Search Regexp in TreeView (in this example we search whole word)</figcaption></figure>
+<figure><a href="../images/screenshots/searching/regexp-search-result.png"><img src="../images/screenshots/searching/regexp-search-result.png" width="596" height="328" alt="Figure 4 - Result in TreeView"></a><figcaption>Figure 4 - Result in TreeView</figcaption></figure>
+
+</div>
+
+<div class="subsection"><h2>21.4 Toolbar icons size<a class="sectionlink" href="#toolbar" title="Link to here">&para;</a></h2>
+<div class="description">
+    <p>
+You can change the size of icons in the toolbar using the property <pre>jmeter.toolbar.icons.size</pre> with these values: 22x22 (default size), 32x32 or 48x48.
+    </p>
+</div>
+<figure><a href="../images/screenshots/icons-22x22.jpg"><img src="../images/screenshots/icons-22x22.jpg" width="296" height="95" alt="Icons with the size 22x22."></a><figcaption>Icons with the size 22x22.</figcaption></figure>
+<figure><a href="../images/screenshots/icons-32x32.jpg"><img src="../images/screenshots/icons-32x32.jpg" width="300" height="106" alt="Icons with the size 32x32."></a><figcaption>Icons with the size 32x32.</figcaption></figure>
+<figure><a href="../images/screenshots/icons-48x48.jpg"><img src="../images/screenshots/icons-48x48.jpg" width="365" height="120" alt="Icons with the size 48x48."></a><figcaption>Icons with the size 48x48.</figcaption></figure>
+</div>
+</div><ul class="pagelinks"><li><a href="regular_expressions.html">&lt; Prev</a></li><li><a href="../index.html">Index</a></li><li><a href="glossary.html">Next &gt;</a></li></ul></div><div class="footer"><div class="copyright">
+            Copyright &copy;
+            1999 &ndash;
+            2015
+            , Apache Software Foundation
+          </div><div class="trademarks">Apache, Apache JMeter, JMeter, the Apache
+            feather, and the Apache JMeter logo are
+            trademarks of the
+            Apache Software Foundation.
+          </div></div></body></html>
