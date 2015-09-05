@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ JBoss, Home of Professional Open Source.
+  ~ Copyright 2011, Red Hat, Inc., and individual contributors
+  ~ as indicated by the @author tags. See the copyright.txt file in the
+  ~ distribution for a full listing of individual contributors.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  -->
+<!-- N.B. This is *not* a usable protocol stack -->
+<!-- This file supplies the internal defaults per protocol -->
+<config xmlns="urn:org:jgroups">
+    <UDP
+        ip_ttl="2"
+        mcast_recv_buf_size="25m"
+        mcast_send_buf_size="1m"
+        ucast_recv_buf_size="20m"
+        ucast_send_buf_size="1m"
+    />
+    <TCP
+        send_buf_size="640k"
+        sock_conn_timeout="300"
+    />
+    <MPING ip_ttl="2"/>
+    <MERGE3
+        min_interval="10000"
+        max_interval="30000"
+    />
+    <FD max_tries="5"
+        msg_counts_as_heartbeat="false"
+        timeout="3000"
+    />
+    <FD_ALL
+        interval="15000"
+        timeout="60000"
+        timeout_check_interval="5000"/>
+    <VERIFY_SUSPECT timeout="5000"/>
+    <pbcast.NAKACK2 xmit_table_num_rows="50"/>
+    <UNICAST3
+        conn_expiry_timeout="0"
+        xmit_table_num_rows="50"
+    />
+    <pbcast.STABLE
+        stability_delay="500"
+        desired_avg_gossip="5000"
+        max_bytes="1m"
+    />
+    <pbcast.GMS print_local_addr="false"/>
+    <UFC max_credits="2m"/>
+    <MFC max_credits="2m"/>
+    <FRAG2 frag_size="30k"/>
+</config>

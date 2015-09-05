@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.wildfly</groupId>
+        <artifactId>wildfly-testsuite</artifactId>
+        <version>10.0.0.CR1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>wildfly-ts-integ</artifactId>
+    <packaging>pom</packaging>
+
+    <name>WildFly Test Suite: Integration</name>
+
+    <properties>
+        <!-- Current module's directory. Will automatically pick up sub-module's basedir. -->
+        <jbossas.ts.submodule.dir>${basedir}</jbossas.ts.submodule.dir>
+        <!-- Integration module's directory. To be overriden in sub-modules. -->
+        <jbossas.ts.integ.dir>${basedir}</jbossas.ts.integ.dir>
+        <!-- This project's testsuite dir. To be changed for every submodule (until we figure out how to do it automatically). -->
+        <jbossas.ts.dir>${jbossas.ts.integ.dir}/..</jbossas.ts.dir>
+        <!-- This project's root dir. -->
+        <jbossas.project.dir>${jbossas.ts.dir}/..</jbossas.project.dir>
+        <jvm.args.dirs>
+            -Djbossas.ts.submodule.dir=${jbossas.ts.submodule.dir}
+            -Djbossas.ts.integ.dir=${jbossas.ts.integ.dir}
+            -Djbossas.ts.dir=${jbossas.ts.dir}
+            -Djbossas.project.dir=${jbossas.project.dir}
+            -Djboss.dist=${jboss.dist}
+        </jvm.args.dirs>
+
+        <!-- Used to provide an absolute location for the distribution under test. -->
+        <jboss.dist>${jbossas.project.dir}/${wildfly.build.output.dir}</jboss.dist>
+        <jboss.home>${jboss.dist}</jboss.home>
+
+        <!-- Used to provide an absolute location for the XSLT scripts. -->
+        <xslt.scripts.dir>${jbossas.ts.integ.dir}/src/test/xslt</xslt.scripts.dir>
+
+        <ts.skipTests>${skipTests}</ts.skipTests>
+        <enforcer.skip>true</enforcer.skip>
+    </properties>
+
+    <profiles>
+
+        <!-- Run all tests on -DallTests. -->
+        <profile>
+            <id>ts.integ.allGroups</id>
+            <activation><property><name>allTests</name></property></activation>
+            <modules>
+                <module>ws</module>
+                <module>web</module>
+                <module>smoke</module>
+                <module>basic</module>
+                <module>iiop</module>
+                <module>xts</module>
+                <module>rts</module>
+                <module>rbac</module>
+                <module>clustering</module>
+                <module>multinode</module>
+                <module>manualmode</module>
+                <module>picketlink</module>
+                <module>secman</module>
+            </modules>
+        </profile>
+        <!-- Define ts.integration uber-group. -->
+        <profile>
+            <id>ts.integ.allGroupsIntegration</id>
+            <activation><property><name>ts.integration</name></property></activation>
+            <modules>
+                <module>ws</module>
+                <module>web</module>
+                <module>smoke</module>
+                <module>basic</module>
+                <module>clustering</module>
+                <module>iiop</module>
+                <module>xts</module>
+                <module>rts</module>
+                <module>rbac</module>
+                <module>multinode</module>
+                <module>manualmode</module>
+                <module>picketlink</module>
+                <module>secman</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.smoke -->
+        <profile>
+            <id>ts.integ.group.smoke</id>
+            <activation><property><name>!ts.noSmoke</name></property></activation>
+            <modules>
+                <module>web</module>
+                <module>smoke</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.basic -->
+        <profile>
+            <id>ts.integ.group.basic</id>
+            <activation><property><name>ts.basic</name></property></activation>
+            <modules>
+                <module>ws</module>
+                <module>basic</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.clustering -->
+        <profile>
+            <id>ts.integ.group.clustering</id>
+            <activation><property><name>ts.clustering</name></property></activation>
+            <modules>
+                <module>clustering</module>
+            </modules>
+        </profile>
+
+        <!-- Keep -Dts.clust compatibility -->
+        <profile>
+            <id>ts.integ.group.clustering.compatibility</id>
+            <activation><property><name>ts.clust</name></property></activation>
+            <modules>
+                <module>clustering</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.iiop -->
+        <profile>
+            <id>ts.integ.group.iiop</id>
+            <activation><property><name>ts.iiop</name></property></activation>
+            <modules>
+                <module>iiop</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.xts -->
+        <profile>
+            <id>ts.integ.group.xts</id>
+            <activation><property><name>ts.xts</name></property></activation>
+            <modules>
+                <module>xts</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.rts -->
+        <profile>
+            <id>ts.integ.group.rts</id>
+            <activation><property><name>ts.rts</name></property></activation>
+            <modules>
+                <module>rts</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.multinode -->
+        <profile>
+            <id>ts.integ.group.multinode</id>
+            <activation><property><name>ts.multinode</name></property></activation>
+            <modules>
+                <module>multinode</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.manualmode -->
+        <profile>
+            <id>ts.integ.group.manualmode</id>
+            <activation><property><name>ts.manualmode</name></property></activation>
+            <modules>
+                <module>manualmode</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.rbac -->
+        <profile>
+            <id>ts.integ.group.rbac</id>
+            <activation><property><name>ts.rbac</name></property></activation>
+            <modules>
+                <module>rbac</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.picketlink -->
+        <profile>
+            <id>ts.integ.group.picketlink</id>
+            <activation><property><name>ts.picketlink</name></property></activation>
+            <modules>
+                <module>picketlink</module>
+            </modules>
+        </profile>
+
+        <!-- -Dts.secman -->
+        <profile>
+            <id>ts.integ.group.secman</id>
+            <activation><property><name>ts.secman</name></property></activation>
+            <modules>
+                <module>secman</module>
+            </modules>
+        </profile>
+    </profiles>
+
+
+    <build>
+        <plugins>
+            <!-- General plugin configuration for all integration tests -->
+
+            <!-- Resources plugin. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions combine.children="append">
+                    <!-- Copy users and roles config from shared resources. -->
+                    <execution>
+                        <id>ts.config-as.copy-mgmt-users</id>
+                        <phase>generate-test-resources</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <inherited>true</inherited>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/jbossas/standalone/configuration</outputDirectory>
+                            <overwrite>true</overwrite>
+                            <resources>
+                                <resource>
+                                    <directory>../../shared/src/main/resources</directory>
+                                    <includes><include>*.properties</include></includes>
+                                </resource>
+                                <resource>
+                                    <!-- Add the XTS config to the standalone/config directory, so it will be processed as well -->
+                                    <directory>${basedir}/target/jbossas/docs/examples/configs</directory>
+                                    <includes>
+                                         <include>standalone-xts.xml</include>
+                                         <include>standalone-rts.xml</include>
+                                         <include>standalone-ec2-*.xml</include>
+                                         <include>standalone-gossip-*.xml</include>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <!-- Add the Picketlink config to the standalone/config directory, so it will be processed as well -->
+                                    <directory>${basedir}/target/jbossas/docs/examples/configs</directory>
+                                    <includes><include>standalone-picketlink.xml</include></includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Setup standalone server IP and logging configuration -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xml-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- General surefire configuration. Applies to submodules too. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>${ts.skipTests}</skipTests>
+                    <!-- Prevent test and server output appearing in console. -->
+                    <redirectTestOutputToFile>${testLogToFile}</redirectTestOutputToFile>
+                    <enableAssertions>true</enableAssertions>
+                    <!--<basedir>${jbossas.ts.integ.dir}</basedir>  <!- - "The base directory of the project being tested." Sets ${basedir}. -->
+                    <workingDirectory>${basedir}/target/workdir</workingDirectory> <!-- Work in submodule's own dir. -->
+
+                    <!-- Forked process timeout -->
+                    <forkedProcessTimeoutInSeconds>${surefire.forked.process.timeout}</forkedProcessTimeoutInSeconds>
+                    <!-- System properties to forked surefire JVM which runs clients. -->
+                    <argLine>${surefire.memory.args} ${jvm.args.ip.client} ${jvm.args.timeouts}</argLine>
+
+                    <!-- System properties passed to test cases -->
+                    <systemPropertyVariables combine.children="append">
+                        <node0>${node0}</node0>
+                        <node1>${node1}</node1>
+                        <mcast>${mcast}</mcast>
+                        <mcast.ttl>${mcast.ttl}</mcast.ttl>
+
+                        <node2>${node2}</node2>
+                        <node3>${node3}</node3>
+
+                        <jbossas.ts.submodule.dir>${basedir}</jbossas.ts.submodule.dir>
+                        <jbossas.ts.integ.dir>${jbossas.ts.integ.dir}</jbossas.ts.integ.dir>
+                        <jbossas.ts.dir>${jbossas.ts.dir}</jbossas.ts.dir>
+                        <jbossas.project.dir>${jbossas.project.dir}</jbossas.project.dir>
+                        <jboss.dist>${jboss.dist}</jboss.dist>
+
+                        <!--
+                            Used in arquillian.xml - arguments for all JBoss AS instances.
+                            System properties are duplicated here until ARQ-647 is implemented.
+                        -->
+                        <server.jvm.args>${surefire.system.args} ${jvm.args.ip.server} ${jvm.args.jacoco} ${jvm.args.other} ${jvm.args.timeouts} -Dnode0=${node0} -Dnode1=${node1} -Dmcast=${mcast} -Dmcast.ttl=${mcast.ttl} ${jvm.args.dirs}</server.jvm.args>
+                    </systemPropertyVariables>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- Dependencies specific to the integration tests. -->
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-webservices-tests-integration</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+           <groupId>org.wildfly.core</groupId>
+            <artifactId>wildfly-model-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wildfly.core</groupId>
+            <artifactId>wildfly-core-model-test-framework</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.wildfly.core</groupId>
+            <artifactId>wildfly-subsystem-test</artifactId>
+            <type>pom</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <defaultProtocol type="jmx-as7" />
+
+    <group qualifier="manual-mode">
+        <container qualifier="default-jbossas" default="true" mode="manual">
+            <configuration>
+                <property name="jbossHome">${basedir}/target/jbossas</property>
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.inst=${basedir}/target/jbossas -Djboss.node.name=default-jbossas</property>
+                <property name="serverConfig">${jboss.server.config.file.name:standalone-ha.xml}</property>
+                <property name="jbossArguments">${jboss.args}</property>
+                <property name="allowConnectingToRunningServer">true</property>
+                <property name="managementAddress">${node0:127.0.0.1}</property>
+                <property name="managementPort">${as.managementPort:9990}</property>
+
+                <!-- AS7-4070 -->
+                <property name="waitForPorts">${as.debug.port:8787} ${as.managementPort:9990}</property>
+                <property name="waitForPortsTimeoutInSeconds">8</property>
+            </configuration>
+        </container>
+
+        <container qualifier="jbossas-non-clustered" default="false" mode="manual">
+            <configuration>
+                <property name="jbossHome">${basedir}/target/jbossas</property>
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.inst=${basedir}/target/jbossas -Djboss.node.name=default-jbossas</property>
+                <property name="serverConfig">standalone.xml</property>
+                <property name="jbossArguments">${jboss.args}</property>
+                <property name="allowConnectingToRunningServer">true</property>
+                <property name="managementAddress">${node0:127.0.0.1}</property>
+                <property name="managementPort">${as.managementPort:9990}</property>
+
+                <!-- AS7-4070 -->
+                <property name="waitForPorts">${as.debug.port:8787} ${as.managementPort:9990}</property>
+                <property name="waitForPortsTimeoutInSeconds">8</property>
+            </configuration>
+        </container>
+
+        <container qualifier="jbossas-with-remote-outbound-connection" default="false" mode="manual">
+            <configuration>
+                <property name="jbossHome">${basedir}/target/jbossas-with-remote-outbound-connection</property>
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.inst=${basedir}/target/jbossas-with-remote-outbound-connection -Djboss.node.name=jbossas-with-remote-outbound-connection</property>
+                <property name="serverConfig">${jboss.server.config.file.name:standalone-ha.xml}</property>
+                <property name="jbossArguments">${jboss.args}</property>
+                <property name="allowConnectingToRunningServer">true</property>
+                <property name="managementAddress">${node1}</property>
+                <property name="managementPort">10090</property>
+
+                <!-- AS7-4070 -->
+                <property name="waitForPorts">${as.debug.port.node1} 10090</property>
+                <property name="waitForPortsTimeoutInSeconds">8</property>
+            </configuration>
+        </container>
+
+        <container qualifier="jbossas-with-remote-outbound-connection-non-clustered" default="false" mode="manual">
+            <configuration>
+                <property name="jbossHome">${basedir}/target/jbossas-with-remote-outbound-connection</property>
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.inst=${basedir}/target/jbossas-with-remote-outbound-connection -Djboss.node.name=jbossas-with-remote-outbound-connection</property>
+                <property name="serverConfig">standalone.xml</property>
+                <property name="jbossArguments">${jboss.args}</property>
+                <property name="allowConnectingToRunningServer">true</property>
+                <property name="managementAddress">${node1}</property>
+                <property name="managementPort">10090</property>
+
+                <!-- AS7-4070 -->
+                <property name="waitForPorts">${as.debug.port.node1} 10090</property>
+                <property name="waitForPortsTimeoutInSeconds">8</property>
+            </configuration>
+        </container>
+
+        <container qualifier="jbossas-layered" default="false" mode="manual">
+            <configuration>
+                <property name="jbossHome">${basedir}/target/jbossas-layered</property>
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.inst=${basedir}/target/jbossas-layered -Djboss.node.name=jbossas-layered</property>
+                <property name="serverConfig">${jboss.server.config.file.name:standalone-ha.xml}</property>
+                <property name="jbossArguments">${jboss.args}</property>
+                <property name="allowConnectingToRunningServer">true</property>
+                <property name="managementAddress">${node0:127.0.0.1}</property>
+                <property name="managementPort">${as.managementPort:9990}</property>
+                <property name="modulePath">${basedir}/target/jbossas-layered/modules</property>
+
+                <!-- AS7-4070 -->
+                <property name="waitForPorts">${as.debug.port.node1} 10090</property>
+                <property name="waitForPortsTimeoutInSeconds">8</property>
+            </configuration>
+        </container>
+
+        <container qualifier="jbossas-messaging-ha-server1" default="false" mode="manual">
+            <configuration>
+                <property name="jbossHome">${basedir}/target/jbossas-messaging-ha-server1</property>
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.inst=${basedir}/target/jbossas-messaging-ha-server1 -Djboss.node.name=default-jbossas-messaging-ha-server1</property>
+                <property name="serverConfig">standalone-full-ha.xml</property>
+                <property name="jbossArguments">${jboss.args}</property>
+                <property name="allowConnectingToRunningServer">true</property>
+                <property name="managementAddress">${node0:127.0.0.1}</property>
+                <property name="managementPort">${as.managementPort:9990}</property>
+
+                <!-- AS7-4070 -->
+                <property name="waitForPorts">${as.debug.port:8787} ${as.managementPort:9990}</property>
+                <property name="waitForPortsTimeoutInSeconds">8</property>
+            </configuration>
+        </container>
+
+        <container qualifier="jbossas-messaging-ha-server2" default="false" mode="manual">
+            <configuration>
+                <property name="jbossHome">${basedir}/target/jbossas-messaging-ha-server2</property>
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.socket.binding.port-offset=100 -Djboss.inst=${basedir}/target/jbossas-messaging-ha-server2 -Djboss.node.name=default-jbossas-messaging-ha-server2</property>
+                <property name="serverConfig">standalone-full-ha.xml</property>
+                <property name="jbossArguments">${jboss.args}</property>
+                <property name="allowConnectingToRunningServer">true</property>
+                <property name="managementAddress">${node0:127.0.0.1}</property>
+                <property name="managementPort">${as.managementPort:10090}</property>
+
+                <!-- AS7-4070 -->
+                <property name="waitForPorts">${as.debug.port:8987} ${as.managementPort:10090}</property>
+                <property name="waitForPortsTimeoutInSeconds">8</property>
+            </configuration>
+        </container>
+
+        <container qualifier="jbossas-admin-only" default="false" mode="manual">
+            <configuration>
+                <property name="jbossHome">${basedir}/target/jbossas</property>
+                <property name="javaVmArguments">${server.jvm.args} -Djboss.inst=${basedir}/target/jbossas -Djboss.node.name=default-jbossas</property>
+                <property name="serverConfig">${jboss.server.config.file.name:standalone-ha.xml}</property>
+                <property name="jbossArguments">${jboss.args}</property>
+                <property name="allowConnectingToRunningServer">true</property>
+                <property name="managementAddress">${node0:127.0.0.1}</property>
+                <property name="managementPort">${as.managementPort:9990}</property>
+                <property name="adminOnly">true</property>
+
+                <!-- AS7-4070 -->
+                <property name="waitForPorts">${as.debug.port:8787} ${as.managementPort:9990}</property>
+                <property name="waitForPortsTimeoutInSeconds">8</property>
+            </configuration>
+        </container>
+    </group>
+
+</arquillian>

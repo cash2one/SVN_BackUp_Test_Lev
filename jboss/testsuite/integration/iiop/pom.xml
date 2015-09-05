@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.wildfly</groupId>
+        <artifactId>wildfly-ts-integ</artifactId>
+        <version>10.0.0.CR1-SNAPSHOT</version>
+    </parent>
+
+    <!-- ********************************************************************************** -->
+    <!-- *********************************** IIOP *********************************** -->
+    <!-- ********************************************************************************** -->
+    <artifactId>wildfly-ts-integ-iiop</artifactId>
+
+    <name>WildFly Test Suite: Integration - IIOP</name>
+
+    <properties>
+        <jbossas.ts.integ.dir>${basedir}/..</jbossas.ts.integ.dir>
+        <jbossas.ts.dir>${jbossas.ts.integ.dir}/..</jbossas.ts.dir>
+        <jbossas.project.dir>${jbossas.ts.dir}/..</jbossas.project.dir>
+    </properties>
+
+    <profiles>
+
+        <profile>
+            <id>iiop.integration.tests.profile</id>
+            <activation>
+                <property>
+                    <name>!ts.noIIOP</name>
+                </property>
+            </activation>
+
+            <properties>
+            </properties>
+
+            <!-- Server configuration executions. -->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>copy</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>org.jboss.openjdk-orb</groupId>
+                                            <artifactId>openjdk-orb</artifactId>
+                                            <outputDirectory>${project.build.directory}/endorsed</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions combine.children="append">
+                            <execution>
+                                <id>build-clustering.server</id>
+                                <phase>process-test-resources</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <!-- Configure IIOP server and client. -->
+                                        <ant
+                                            antfile="${jbossas.ts.integ.dir}/src/test/scripts/iiop-build.xml">
+                                            <property name="node0"
+                                                value="${node0}" /> <!-- inheritAll="true" doesn't work. -->
+                                            <property name="node1"
+                                                value="${node1}" />
+                                            <target name="build-iiop" />
+                                        </ant>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Surefire test executions -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <executions combine.children="append">
+
+                            <!-- Disable default-test execution. -->
+                            <execution>
+                                <id>default-test</id>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <phase>none</phase>
+                            </execution>
+                            <!-- Multi node clustering tests. -->
+                            <execution>
+                                <id>tests-iiop-multi-node.surefire</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <configuration>
+                                    <!-- Tests to execute. -->
+                                    <includes>
+                                        <include>org/jboss/as/test/iiop/**/*TestCase.java</include>
+                                    </includes>
+
+                                    <!-- Parameters to test cases. -->
+                                    <systemPropertyVariables
+                                        combine.children="append">
+                                        <arquillian.launch>iiop</arquillian.launch>
+                                        <jboss.server.config.file.name>standalone-full.xml</jboss.server.config.file.name>
+                                        <!-- EJB client library hack, see WFLY-4973-->
+                                        <org.jboss.ejb.client.wildfly-testsuite-hack>true</org.jboss.ejb.client.wildfly-testsuite-hack>
+                                    </systemPropertyVariables>
+                                    <argLine>
+                                        -Djava.endorsed.dirs=${project.build.directory}/endorsed
+                                        -Dcom.sun.CORBA.ORBUseDynamicStub=true
+                                        -Dcom.arjuna.ats.arjuna.common.propertiesFile=jbossts-properties.xml</argLine>
+                                </configuration>
+                            </execution>
+
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+    </profiles>
+</project>
