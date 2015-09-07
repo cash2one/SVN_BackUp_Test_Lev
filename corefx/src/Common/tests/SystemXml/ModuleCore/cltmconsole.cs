@@ -1,0 +1,85 @@
+﻿// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
+using System.IO;
+using System.Text;			//Encoding
+using System.Diagnostics;	//TraceListener
+
+namespace OLEDB.Test.ModuleCore
+{
+    ////////////////////////////////////////////////////////////////
+    // CLTMConsole
+    //
+    ////////////////////////////////////////////////////////////////
+    public class CLTMConsole : TextWriter
+    {
+        //Data
+
+        //Constructor
+        public CLTMConsole()
+        {
+        }
+
+        //Overloads - A subclass must minimally implement the Write(Char) method. 
+        public override void Write(char ch)
+        {
+            CError.Write(ch.ToString());
+        }
+
+        //Overlaods - We also implement "string" since its much more effiencent and TextWriter will call this instead
+        public override void Write(string strText)
+        {
+            CError.Write(strText);
+        }
+
+        //Overlaods - We also implement "string" since its much more effiencent and TextWriter will call this instead
+        public override void Write(char[] ch)
+        {
+            //Note: This is a workaround the TextWriter::Write(char[]) that incorrectly 
+            //writes 1 char at a time, which means \r\n is written sperately and then gets fixed
+            //up to be two carriage returns!
+            if (ch != null)
+            {
+                StringBuilder builder = new StringBuilder(ch.Length);
+                builder.Append(ch);
+                Write(builder.ToString());
+            }
+        }
+
+        public override void WriteLine(string strText)
+        {
+            Write(strText + this.NewLine);
+        }
+
+        //Overloads
+        //Writes a line terminator to the text stream. 
+        //The default line terminator is a carriage return followed by a line feed ("\r\n"), 
+        //but this value can be changed using the NewLine property.
+        public override void WriteLine()
+        {
+            Write(this.NewLine);
+        }
+
+        //Overloads
+        public override Encoding Encoding
+        {
+            get { return Encoding.Unicode; }
+        }
+    }
+
+
+    ////////////////////////////////////////////////////////////////
+    // CLTMTraceListener
+    //
+    ////////////////////////////////////////////////////////////////
+    public class CLTMTraceListener //: TraceListener
+    {
+        //Data
+
+        //Constructor
+        public CLTMTraceListener()
+        {
+        }
+    }
+}
