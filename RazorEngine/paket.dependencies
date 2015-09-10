@@ -1,0 +1,13 @@
+source https://nuget.org/api/v2
+
+nuget Nuget.CommandLine
+nuget Yaaf.AdvancedBuilding
+
+nuget Microsoft.AspNet.Razor ~> 3.0
+nuget Microsoft.CodeAnalysis
+
+nuget NUnit
+nuget NUnit.Runners
+nuget Moq
+nuget NUnit
+nuget Unity

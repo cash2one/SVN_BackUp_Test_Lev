@@ -97,7 +97,7 @@
             <artifactId>addressing</artifactId>
             <version>${project.version}</version>
             <type>mar</type>
-            <scope>test</scope>
+            <!--scope>test</scope-->
         </dependency>
         <dependency>
             <groupId>junit</groupId>
