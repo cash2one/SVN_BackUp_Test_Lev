@@ -27,7 +27,7 @@ import java.io.IOException;
 import java.security.cert.Certificate;
 
 /**
- * @version $Rev: 704201 $ $Date: 2008-10-13 22:52:25 +0400 (Пн, 13 окт 2008) $
+ * @version $Rev: 704201 $ $Date: 2008-10-13 22:52:25 +0400 (Mon, 13 Oct 2008) $
  */
 public class JarResourceHandle extends AbstractResourceHandle {
     private final JarFile jarFile;

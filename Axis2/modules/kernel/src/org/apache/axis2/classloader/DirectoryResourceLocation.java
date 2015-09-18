@@ -23,7 +23,7 @@ import java.net.MalformedURLException;
 import java.util.jar.Manifest;
 
 /**
- * @version $Rev: 1352428 $ $Date: 2012-06-21 11:02:58 +0400 (Чт, 21 июн 2012) $
+ * @version $Rev: 1352428 $ $Date: 2012-06-21 11:02:58 +0400 (Thu, 21 Jun 2012) $
  */
 public class DirectoryResourceLocation extends AbstractUrlResourceLocation {
     private final File baseDir;

@@ -33,7 +33,7 @@ import java.util.zip.ZipException;
 import org.apache.axis2.Constants;
 
 /**
- * @version $Rev: 1307411 $ $Date: 2012-03-30 17:40:27 +0400 (Пт, 30 мар 2012) $
+ * @version $Rev: 1307411 $ $Date: 2012-03-30 17:40:27 +0400 (Fri, 30 Mar 2012) $
  */
 public class JarResourceLocation extends AbstractUrlResourceLocation {
     private JarFile jarFile;

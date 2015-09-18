@@ -23,7 +23,7 @@ import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
 /**
- * @version $Rev: 704201 $ $Date: 2008-10-13 22:52:25 +0400 (Пн, 13 окт 2008) $
+ * @version $Rev: 704201 $ $Date: 2008-10-13 22:52:25 +0400 (Mon, 13 Oct 2008) $
  */
 public abstract class AbstractResourceHandle implements ResourceHandle {
     public byte[] getBytes() throws IOException {

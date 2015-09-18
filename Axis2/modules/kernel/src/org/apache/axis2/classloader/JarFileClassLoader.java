@@ -39,7 +39,7 @@ import java.util.jar.Manifest;
  * the jar file can be modified and deleted.
  * <p>
  *
- * @version $Rev: 1190499 $ $Date: 2011-10-28 23:01:32 +0400 (Пт, 28 окт 2011) $
+ * @version $Rev: 1190499 $ $Date: 2011-10-28 23:01:32 +0400 (Fri, 28 Oct 2011) $
  */
 public class JarFileClassLoader extends MultiParentClassLoader implements BeanInfoCachingClassLoader {
     private static final URL[] EMPTY_URLS = new URL[0];
