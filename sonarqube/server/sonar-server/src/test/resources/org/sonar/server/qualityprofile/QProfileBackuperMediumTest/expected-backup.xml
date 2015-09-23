@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<profile>
+  <name>P1</name>
+  <language>xoo</language>
+  <rules>
+    <!-- blah comes first (sorted by repository) -->
+    <rule>
+      <repositoryKey>blah</repositoryKey>
+      <key>my-rule</key>
+      <priority>INFO</priority>
+      <parameters/>
+    </rule>
+    <!-- x1 before x2 (sorted by key) -->
+    <rule>
+      <repositoryKey>xoo</repositoryKey>
+      <key>x1</key>
+      <priority>BLOCKER</priority>
+      <parameters>
+        <parameter>
+          <key>max</key>
+          <value>7</value>
+        </parameter>
+      </parameters>
+    </rule>
+    <rule>
+      <repositoryKey>xoo</repositoryKey>
+      <key>x2</key>
+      <priority>MINOR</priority>
+      <parameters/>
+    </rule>
+  </rules>
+</profile>

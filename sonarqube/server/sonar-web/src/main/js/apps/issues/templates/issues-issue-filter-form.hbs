@@ -1,0 +1,93 @@
+<header class="menu-search">
+  <h6>{{t "issue.filter_similar_issues"}}</h6>
+</header>
+
+<ul class="menu">
+  <li>
+    <a href="#" data-property="severities" data-value="{{s}}">
+      {{severityIcon severity}}&nbsp;{{t "severity" severity}}
+    </a>
+  </li>
+
+  <li>
+    <a href="#" data-property="statuses" data-value="{{status}}">
+      {{statusIcon status}}&nbsp;{{t "issue.status" status}}
+    </a>
+  </li>
+
+  <li>
+    {{#if resolution}}
+      <a href="#" data-property="resolutions" data-value="{{resolution}}">
+        {{t "issue.resolution" resolution}}
+      </a>
+    {{else}}
+      <a href="#" data-property="resolved" data-value="false">
+        {{t "unresolved"}}
+      </a>
+    {{/if}}
+  </li>
+
+  <li>
+    {{#if assignee}}
+      <a href="#" class="issue-action-option" data-property="assignees" data-value="{{assignee}}">
+      {{t "assigned_to"}} {{assigneeName}}
+      </a>
+    {{else}}
+      <a href="#" data-property="assigned" data-value="false">
+        {{t "unassigned"}}
+      </a>
+    {{/if}}
+  </li>
+
+  <li>
+    {{#if actionPlan}}
+      <a href="#" data-property="actionPlans" data-value="{{actionPlan}}">
+        {{t "issue.planned_for"}} {{actionPlanName}}
+      </a>
+    {{else}}
+      <a href="#" data-property="planned" data-value="false">
+        {{t "issue.unplanned"}}
+      </a>
+    {{/if}}
+  </li>
+
+  <li class="divider"></li>
+
+  <li>
+    <a href="#" data-property="rules" data-value="{{rule}}">
+      {{limitString ruleName}}
+    </a>
+  </li>
+
+  {{#each tags}}
+    <li>
+      <a href="#" data-property="tags" data-value="{{this}}">
+        <i class="icon-tags icon-half-transparent"></i>&nbsp;{{this}}
+      </a>
+    </li>
+  {{/each}}
+
+  <li class="divider"></li>
+
+  <li>
+    <a href="#" data-property="projectUuids" data-value="{{projectUuid}}">
+      {{qualifierIcon "TRK"}}&nbsp;{{projectLongName}}
+    </a>
+  </li>
+
+  {{#if subProject}}
+    <li>
+      <a href="#" data-property="moduleUuids" data-value="{{subProjectUuid}}">
+        {{qualifierIcon "BRC"}}&nbsp;{{subProjectLongName}}
+      </a>
+    </li>
+  {{/if}}
+
+  <li>
+    <a href="#" data-property="fileUuids" data-value="{{componentUuid}}">
+      {{qualifierIcon componentQualifier}}&nbsp;{{fileFromPath componentLongName}}
+    </a>
+  </li>
+</ul>
+
+<div class="bubble-popup-arrow"></div>

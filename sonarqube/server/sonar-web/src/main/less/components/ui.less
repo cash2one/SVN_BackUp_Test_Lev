@@ -1,0 +1,222 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+
+
+/*
+ * Display SQALE Rating (also used by the SQALE plugin)
+ */
+
+.rating {
+  display: inline-block;
+  .size(1em, 1.3em);
+  line-height: 1.3;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+
+  a > & {
+    margin-bottom: -1px;
+    border-bottom: 1px solid;
+    .trans;
+
+    &:hover { opacity: 0.8; }
+  }
+}
+
+.rating-A {
+  background-color: #00AA00;
+  a & { border-bottom-color: #00AA00; }
+}
+
+.rating-B {
+  background-color: #80CC00;
+  a & { border-bottom-color: #80CC00; }
+}
+
+.rating-C {
+  background-color: #FFEE00;
+  color: @baseFontColor;
+  a & { border-bottom-color: #FFEE00; }
+}
+
+.rating-D {
+  background-color: #F77700;
+  a & { border-bottom-color: #F77700; }
+}
+
+.rating-E {
+  background-color: #EE0000;
+  a & { border-bottom-color: #EE0000; }
+}
+
+
+.processes-container {
+  position: fixed;
+  z-index: @process-container-z-index;
+  top: 0;
+  left: 50%;
+  width: 350px;
+  margin-left: -175px;
+}
+
+.process-spinner {
+  position: relative;
+  padding: 0 10px;
+  line-height: @formControlHeight;
+  border-radius: 0 0 3px 3px;
+  .box-sizing(border-box);
+  background-color: #f0e8ac;
+  text-align: center;
+  opacity: 0;
+  .trans;
+
+  &.shown { opacity: 1; }
+}
+
+.process-spinner + .process-spinner {
+  margin-top: 5px;
+  border-radius: 3px;
+}
+
+.process-spinner-failed {
+  padding-right: 30px;
+  background-color: @red;
+  color: @white;
+}
+
+.process-spinner-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px;
+  background: none !important;
+  border: none !important;
+  line-height: 1;
+}
+
+
+
+.shortcuts-section {
+
+}
+
+.shortcuts-section + .shortcuts-section {
+  margin-top: 20px;
+}
+
+.shortcuts-section-title {
+  margin-bottom: 5px;
+}
+
+.shortcuts-list {
+  > li + li {
+    margin-top: 5px;
+  }
+}
+
+.shortcut-button {
+  display: inline-block;
+  .square(24px);
+  line-height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  .vertical-gradient(#f5f5f5, #eee);
+  box-shadow: inset 0 1px 0 #fff, 0 1px 0 #ccc;
+  color: @secondFontColor;
+  font-size: @baseFontSize;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav > li {
+  position: relative;
+  display: block;
+}
+
+.nav > li > a {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 15px;
+}
+
+
+.nav-crumbs {
+  padding: 2px 0;
+
+  a {
+    color: @baseFontColorLight;
+
+    &:hover, &:focus {
+      color: @blue !important;
+    }
+  }
+
+  > li + li:before {
+    content: "/";
+    float: left;
+    padding: 4px 0;
+    color: fade(@baseFontColor, 30%);
+  }
+
+  > li:first-child {
+    font-size: 18px;
+    font-weight: 300;
+
+    > a {
+      color: @baseFontColor;
+    }
+  }
+
+  [class^="icon-"], [class*=" icon-"] {
+    position: relative;
+    top: 2px;
+  }
+}
+
+.nav-tabs {
+  padding-top: 1px;
+  border-bottom: 1px solid @barBorderColor;
+
+  > li {
+    float: left;
+    margin-bottom: -1px;
+  }
+
+  > li > a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-right: 2px;
+    border-bottom: 3px solid transparent;
+    color: @baseFontColorLight;
+
+    &:hover {
+      border-color: @blue;
+    }
+  }
+
+  > li.active > a {
+    border-color: @blue;
+  }
+}
+
+
+.flash {
+  background-color: transparent;
+  .trans(all, 0.5s ease);
+
+  &.in {
+    background-color: #fcf8e3;
+  }
+}
+
+.flash-heavy.in {
+  background-color: #ffe456;
+}

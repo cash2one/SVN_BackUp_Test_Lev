@@ -1,0 +1,253 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+@import (reference) "../components/ui";
+
+/*
+ * Inputs
+ */
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=search],
+textarea {
+  border: 1px solid @darkGrey;
+  .box-sizing(border-box);
+  border-radius: 2px;
+  background: #fff;
+  color: @baseFontColor;
+  .trans(border-color);
+
+  &:active,
+  &:focus {
+    border-color: @highlighted;
+    box-shadow: none;
+    outline: none;
+  }
+
+  &.invalid { border-color: @red; }
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=search] {
+  height: @formControlHeight;
+  padding: 0 6px;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+}
+
+textarea {
+  padding: 3px;
+}
+
+button,
+.button,
+input[type=submit],
+input[type=button] {
+  display: inline-block;
+  vertical-align: baseline;
+  height: @formControlHeight;
+  line-height: @formControlHeight - 2px;
+  padding: 0 12px;
+
+  border: 1px solid @darkBlue;
+  border-radius: 2px;
+  .box-sizing(border-box);
+
+  background: transparent;
+
+  color: @darkBlue;
+  font-weight: 500;
+  font-size: @smallFontSize;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+  outline: none;
+  .trans(border-color);
+
+  &:hover, &:focus {
+    background: @darkBlue;
+    color: #fff;
+  }
+
+  &:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:active,
+  &:disabled:focus {
+    color: #bbb;
+    border-color: #ddd;
+    background: #ebebeb;
+    cursor: not-allowed;
+  }
+}
+
+.button-red {
+  border-color: @red;
+  color: @red;
+
+  &:hover, &:focus {
+    background: @red;
+    color: #fff;
+  }
+}
+
+.button-clean,
+.button-clean:hover,
+.button-clean:focus {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: @baseFontColor;
+}
+
+.button-link {
+  display: inline;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: @darkBlue;
+  font-weight: 400;
+  font-size: inherit;
+  line-height: inherit;
+  .trans;
+
+  &:hover, &:active, &:focus {
+    background: transparent;
+    color: @blue;
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:active,
+  &:disabled:focus {
+    color: @secondFontColor;
+    background: transparent;
+    cursor: default;
+  }
+}
+
+.button-group {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  white-space: nowrap;
+
+  & > button,
+  & > .button {
+    position: relative;
+    z-index: @normal-z-index;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    cursor: pointer;
+
+    &:hover, &:focus, &:active, &.active {
+      &:not(:disabled) {
+        z-index: @above-normal-z-index;
+      }
+    }
+
+    &:disabled { z-index: @below-normal-z-index; }
+  }
+
+  & > button:not(:first-child),
+  & > .button:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  & > button:not(:last-child):not(.dropdown-toggle),
+  & > .button:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  & > button + button,
+  & > button + .button,
+  & > .button + button,
+  & > .button + .button {
+    margin-left: -1px;
+  }
+
+  & > a:not(.button) {
+    vertical-align: middle;
+    margin: 0 8px;
+    font-size: @smallFontSize;
+  }
+}
+
+.input-tiny   { width: 60px; }
+.input-small  { width: 100px; }
+.input-medium { width: 150px; }
+.input-large  { width: 200px; }
+
+em.mandatory {
+  color: #990000;
+  font-style: italic;
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+.radio-toggle {
+  display: inline-block;
+  font-size: 0;
+
+  & > li {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: @smallFontSize;
+
+    &:first-child > label {
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+
+    &:last-child > label {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  }
+
+  & > li + li > label { border-left: none; }
+
+  & > li > label {
+    @padding-top: (@formControlHeight - 16px) / 2;
+    display: inline-block;
+    padding: (@padding-top - 1px) 12px (@padding-top + 1px);
+    margin: 0;
+    border: 1px solid @darkBlue;
+    color: @darkBlue;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]:checked + label {
+    background-color: @darkBlue;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  input[type="radio"]:disabled + label {
+    color: #bbb;
+    border-color: #ddd;
+    background: #ebebeb;
+    cursor: not-allowed;
+  }
+
+}

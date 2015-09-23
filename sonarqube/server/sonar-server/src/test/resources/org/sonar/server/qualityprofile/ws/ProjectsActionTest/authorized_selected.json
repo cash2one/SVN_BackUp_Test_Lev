@@ -1,0 +1,12 @@
+{
+  "results":
+  [
+    {
+      "uuid": "ABCD",
+      "name": "Project One",
+      "selected": true
+    }
+  ],
+
+  "more": false
+}

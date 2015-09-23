@@ -1,0 +1,55 @@
+@import (reference) 'variables';
+@import (reference) 'mixins';
+
+/* for example java annotations */
+.code .a {
+  color: #808000;
+}
+/* constants */
+.code .c {
+  color: #660E80;
+  font-style: normal;
+  font-weight: bold;
+}
+/* javadoc */
+.code .j {
+  color: #666666;
+  font-style: normal;
+}
+/* classic comment */
+.code .cd {
+  color: #666666;
+  font-style: italic;
+}
+/* C++ doc */
+.code .cppd {
+  color: #666666;
+  font-style: italic;
+}
+/* keyword */
+.code .k {
+  color: saturate(@darkBlue, 50%);
+  font-weight: 600;
+}
+/* string */
+.code .s {
+  color: saturate(@red, 0%);
+  font-weight: normal;
+}
+/* keyword light*/
+.code .h {
+  color: #000080;
+  font-weight: normal;
+}
+/* preprocessing directive */
+.code .p {
+  color: #347235;
+  font-weight: normal;
+}
+.sym {
+  cursor: hand;
+  cursor: pointer;
+}
+.highlighted {
+  background-color: #B3D4FF;
+}

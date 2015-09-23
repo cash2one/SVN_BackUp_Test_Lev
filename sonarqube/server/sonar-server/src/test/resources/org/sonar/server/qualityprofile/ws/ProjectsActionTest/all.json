@@ -1,0 +1,27 @@
+{
+  "results":
+  [
+    {
+      "uuid": "DEFA",
+      "name": "Project Four",
+      "selected": false
+    },
+    {
+      "uuid": "ABCD",
+      "name": "Project One",
+      "selected": true
+    },
+    {
+      "uuid": "CDEF",
+      "name": "Project Three",
+      "selected": false
+    },
+    {
+      "uuid": "BCDE",
+      "name": "Project Two",
+      "selected": true
+    }
+  ],
+
+  "more": false
+}

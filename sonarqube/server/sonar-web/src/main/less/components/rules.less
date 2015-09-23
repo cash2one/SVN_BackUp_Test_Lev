@@ -1,0 +1,85 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+@import (reference) "ui";
+
+@leftPadding: 10px;
+@rightPadding: 10px;
+@topPadding: 8px;
+@bottomPadding: 8px;
+@lineHeight: @baseFontSize * 1.5;
+
+.coding-rule {
+  padding: @topPadding @rightPadding @bottomPadding @topPadding;
+  border: 1px solid transparent;
+  background-color: #fff;
+
+  &.selected {
+    border-color: @blue !important;
+  }
+}
+
+.coding-rule + .coding-rule {
+  border-top-color: @barBorderColor;
+}
+
+.coding-rule.selected + .coding-rule {
+  border-top-color: transparent;
+}
+
+.coding-rule-table {
+  width: 100%;
+
+  td {
+    vertical-align: top;
+  }
+}
+
+.coding-rule-table + .coding-rule-table {
+  margin-top: 5px;
+}
+
+.coding-rule-table-meta-cell {
+  width: 1px;
+  white-space: nowrap;
+}
+
+.coding-rule-title {
+  line-height: @lineHeight;
+  font-size: @baseFontSize;
+}
+
+.coding-rule-meta {
+  padding-left: 30px;
+  line-height: @lineHeight;
+  font-size: @smallFontSize;
+
+  .icon-tags:before {
+    color: @secondFontColor;
+    font-size: @smallFontSize;
+  }
+
+  .js-tag:after {
+    content: ",";
+  }
+
+  .js-tag:last-child:after {
+    content: "";
+  }
+}
+
+.coding-rule-activation {
+  width: 40px;
+  line-height: @lineHeight;
+}
+
+.coding-rule-activation-actions {
+  padding-left: 20px;
+}
+
+.coding-rule-section-separator {
+  height: 10px;
+  margin: 0 -10px;
+  border-top: 1px solid @barBorderColor;
+  border-bottom: 1px solid @barBorderColor;
+  background-color: @barBackgroundColor;
+}

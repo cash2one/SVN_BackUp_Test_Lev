@@ -1,0 +1,16 @@
+<div class="bubble-popup-container">
+  <div class="bubble-popup-title">Changelog</div>
+
+  <ul class="js-plugin-changelog-list">
+    {{#each previousUpdates}}
+      <li class="big-spacer-bottom">
+        {{> '_update-center-plugin-changelog-entry'}}
+      </li>
+    {{/each}}
+    <li class="spacer-bottom">
+      {{> '_update-center-plugin-changelog-entry'}}
+    </li>
+  </ul>
+</div>
+
+<div class="bubble-popup-arrow"></div>

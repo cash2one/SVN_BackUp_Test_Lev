@@ -1,0 +1,62 @@
+@import (reference) "../mixins";
+@import (reference) "../variables";
+@import (reference) "../init/links";
+@import (reference) "../init/type";
+@import (reference) "ui";
+
+.menu {
+  min-width: 160px;
+  padding: 5px 0;
+  list-style: none;
+  font-size: @smallFontSize;
+  text-align: left;
+  background-color: #fff;
+  background-clip: padding-box;
+
+  > li > a,
+  > li > span {
+    display: block;
+    padding: 4px 16px;
+    line-height: 16px;
+    clear: both;
+    font-weight: normal;
+    .text-ellipsis;
+  }
+
+  > li > a {
+    color: @baseFontColor;
+    .link-no-underline;
+    .trans(none);
+  }
+
+  .divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: @barBorderColor;
+  }
+
+  > li > a {
+    &:hover, &:focus {
+      text-decoration: none;
+      color: @baseFontColor;
+      background-color: @barBackgroundColor;
+    }
+  }
+
+  > .active > a,
+  > li > .active {
+    &, &:hover, &:focus {
+      color: @baseFontColor;
+      text-decoration: none;
+      outline: 0;
+      background-color: @barBackgroundColor;
+    }
+  }
+}
+
+.menu-search {
+  padding: 4px 16px 0;
+
+  .search-box-input { font-size: @smallFontSize; }
+}

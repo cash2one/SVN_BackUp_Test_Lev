@@ -1,0 +1,167 @@
+// SonarQube, open source software quality management tool.
+// Copyright (C) 2008-2015 SonarSource
+// mailto:contact AT sonarsource DOT com
+//
+// SonarQube is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 3 of the License, or (at your option) any later version.
+//
+// SonarQube is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program; if not, write to the Free Software Foundation,
+// Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+syntax = "proto2";
+
+package sonarqube.ws.issues;
+
+import "ws-commons.proto";
+
+option java_package = "org.sonarqube.ws";
+option java_outer_classname = "Issues";
+option optimize_for = SPEED;
+
+// Response of GET api/issues/search
+message Search {
+  optional int64 total = 1;
+  optional int64 p = 2;
+  optional int32 ps = 3;
+  optional sonarqube.ws.commons.Paging paging = 4;
+
+  // Total amount of debt, only when the facet "total" is enabled
+  optional int64 debtTotal = 5;
+
+  repeated Issue issues = 6;
+  repeated Component components = 7;
+  optional sonarqube.ws.commons.Rules rules = 8;
+  optional sonarqube.ws.commons.Users users = 9;
+  optional ActionPlans actionPlans = 10;
+  optional Languages languages = 11;
+  optional sonarqube.ws.commons.Facets facets = 12;
+}
+
+// Response of most of POST/issues/{operation}, for instance assign, add_comment and set_severity
+message Operation {
+  optional Issue issue = 1;
+  repeated Component components = 2;
+  repeated sonarqube.ws.commons.Rule rules = 3;
+  repeated sonarqube.ws.commons.User users = 4;
+  repeated ActionPlan actionPlans = 5;
+}
+
+
+message Issue {
+  optional string key = 1;
+  optional string rule = 2;
+  optional sonarqube.ws.commons.Severity severity = 3;
+  optional string component = 4;
+  optional int64 componentId = 5;
+  optional string project = 6;
+  optional string subProject = 7;
+  optional int32 line = 8;
+  optional sonarqube.ws.commons.TextRange textRange = 9;
+  repeated Flow flows = 10;
+  optional string resolution = 11;
+  optional string status = 12;
+  optional string message = 13;
+  optional string debt = 14;
+  optional string assignee = 15;
+  optional string reporter = 16;
+
+  // SCM login of the committer who introduced the issue
+  optional string author = 17;
+
+  optional string actionPlan = 18;
+  repeated string tags = 19;
+
+  // the transitions allowed for the requesting user.
+  optional Transitions transitions = 20;
+
+  // the actions allowed for the requesting user.
+  optional Actions actions = 21;
+
+  optional Comments comments = 22;
+  optional string creationDate = 23;
+  optional string updateDate = 24;
+  optional string fUpdateAge = 25;
+  optional string closeDate = 26;
+}
+
+message Transitions {
+  repeated string transitions = 1;
+}
+
+message Actions {
+  repeated string actions = 1;
+}
+
+message Flow {
+  repeated Location locations = 1;
+}
+
+message Location {
+  optional string componentId = 1;
+  // Only when component is a file. Can be empty for a file if this is an issue global to the file.
+  optional sonarqube.ws.commons.TextRange textRange = 2;
+  optional string msg = 3;
+}
+
+message Comment {
+  optional string key = 1;
+  optional string login = 2;
+  // TODO drop, it's already in field "users"
+  optional string email = 3;
+  // TODO drop, it's already in field "users"
+  optional string userName = 4;
+  optional string htmlText = 5;
+  // TODO rename markdownText ?
+  optional string markdown = 6;
+  optional bool updatable = 7;
+  optional string createdAt = 8;
+}
+
+message Comments {
+  repeated Comment comments = 1;
+}
+
+message ActionPlan {
+  optional string key = 1;
+  optional string name = 2;
+
+  // TODO define enum
+  optional string status = 3;
+  optional string deadLine = 4;
+  // TODO to be renamed, is it id or key ?
+  optional string project = 5;
+}
+
+message ActionPlans {
+  repeated ActionPlan actionPlans = 1;
+}
+
+message Language {
+  optional string key = 1;
+  optional string name = 2;
+}
+
+message Languages {
+  repeated Language languages = 1;
+}
+
+message Component {
+  optional int64 id = 1;
+  optional string key = 2;
+  optional string uuid = 3;
+  optional bool enabled = 4;
+  optional string qualifier = 5;
+  optional string name = 6;
+  optional string longName = 7;
+  optional string path = 8;
+  optional int64 projectId = 9;
+  optional int64 subProjectId = 10;
+}

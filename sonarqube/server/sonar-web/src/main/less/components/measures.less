@@ -1,0 +1,141 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+@import (reference) "../init/misc";
+@import (reference) "ui";
+
+
+.measures {
+
+}
+
+.measures + .measures {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid @barBorderColor;
+}
+
+.measures-duplex {
+  font-size: 0;
+  .justify;
+
+  .measures-list {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    font-size: @baseFontSize;
+  }
+}
+
+.measures-chart {
+  display: inline-block;
+  vertical-align: middle;
+  width: 70px;
+  margin-right: 20px;
+  text-align: center;
+
+  .rating {
+    font-size: 32px;
+  }
+}
+
+.measures-chart-indent {
+  padding-left: 90px;
+}
+
+.measure {
+  line-height: 1.3333333333333;
+}
+
+.measure + .measure {
+
+}
+
+.measure-name {
+  display: block;
+  font-size: @baseFontSize;
+}
+
+.measure-value {
+  color: @darkBlue;
+  font-size: @bigFontSize;
+  font-weight: 300;
+}
+
+.measure-bar {
+  display: inline-block;
+  width: 60px;
+}
+
+.measure-bar-inner {
+  display: block;
+  min-width: 1px;
+  height: 5px;
+  background-color: #c0c0c0;
+}
+.measure-bar-inner-BLOCKER {
+  background-color: @severityBlockerColor;
+}
+.measure-bar-inner-CRITICAL {
+  background-color: @severityCriticalColor;
+}
+.measure-bar-inner-MAJOR {
+  background-color: @severityMajorColor;
+}
+.measure-bar-inner-MINOR {
+  background-color: @severityMinorColor;
+}
+.measure-bar-inner-INFO {
+  background-color: @severityInfoColor;
+}
+
+.measure-big {
+  display: inline-block;
+  vertical-align: middle;
+
+  .measure-name {
+    margin-top: 2px;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .measure-value {
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  .rating {
+    font-size: 22px;
+  }
+}
+
+.measure-big + .measure-big {
+  margin-left: 20px;
+}
+
+.measure-one-line {
+  .clearfix;
+
+  .measure-name {
+    float: left;
+  }
+
+  .measure-value {
+    float: right;
+  }
+}
+
+.measure-with-bar {
+  font-size: 0;
+
+  .measure-name {
+    width: 40%;
+  }
+
+  .measure-value {
+    width: 20%;
+  }
+
+  .measure-bar {
+    width: 30%;
+  }
+}

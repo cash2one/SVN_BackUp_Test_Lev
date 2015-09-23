@@ -1,0 +1,17 @@
+{
+  "results":
+  [
+    {
+      "uuid": "CDEF",
+      "name": "Project Three",
+      "selected": false
+    },
+    {
+      "uuid": "BCDE",
+      "name": "Project Two",
+      "selected": true
+    }
+  ],
+
+  "more": false
+}

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.sonar.db.permission.PermissionMapper">
+
+  <select id="selectUsers" parameterType="map" resultType="UserWithPermission">
+    SELECT u.login as login, u.name as name, u.email as email, user_role.role as permission
+    <include refid="usersSelection"/>
+    ORDER BY u.name
+  </select>
+
+  <select id="countUsers" parameterType="map" resultType="int">
+    SELECT count(u.login)
+    <include refid="usersSelection"/>
+  </select>
+
+  <sql id="usersSelection">
+    FROM users u
+    LEFT JOIN user_roles user_role ON user_role.user_id=u.id
+    AND user_role.role=#{query.permission}
+    <if test="componentId != null">
+      AND user_role.resource_id=#{componentId}
+    </if>
+    <if test="componentId == null">
+      AND user_role.resource_id IS NULL
+    </if>
+    <where>
+      u.active = ${_true}
+      <choose>
+        <when test="query.membership() == 'IN'">
+          AND user_role.role IS NOT NULL
+        </when>
+        <when test="query.membership() == 'OUT'">
+          AND user_role.role IS NULL
+        </when>
+      </choose>
+      <if test="query.search() != null">
+        AND (UPPER(u.name) LIKE #{query.searchSql} ESCAPE '/')
+      </if>
+    </where>
+  </sql>
+
+  <select id="usersCountByProjectIdAndPermission" parameterType="map"
+          resultType="org.sonar.db.permission.CountByProjectAndPermissionDto">
+    SELECT user_role.resource_id as componentId, user_role.role as permission, count(u.login) as count
+    FROM users u
+    INNER JOIN user_roles user_role ON user_role.user_id=u.id
+    AND user_role.resource_id in
+    <foreach collection="componentIds" open="(" close=")" item="id" separator=",">
+      #{id}
+    </foreach>
+    <where>
+      u.active = ${_true}
+    </where>
+    GROUP BY user_role.resource_id, user_role.role
+  </select>
+
+  <select id="groupsCountByProjectIdAndPermission" parameterType="map"
+          resultType="org.sonar.db.permission.CountByProjectAndPermissionDto">
+    SELECT count(name) as count, permission, componentId
+    FROM
+    (SELECT g.name as name, group_role.role as permission, group_role.resource_id as componentId
+    FROM groups g
+    INNER JOIN group_roles group_role ON group_role.group_id=g.id
+    UNION
+    -- Add Anyone group permission
+    SELECT #{anyoneGroup} as name, group_role.role as permission, group_role.resource_id as componentId
+    FROM group_roles group_role
+    <where>
+      AND group_role.group_id IS NULL
+    </where>
+    ) groups
+    <where>
+      groups.componentId in
+      <foreach collection="componentIds" open="(" close=")" item="id" separator=",">
+        #{id}
+      </foreach>
+    </where>
+    GROUP BY groups.permission, groups.componentId
+  </select>
+
+  <select id="countGroups" parameterType="map" resultType="int">
+    SELECT count(name)
+    FROM
+    (SELECT g.name as name
+    FROM groups g
+    INNER JOIN group_roles group_role ON group_role.group_id=g.id
+    AND group_role.role=#{permission}
+    <if test="componentId != null">
+      AND group_role.resource_id=#{componentId}
+    </if>
+    <if test="componentId == null">
+      AND group_role.resource_id IS NULL
+    </if>
+    UNION
+    -- Add Anyone group permission
+    SELECT #{anyoneGroup} as name
+    FROM group_roles group_role
+    <where>
+      AND group_role.role=#{permission}
+      AND group_role.group_id IS NULL
+      <if test="componentId != null">
+        AND group_role.resource_id=#{componentId}
+      </if>
+      <if test="componentId == null">
+        AND group_role.resource_id IS NULL
+      </if>
+    </where>
+    ) groups
+  </select>
+
+  <select id="selectGroups" parameterType="map" resultType="GroupWithPermission">
+    SELECT id, name, description, permission FROM
+    (SELECT g.id as id, g.name as name, g.description as description, group_role.role as permission
+    FROM groups g
+    LEFT JOIN group_roles group_role ON group_role.group_id=g.id
+    AND group_role.role=#{query.permission}
+    <if test="componentId != null">
+      AND group_role.resource_id=#{componentId}
+    </if>
+    <if test="componentId == null">
+      AND group_role.resource_id IS NULL
+    </if>
+    UNION
+    -- Add Anyone group permission
+    SELECT 0 as id, #{anyoneGroup} as name, NULL as description, group_role.role as permission
+    FROM group_roles group_role
+    <where>
+      AND group_role.role=#{query.permission}
+      AND group_role.group_id IS NULL
+      <if test="componentId != null">
+        AND group_role.resource_id=#{componentId}
+      </if>
+      <if test="componentId == null">
+        AND group_role.resource_id IS NULL
+      </if>
+    </where>
+    ) groups
+    <where>
+      <if test="query.search() != null">
+        AND (UPPER(groups.name) LIKE #{query.searchSql} ESCAPE '/')
+      </if>
+    </where>
+    ORDER BY groups.name
+  </select>
+</mapper>

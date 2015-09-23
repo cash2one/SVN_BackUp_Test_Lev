@@ -1,0 +1,97 @@
+/*
+    SonarQube, open source software quality management tool.
+    Copyright (C) 2008-2015 SonarSource
+    mailto:contact AT sonarsource DOT com
+
+    SonarQube is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 3 of the License, or (at your option) any later version.
+
+    SonarQube is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program; if not, write to the Free Software Foundation,
+    Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+syntax = "proto2";
+
+option java_package = "org.sonar.core.test";
+option optimize_for = SPEED;
+
+message Fake {
+  optional string label = 1;
+  optional int32 line = 2;
+}
+
+enum FakeEnum {
+  BLUE = 0;
+  RED = 1;
+  GREEN = 2;
+}
+
+message PrimitiveTypeMsg {
+  optional string stringField = 1;
+  optional int32 intField = 2;
+  optional int64 longField = 3;
+  optional double doubleField = 4;
+  optional bool booleanField = 5;
+  optional FakeEnum enumField = 6;
+  optional bytes bytesField = 7;
+  optional NestedMsg nested = 8;
+}
+
+message TestArray {
+  repeated string strings = 1;
+  repeated NestedMsg nesteds = 2;
+}
+
+message NestedMsg {
+  optional string label = 1;
+}
+
+message TestMap {
+  map<string,string> stringMap = 1;
+  map<string,NestedMsg> nestedMap = 2;
+}
+
+message TestNullableArray {
+  optional string label = 1;
+
+  // allow to make the difference between null and empty array
+  optional Countries countries = 2;
+}
+
+message TestNullableMap {
+  optional string label = 1;
+
+  // allow to make the difference between null and empty map
+  optional Translations translations = 2;
+}
+
+message TestMapOfArray {
+  // allow to have map values of arrays
+  map<string, Countries> moneys = 1;
+}
+
+message TestMapOfMap {
+  // allow to have map values of maps
+  map<string, Translations> catalogs = 1;
+}
+
+message Translations {
+  map<string,string> translations = 1;
+}
+
+message Countries {
+  repeated Country countries = 1;
+}
+
+message Country {
+  optional string name = 1;
+  optional string continent = 2;
+}

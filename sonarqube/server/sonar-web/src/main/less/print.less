@@ -1,0 +1,39 @@
+@import (reference) "mixins";
+@import (reference) "variables";
+@import (reference) "init/links";
+
+@media print {
+
+  .noprint {
+    display: none !important;
+  }
+
+  a {
+    color: @baseFontColor;
+    .link-no-underline;
+  }
+
+  .navbar-global {
+    .noprint;
+  }
+
+  .page-wrapper-global {
+    padding-top: 0;
+  }
+
+  .page-footer {
+    .noprint;
+  }
+
+  .dashboard-page,
+  .dashboard-page body {
+    background-color: #fff;
+  }
+
+  // see https://github.com/ariya/phantomjs/issues/10927
+  .widget thead,
+  .widget tfoot {
+    display: table-row-group;
+  }
+
+}

@@ -1,0 +1,13 @@
+{
+  "components": [
+    {
+      "key": "FileLinkedToModule"
+    },
+    {
+      "key": "ModuleHavingFile"
+    },
+    {
+      "key": "ProjectHavingModule"
+    }
+  ]
+}

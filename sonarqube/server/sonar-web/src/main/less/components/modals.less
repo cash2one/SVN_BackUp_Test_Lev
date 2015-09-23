@@ -1,0 +1,161 @@
+@import (reference) "../mixins";
+@import (reference) "../variables";
+
+.modal {
+  position: fixed;
+  z-index: @modal-z-index;
+  top: 0;
+  left: 50%;
+  margin-left: -270px;
+  width: 540px;
+  background-color: #fff;
+  opacity: 0;
+  .trans;
+}
+
+.modal.in {
+  top: 15%;
+  opacity: 1;
+}
+
+.modal-large {
+  width: 90vw;
+  margin-left: -45vw;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: @modal-overlay-z-index;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  .trans;
+}
+
+.modal-overlay.in {
+  opacity: 1;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-container {
+  max-height: 70vh;
+  padding: 10px;
+  .box-sizing(border-box);
+  overflow-x: auto;
+  overflow-y: scroll;
+}
+
+.modal-head {
+  padding: 0 10px;
+  background-color: #EFEFEF;
+  border-bottom: 1px solid #DDD;
+}
+
+.modal-head h1, .modal-head h2 {
+  line-height: 30px;
+  min-height: 30px;
+}
+
+ul.modal-head-metadata {
+  overflow: hidden;
+  padding: 0 0 5px 0;
+}
+
+ul.modal-head-metadata li {
+  float: left;
+  position: relative;
+  font-size: 85%;
+  color: #777;
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+.modal-body-select2 {
+  margin-bottom: 10px;
+}
+
+.modal-body .notes {
+  height: auto;
+}
+
+.modal-field {
+  clear: both;
+  display: block;
+  padding: 5px 0 5px 130px;
+}
+
+.modal-field label {
+  display: block;
+  float: left;
+  text-align: right;
+  width: 130px;
+  left: -140px;
+  margin-right: -130px;
+  line-height: 1;
+  word-wrap: break-word;
+  position: relative;
+  padding-top: 5px;
+
+  &.simple-label {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    position: static;
+    margin: 0 0 0 -5px;
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.readonly-field {
+  padding-top: 5px;
+  margin-left: -5px;
+  line-height: 1;
+}
+
+.modal-field input {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.modal-field input[type=text],
+.modal-field input[type=email],
+.modal-field input[type=password],
+.modal-field textarea,
+.modal-field select {
+  width: 250px;
+}
+
+.modal-field .text {
+  line-height: 20px;
+}
+
+.modal-foot {
+  text-align: right;
+  padding: 8px 10px;
+  border-top: 1px solid #CCC;
+  line-height: 30px;
+  background-color: #EFEFEF;
+
+  button,
+  .button,
+  input[type=submit],
+  input[type=button] {
+    margin-right: 10px;
+  }
+}
+
+.modal-field-description {
+  clear: both;
+  font-size: 93%;
+  color: #777;
+}
+
+.modal-error, .modal-warning, .modal-notice {
+  display: none;
+}

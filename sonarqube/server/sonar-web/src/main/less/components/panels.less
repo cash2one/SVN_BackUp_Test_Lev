@@ -1,0 +1,38 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+@import (reference) "../init/misc";
+
+.panel {
+  padding: 10px;
+}
+
+.panel:not(:last-child) {
+  border-bottom: 1px solid @barBorderColor;
+}
+
+.panel-vertical {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.panel-white {
+  border: 1px solid @barBorderColor;
+  background-color: #fff;
+}
+
+.panel-info {
+  border: 1px solid @blue;
+  background-color: @lightBlue;
+}
+
+.panel-warning {
+  border: 1px solid #faebcc;
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+}
+
+.panel-danger {
+  border-color: transparent !important;
+  background-color: #f2dede;
+  color: #a94442;
+}

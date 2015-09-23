@@ -1,0 +1,92 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+@import (reference) "../init/links";
+
+
+.page {
+  .clearfix;
+  position: relative;
+  padding: 10px;
+}
+
+.page-container {
+  min-width: 1080px;
+}
+
+.page-wrapper {
+  min-height: ~"calc(100vh - @{pageFooterHeight})";
+  .box-sizing(border-box);
+}
+
+.page-wrapper-global {
+  padding-top: @navbarGlobalHeight;
+}
+
+.page-wrapper-context {
+  padding-top: @navbarGlobalHeight + @navbarContextHeight;
+}
+
+.page-simple {
+  max-width: 400px;
+  margin: 150px auto 0;
+  padding: 40px;
+  border: 1px solid @barBorderColor;
+  background-color: #fff;
+  text-align: left;
+}
+
+.page-header {
+  .clearfix;
+  margin-bottom: 10px;
+}
+
+.page-title {
+  float: left;
+  margin-bottom: 0;
+  line-height: @formControlHeight;
+}
+
+.page-actions {
+  float: right;
+
+  .badge {
+    margin: 3px 0;
+  }
+}
+
+.page-description {
+  float: left;
+  clear: left;
+  font-size: @smallFontSize;
+  line-height: 1.5;
+}
+
+.page-footer {
+  min-height: @pageFooterHeight;
+  padding: 10px;
+  line-height: 1.5;
+  border-top: 1px solid @barBorderColor;
+  .box-sizing(border-box);
+  background-color: @barBackgroundColor;
+  color: @baseFontColorLight;
+  font-size: @smallFontSize;
+  text-align: center;
+
+  a {
+    .link-base-color;
+  }
+}
+
+@supports (display: flex) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
+  .page-wrapper {
+    flex: 1;
+    min-height: 0 !important;
+  }
+}

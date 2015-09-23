@@ -1,0 +1,335 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+@import (reference) "../init/type";
+@import (reference) "ui";
+@import (reference) "../components/typography";
+
+@leftPadding: 10px;
+@rightPadding: 10px;
+@topPadding: 8px;
+@bottomPadding: 8px;
+
+
+.issue-list {
+  margin: 10px 0;
+}
+
+.issue {
+  position: relative;
+  padding-top: @topPadding;
+  padding-bottom: @bottomPadding;
+  border: 1px solid transparent;
+  background-color: @issueBackgroundColor;
+}
+
+.issue-list,
+.issue {
+  max-width: 920px;
+}
+
+.issue.selected {
+  border-color: @issueBorderColor !important;
+}
+
+.issue + .issue {
+  margin-top: 5px;
+}
+
+.issue.selected + .issue {
+  border-top-color: transparent;
+}
+
+.issue-inner {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.issue-table {
+  width: 100%;
+
+  td {
+    vertical-align: top;
+  }
+}
+
+.issue-table + .issue-table {
+  margin-top: 5px;
+}
+
+.issue-table-meta-cell {
+  width: 1px;
+  padding-right: 5px;
+  white-space: nowrap;
+}
+
+.issue-message {
+  padding-left: @leftPadding;
+  padding-right: @rightPadding;
+  line-height: 1.5;
+  font-size: @baseFontSize;
+  font-weight: 500;
+}
+
+.issue-rule {
+  padding: 0 3px;
+  background: fade(@blue, 30%);
+  opacity: 0.5;
+
+  &:hover {
+    background: fade(@blue, 30%);
+  }
+}
+
+.issue-component {
+  margin-top: 5px;
+  padding-left: @leftPadding;
+  padding-right: @rightPadding;
+  line-height: 1.5;
+  font-size: @smallFontSize;
+}
+
+.issue-age {
+  position: relative;
+  float: right;
+  margin-top: -@baseFontSize * 1.5;
+  padding-right: @rightPadding;
+  line-height: 1.5;
+  font-size: @smallFontSize;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0; bottom: 0; right: 100%;
+    width: 10px;
+    background-image: linear-gradient(to right, fade(#fff, 0%), #fff 75%);
+  }
+}
+
+.issue-meta-list {
+  padding-left: @leftPadding;
+}
+
+.issue-meta {
+  line-height: 16px;
+  font-size: @smallFontSize;
+}
+
+.issue-meta-on-right {
+  float: right;
+  margin-right: 0;
+}
+
+.issue-meta-on-right + .issue-meta-on-right {
+  margin-right: 10px;
+}
+
+.issue-meta-in-corner {
+  position: absolute;
+  top: @topPadding;
+  right: @rightPadding;
+  margin: 0 !important;
+}
+
+.issue-meta-label {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 180px;
+  .text-ellipsis;
+}
+
+.issue-changelog {
+  max-width: 540px;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.issue-comments {
+  margin-top: 5px;
+  padding-left: @leftPadding;
+  padding-right: @rightPadding;
+  font-size: @smallFontSize;
+}
+
+.issue-comment {
+  display: table;
+  width: 100%;
+}
+
+.issue-comment + .issue-comment {
+  margin-top: 4px;
+}
+
+.issue-comment-author {
+  display: table-cell;
+  vertical-align: top;
+  max-width: 130px;
+  width: 1px;
+  line-height: 18px;
+  color: @secondFontColor;
+  font-weight: 500;
+  .text-ellipsis;
+}
+
+.issue-comment-age {
+  display: table-cell;
+  vertical-align: top;
+  width: 1px;
+  line-height: 18px;
+  white-space: nowrap;
+  color: @secondFontColor;
+}
+
+.issue-comment-text {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 18px;
+  .formatted;
+}
+
+.issue-comment-actions {
+  display: table-cell;
+  vertical-align: top;
+  width: 1px;
+  padding-left: 5px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+input.issue-action-options-search {
+  padding: 0 10px 0 30px;
+  border: none;
+}
+
+.issue-action-options-search-icon {
+  position: absolute;
+  top: 3px; left: 10px;
+  color: @secondFontColor;
+
+  &:before {
+    font-size: @iconSmallFontSize;
+  }
+}
+
+.issue-comment-bubble-popup {
+  width: 440px;
+  margin-left: -220px;
+  font-size: @smallFontSize;
+
+  .bubble-popup-arrow {
+    left: 220px;
+  }
+}
+
+.issue-comment-form-text {
+
+}
+
+.issue-comment-form-text textarea {
+  width: 100%;
+  max-width: 100%;
+}
+
+.issue-comment-form-footer {
+  .clearfix;
+  margin-top: 5px;
+  line-height: 22px;
+}
+
+.issue-comment-form-actions {
+  float: right;
+}
+
+.issue-comment-form-tips {
+  float: left;
+}
+
+.issue-more-actions {
+  line-height: 1.5;
+  font-size: @smallFontSize;
+}
+
+.issue-navigate {
+  display: none;
+  position: absolute;
+  width: 24px;
+  top: 0;
+  bottom: 0;
+  border-bottom: none;
+
+  .issue-navigate-to-left,
+  .issue-navigate-to-right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -3px;
+
+    &:before {
+     font-size: 18px;
+   }
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.issue-navigate-right .issue-meta-in-corner {
+  padding-right: 24px;
+}
+
+.issue-navigate-left {
+  padding-left: 24px;
+
+  .issue-navigate {
+    display: block;
+    left: 0;
+
+    .issue-navigate-to-right {
+      display: none;
+    }
+  }
+}
+
+.issue-navigate-right {
+  padding-right: 24px;
+
+  .issue-navigate {
+    display: block;
+    right: 0;
+
+    .issue-navigate-to-left {
+      display: none;
+    }
+  }
+}
+
+.issue-with-checkbox {
+  padding-left: 24px;
+
+  .issue-checkbox-container {
+    display: block;
+  }
+}
+
+.issue-checkbox-container {
+  display: none;
+  position: absolute;
+  width: 29px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.issue-checkbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
+}

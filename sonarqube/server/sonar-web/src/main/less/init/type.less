@@ -1,0 +1,115 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+@import (reference) "../components/ui";
+
+
+// Top Level
+
+html, body {
+  color: @baseFontColor;
+}
+
+body {
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+}
+
+
+// Headers
+
+.header(@h) {
+  line-height: @formControlHeight;
+  color: ~"@{@{h}-font-color}";
+  font-size: ~"@{@{h}-font-size}";
+  font-weight: ~"@{@{h}-font-weight}";
+
+  img { vertical-align: middle; }
+}
+
+h1, .h1 { .header(h1); }
+h2, .h2 { .header(h2); }
+h3, .h3 { .header(h3); }
+h4, .h4 { .header(h4); }
+h5, .h5 { .header(h5); }
+h6, .h6 { .header(h6); }
+
+
+// Superset & Subset
+
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+
+
+// Emphasising
+
+em     { font-style: italic; }
+strong { font-weight: 500; }
+
+.emphasised-measure {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+
+// Quotes
+
+blockquote {
+  border-left: 3px solid @barBorderColor;
+  padding: 0 8px;
+  line-height: 1.5;
+}
+
+blockquote cite {
+  line-height: 1.5;
+  color: @secondFontColor;
+  font-size: @smallFontSize;
+}
+
+
+// Size
+
+small,
+.small { font-size: (100% * (@smallFontSize / @baseFontSize)); }
+
+.big   { font-size: (100% * (@bigFontSize / @baseFontSize)); }
+
+.zero-font-size { font-size: 0 !important; }
+
+
+// Alignment
+
+.text-left    { text-align: left; }
+.text-center  { text-align: center; }
+.text-right   { text-align: right; }
+.text-justify { text-align: justify; }
+
+.text-top     { vertical-align: top; }
+.text-middle  { vertical-align: middle; }
+.text-bottom  { vertical-align: bottom; }
+
+
+// Overflow
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+// Transformation
+
+.text-uppercase    { text-transform: uppercase; }
+.text-lowercase    { text-transform: lowercase; }
+.text-no-transform { text-transform: none; }
+
+
+// Color
+
+.text-emphasis-variant(@color) { color: @color; }
+.text-muted   { .text-emphasis-variant(@secondFontColor); }
+.text-danger  { .text-emphasis-variant(@red); }
+.text-warning { .text-emphasis-variant(@orange); }
+.text-info    { .text-emphasis-variant(@blue); }
+.text-success { .text-emphasis-variant(@green); }

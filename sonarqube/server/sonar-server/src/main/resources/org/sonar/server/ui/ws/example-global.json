@@ -1,0 +1,17 @@
+{
+  "globalDashboards": [
+    {
+      "key": 51,
+      "name": "Helicopter View"
+    }
+  ],
+  "globalPages": [
+    {
+      "name": "My Plugin",
+      "url": "/plugins/home/my-plugin"
+    }
+  ],
+  "logoUrl": "http://example.com/my-custom-logo.png",
+  "logoWidth": 135,
+  "qualifiers": ["TRK", "VW"]
+}

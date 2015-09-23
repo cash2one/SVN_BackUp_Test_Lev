@@ -1,0 +1,56 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+@import (reference) "../init/links";
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 300;
+  color: @white;
+  line-height: 12px;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background-color: @blue;
+
+  &:empty { display: none; }
+
+  &:hover, &:focus, &:active { color: @white; }
+
+  a& { .link-no-underline; }
+
+  .list-group-item > &,
+  .list-group-item-heading > & {
+    float: right;
+    margin-top: 3px;
+  }
+
+  .list-group-item > & + &,
+  .list-group-item-heading > & + & {
+    margin-right: 5px;
+  }
+}
+
+.badge-muted {
+  background-color: transparent;
+  color: @secondFontColor;
+
+  &:hover, &:focus, &:active { color: @blue; }
+}
+
+.badge-success,
+.badge-ok {
+  background-color: @green;
+}
+
+.badge-warning,
+.badge-warn {
+  background-color: @orange;
+}
+
+.badge-danger,
+.badge-error {
+  background-color: @red
+}

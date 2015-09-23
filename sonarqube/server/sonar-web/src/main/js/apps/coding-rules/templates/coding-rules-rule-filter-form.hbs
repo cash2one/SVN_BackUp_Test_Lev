@@ -1,0 +1,50 @@
+<header class="menu-search">
+  <h6>{{t 'coding_rules.filter_similar_rules'}}</h6>
+</header>
+
+<ul class="menu">
+  <li>
+    <a href="#" class="issue-action-option" data-property="languages" data-value="{{lang}}">
+      {{langName}}
+    </a>
+  </li>
+
+  {{#if severity}}
+    <li>
+      <a href="#" class="issue-action-option" data-property="severities" data-value="{{severity}}">
+        {{severityHelper severity}}
+      </a>
+    </li>
+  {{/if}}
+
+  {{#if debtChar}}
+    <li class="divider"></li>
+
+    <li>
+      <a href="#" class="issue-action-option" data-property="debt_characteristics" data-value="{{debtChar}}">
+        {{debtCharName}}
+      </a>
+    </li>
+
+    {{#if debtSubChar}}
+      <li>
+        <a href="#" class="issue-action-option" data-property="debt_characteristics" data-value="{{debtSubChar}}">
+          {{debtSubCharName}}
+        </a>
+      </li>
+    {{/if}}
+  {{/if}}
+
+  {{#notEmpty tags}}
+    <li class="divider"></li>
+    {{#each tags}}
+      <li>
+        <a href="#" class="issue-action-option" data-property="tags" data-value="{{this}}">
+          <i class="icon-tags icon-half-transparent"></i>&nbsp;{{this}}
+        </a>
+      </li>
+    {{/each}}
+  {{/notEmpty}}
+</ul>
+
+<div class="bubble-popup-arrow"></div>

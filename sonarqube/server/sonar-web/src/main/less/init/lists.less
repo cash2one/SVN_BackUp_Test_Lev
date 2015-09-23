@@ -1,0 +1,55 @@
+@import (reference) "../variables";
+@import (reference) "../mixins";
+@import (reference) "../components/ui";
+
+ol, ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+// Styled lists
+
+.list-styled {
+  margin-bottom: 10px;
+  padding-left: 40px;
+
+  ul& { list-style: disc; }
+  ol& { list-style: decimal; }
+}
+
+
+// Inline lists
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+
+.list-inline > li {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
+// Definition lists
+
+dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+dt, dd {
+  line-height: 1.42857143;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}

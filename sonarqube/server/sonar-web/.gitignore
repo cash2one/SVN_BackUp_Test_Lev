@@ -1,0 +1,15 @@
+# nodeJS downloaded by Maven
+node/
+
+# nodeJS dependencies
+node_modules/
+
+# build
+build/
+src/main/webapp/js/
+src/main/webapp/css/
+src/main/webapp/WEB-INF/lib/*.jar
+
+# tests
+src/test/json/**/*.png
+lcov.info
