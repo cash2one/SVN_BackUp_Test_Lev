@@ -1,0 +1,131 @@
+Apache CXF 3.1.3 Release Notes
+
+1. Overview
+
+The 3.1.3 version of Apache CXF is a significant new version of CXF 
+that provides several new features and enhancements.  
+
+New features include: 
+
+* New Metrics feature for collecting metrics about a CXF services.  
+* New Throttling feature for easily throttling CXF services.  
+* New Logging feature for more advanced logging than the logging 
+  available in cxf-core
+* New Metadata service for SAML SSO to allow you to publish SAML SSO 
+  metadata for your service provider.
+* Enhancements to the code generator to be more "Java7" friendly
+* Update to OpenSAML 3.0
+* Support for Karaf 4, Jetty 9
+
+Important notes:
+CXF 3.1.x no longer supports Java 6.   You must upgrade to Java 7 or later.
+
+Users are encourage to review the migration guide at:
+http://cxf.apache.org/docs/31-migration-guide.html
+for further information and requirements for upgrading from earlier
+versions of CXF.
+
+3.1.3 fixes over 40 JIRA issues reported by users and the community.
+
+
+
+2. Installation Prerequisites 
+
+Before installing Apache CXF, make sure the following products,
+with the specified versions, are installed on your system:
+
+    * Java 7 Development Kit
+    * Apache Maven 3.x to build the samples
+
+
+3.  Integrating CXF Into Your Application
+
+If you use Maven to build your application, you need merely add
+appropriate dependencies. See the pom.xml files in the samples.
+
+If you don't use Maven, you'll need to add one or more jars to your
+classpath. The file lib/WHICH_JARS should help you decide which 
+jars you need.
+
+4. Building the Samples
+
+Building the samples included in the binary distribution is easy. Change to
+the samples directory and follow the build instructions in the README.txt file 
+included with each sample.
+
+5. Reporting Problems
+
+If you have any problems or want to send feedback of any kind, please e-mail the
+CXF dev list, dev@cxf.apache.org.  You can also file issues in JIRA at:
+
+http://issues.apache.org/jira/browse/CXF
+
+6. Migration notes:
+
+See the migration guide at:
+http://cxf.apache.org/docs/31-migration-guide.html
+for caveats when upgrading from CXF 2.7.x and 3.0.x
+to 3.1.
+
+
+
+7. Specific issues, features, and improvements fixed in this version
+
+** Bug
+    * [CXF-6198] - No SOAPFault for HTTP error code 400
+    * [CXF-6488] - Binding style vs part type R2203 And R2204 problems in wsdl document
+    * [CXF-6512] - The host property is missing in Swagger2 feature's configuration properties
+    * [CXF-6515] - provider sorting not right
+    * [CXF-6517] - Regression in 3.1.2 attachment handling
+    * [CXF-6522] - ThreadLocalInvocationHandler doesn't handle InvocationTargetException
+    * [CXF-6524] - Swagger 2 feature doesn't work with blueprint endpoints
+    * [CXF-6527] - WSDLRefValidator reject valid target reference URI/IRI
+    * [CXF-6534] - Kerberos delegation not possible if Authorization given
+    * [CXF-6535] - Swagger2Feature's properties cannot be set when using Blueprint
+    * [CXF-6536] - XML pretty printing produces double line spacing if incoming XML contains linefeeds
+    * [CXF-6542] - Setting the signature digest algorithm on the SAMLCallback does not work for WS-Security
+    * [CXF-6543] - It's not possible to specify the signature + digest algorithms for self-signed SAML Assertions with JAX-RS
+    * [CXF-6548] - LoggingOutInterceptor logs the wrong Content-Type for some scenarios
+    * [CXF-6550] - AsyncConduitHTTPFactory will throw NPE if passed properties are null 
+    * [CXF-6551] - Digest authentication to intermediate HTTP proxy fails with 407 without retry
+    * [CXF-6552] - Multiple chained schema imports not handled correctly
+    * [CXF-6553] - Unable to override Content-Type on GET requests
+    * [CXF-6558] - DefaultEncryptingOAuthDataProvider.getAccessToken throws SecurityException on invalid accessToken format
+    * [CXF-6559] - AbstractOAuthDataProvider.refreshAccessToken method can't handle an invalid refresh token
+    * [CXF-6561] - ResourceOwnerGrantHandler: ResourceOwnerLoginHandler can't return null or throw exception
+    * [CXF-6570] - FormattedServiceListWriter - meta http-equiv value not quoted
+    * [CXF-6574] -  Issue with Digest Authentication
+    * [CXF-6575] - WS-A Action generation defect
+    * [CXF-6577] - MessageContextImpl needs to get a property from a current message first
+    * [CXF-6579] - Inflated tokens can be corrupted if compression ratio is greater than 2:1
+    * [CXF-6580] - wsdl2java - Issue with import to default namespace
+    * [CXF-6582] - Support newer symmetric signature algorithms with WS-SecurityPolicy
+    * [CXF-6583] - MessageListenerTest#testLocalTransaction fails intermittently
+    * [CXF-6584] - EncryptSignature is ignored
+    * [CXF-6585] - Possible to send invalid Soap 1.2 faults
+    * [CXF-6588] - NPE in providers.getMessageBodyReader
+    * [CXF-6590] - MAPCodec: memory leak with sync client when soapfaults returned from endpoint
+    * [CXF-6591] - Aegis DataSourceType.getBytes fails to close the InputStream fetched from DataSource, which prevents the underlying file to be deleted on Windows
+    * [CXF-6592] - Maven[cxf-java2wadl-plugin] when stylesheetReference are set,package ended with Nullpoint Error
+    * [CXF-6593] - Some thread-local contexts may get lost on the client side after a refresh
+
+** Improvement
+    * [CXF-6509] - CXF is mysterious about invalid JAX-RS bean classes
+    * [CXF-6521] - RS SAML Out Interceptors should be able to reuse tokens set by STSTokenOutInterceptor
+    * [CXF-6525] - Support for http://docs.oasis-open.org/wss/oasis-wss-SwAProfile-1.1#Attachment-Content-Only when using WSS-Policy
+    * [CXF-6538] - Let users disable sending Content-Type with empty requests with URLConnection conduit
+    * [CXF-6557] - Use the default swagger-ui html page in swagger2 sample
+    * [CXF-6562] - ResourceOwnerGrantHandler: doesn't have getter for loginHandler
+    * [CXF-6563] - Various java2wadl-plugin improvements
+    * [CXF-6565] - DOM4JProvider should support suppressing XML declarations
+    * [CXF-6566] - Update WADLGenerator to avoid converting existing resources to DOM
+    * [CXF-6568] - Default WebApplicationExceptionMapper should be optionally made less specific
+    * [CXF-6571] - Adding an option in Swager2Feature to scan non-swagger annotated resources
+    * [CXF-6586] - Missing some bean properties in Swagger2Feature
+
+
+** Task
+    * [CXF-6530] - Add a webapp version of Swagger2Feature sample using spring
+    * [CXF-6541] - Add an OSGi version of Swagger2Feature sample using blueprint
+
+
