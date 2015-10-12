@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/stage/glassfish4" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.glassfish.corba:glassfish-corba-orb:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.corba:glassfish-corba-omgapi:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.corba:glassfish-corba-internal-api:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.corba:exception-annotation-processor:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.meterware.simplestub:simplestub:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.javassist:javassist:3.18.1-GA" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.osgi.core:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.gmbal:gmbal:4.0.0-b001" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.external:management-api:3.2.1-b002" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.pfl:pfl-tf:4.0.0-b004" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.pfl:pfl-basic-tools:4.0.0-b004" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.pfl:pfl-tf-tools:4.0.0-b004" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.pfl:pfl-basic:4.0.0-b004" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.pfl:pfl-dynamic:4.0.0-b004" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.pfl:pfl-asm:4.0.0-b004" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-framework:2.3.23" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-library:1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.corba:glassfish-corba-csiv2-idl:4.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.sun:tools-jar:1">
+        <CLASSES>
+          <root url="jar://C:/Java/jdk1.8.0_60/lib/tools.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

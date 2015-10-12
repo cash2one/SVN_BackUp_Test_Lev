@@ -255,11 +255,11 @@ init_common(){
     PKG_ID=`cat ${HUDSON_HOME}/pkgid-trunk.version`
 
     PRODUCT_GF="glassfish"
-    JAVAEE_VERSION=7.0
-    MAJOR_VERSION=4
-    MINOR_VERSION=1
+    JAVAEE_VERSION=8.0
+    MAJOR_VERSION=5
+    MINOR_VERSION=0
     PRODUCT_VERSION_GF=${MAJOR_VERSION}.${MINOR_VERSION}
-    MICRO_VERSION=1
+    MICRO_VERSION=
     if [ ! -z $MICRO_VERSION ] && [ ${#MICRO_VERSION} -gt 0 ]; then
         PRODUCT_VERSION_GF=$PRODUCT_VERSION_GF.${MICRO_VERSION} 
     fi
@@ -694,6 +694,8 @@ clean_and_zip_workspace(){
     printf "\n%s \n\n" "===== CLEAN AND ZIP THE WORKSPACE ====="
     svn status main | grep ? | awk '{print $2}' | xargs rm -rf
     zip ${WORKSPACE}/bundles/workspace.zip -r main
+    # zip promorepo without top-leveldir for sdk build and to push IPS pkgs.
+    (cd ${WORKSPACE}/promorepo; zip -ry - .) > ${WORKSPACE}/bundles/promorepo.zip
 }
 
 zip_tests_workspace(){
@@ -767,17 +769,25 @@ aggregated_tests_summary(){
           -e s@'/testReport/><img style=text-align:right>'@'#'@g \
           -e s@'/aggregatedTestReport/><img style=text-align:right>'@'#'@g \
           -e s@' style=text-align:right>'@'#'@g \
+          -e s@'<.*'@@g \
+          -e s@'.*>'@@g \
           -e s@'/'@'#'@g`
     do
-        jobname=`cut -d '#' -f1 <<< $i`
-        buildnumber=`cut -d '#' -f2 <<< $i`
-        failednumber=`cut -d '#' -f3 <<< $i`
-        totalnumber=`cut -d '#' -f4 <<< $i`
-        passednumber=$((totalnumber-failed))
-    printf "%s%s%s%s\n" \
-            `align_column 55 "." "$jobname (#${buildnumber})"` \
-            `align_column 15 "." "PASSED(${passednumber})"` \
-            "FAILED(${failednumber})"
+        sizei=${#i}
+        y=`sed s@'#'@@g <<< $i`
+        sizey=${#y}
+        if [ $((sizei - sizey)) -eq 3 ]
+        then
+            jobname=`cut -d '#' -f1 <<< $i`
+            buildnumber=`cut -d '#' -f2 <<< $i`
+            failednumber=`cut -d '#' -f3 <<< $i`
+            totalnumber=`cut -d '#' -f4 <<< $i`
+            passednumber=$((totalnumber-failednumber))
+            printf "%s%s%s%s\n" \
+                `align_column 55 "." "$jobname (#${buildnumber})"` \
+                `align_column 15 "." "PASSED(${passednumber})"` \
+                "FAILED(${failednumber})"
+        fi
     done
     rm tests.html
 }

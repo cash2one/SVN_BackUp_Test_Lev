@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1997-2014 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -2645,17 +2645,22 @@ public class WebappClassLoader
                 }
                 WeakReference<?> loaderRef =
                     (WeakReference<?>) loaderRefField.get(key);
+                //In case of JDK 9, java.logging loading  sun.util.logging.resources.logging resource bundle and
+                // java.logging module is used as the cache key with null class loader.So we are adding a null check
+                if (loaderRef!=null){
+                  ClassLoader loader = (ClassLoader) loaderRef.get();
 
-                ClassLoader loader = (ClassLoader) loaderRef.get();
-
-                while (loader != null && loader != this) {
+                  while (loader != null && loader != this) {
                     loader = loader.getParent();
-                }
+                  }
 
-                if (loader != null) {
+                  if (loader != null) {
                     keysIter.remove();
                     countRemoved++;
+                  }
+
                 }
+
             }
 
             if (countRemoved > 0 && logger.isLoggable(Level.FINE)) {
