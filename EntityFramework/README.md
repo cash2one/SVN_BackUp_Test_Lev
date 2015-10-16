@@ -1,4 +1,4 @@
-Entity Framework.
+Entity Framework
 ===
 Entity Framework is Microsoft's recommended data access technology for new applications in .NET. 
 
