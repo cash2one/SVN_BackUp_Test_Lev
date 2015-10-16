@@ -1,0 +1,53 @@
+{
+  "version": "7.0.0-*",
+  "description": "Command line utilities for Entity Framework.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aspnet/entityframework"
+  },
+  "compilationOptions": {
+    "warningsAsErrors": true
+  },
+  "compile": "..\\Shared\\*.cs",
+  "namedResource": {
+    "EntityFramework.Commands.CommandsStrings": "Properties/CommandsStrings.resx"
+  },
+  "dependencies": {
+    "EntityFramework.Relational": "7.0.0-*",
+    "Microsoft.CodeAnalysis.CSharp": "1.1.0-rc1-*"
+  },
+  "frameworks": {
+    "net45": {
+      "dependencies": {
+        "EntityFramework.Relational.Design": "7.0.0-*"
+      }
+    },
+    "dnx451": {
+      "dependencies": {
+        "EntityFramework.Relational.Design": "7.0.0-*",
+        "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-*",
+        "Microsoft.Extensions.CommandLineUtils.Sources": { "version": "1.0.0-*", "type": "build" }
+      }
+    },
+    "dnxcore50": {
+      "dependencies": {
+        "EntityFramework.Relational.Design": "7.0.0-*",
+        "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-*",
+        "Microsoft.Extensions.CommandLineUtils.Sources": { "version": "1.0.0-*", "type": "build" }
+      }
+    },
+    "uap10.0": {
+      "bin": {
+        "assembly": "lib\\uap10.0\\_._"
+      }
+    }
+  },
+  "packInclude": {
+    "build/": "build/**",
+    "lib/": "lib/**",
+    "tools/": [ "tools/**", "Design\\OperationHandlers.cs" ]
+  },
+  "commands": {
+    "ef": "EntityFramework.Commands"
+  }
+}
