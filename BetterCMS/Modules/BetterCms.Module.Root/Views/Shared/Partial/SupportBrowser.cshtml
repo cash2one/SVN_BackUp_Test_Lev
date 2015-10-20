@@ -1,0 +1,18 @@
+﻿@using BetterCms.Module.Root.Content.Resources
+
+<div class="bcms-msg-message-page" id="bcms-browser-info" style="display: none;">
+    <div class="bcms-msg-message-block">
+        <div class="bcms-msg-message-top">@Html.Raw(RootGlobalization.BrowserSupport_Outdated_IE_Message)</div>
+        <div class="bcms-msg-message-lower">
+            <div class="bcms-msg-lower-upper">@Html.Raw(RootGlobalization.BrowserSupport_UprgradeBrowser_Message_FirstLine)</div>
+            @Html.Raw(RootGlobalization.BrowserSupport_UprgradeBrowser_Message_SecondLine)<span class="bcms-msg-message-upgrade"></span>
+            <div class="bcms-msg-lower-lower">@Html.Raw(RootGlobalization.BrowserSupport_UprgradeBrowser_Message_ThirdLine)</div>
+        </div>
+        <div class="bcms-msg-choose-browser">
+            <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank" class="bcms-msg-download-chrome">Chrome  </a>
+            <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank" class="bcms-msg-download-ff">Mozilla Firefox</a>
+            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank" class="bcms-msg-download-ie">Internet Explorer</a>
+        </div>
+        <a class='bcms-msg-message-close' title="@RootGlobalization.BrowserSupport_UprgradeBrowser_Close_Button">@RootGlobalization.BrowserSupport_UprgradeBrowser_Close_Button</a>
+    </div>
+</div>

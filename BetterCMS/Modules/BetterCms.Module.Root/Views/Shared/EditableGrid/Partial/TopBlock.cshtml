@@ -1,0 +1,29 @@
+﻿@using BetterCms.Module.Root.Content.Resources
+
+@model BetterCms.Module.Root.ViewModels.Shared.EditableGridViewModel
+
+<div class="@Model.TopBlockClass">
+    @if (!string.IsNullOrWhiteSpace(Model.TopBlockTitle))
+    {
+        <div class="bcms-large-titles">@Model.TopBlockTitle</div>
+    }
+
+    @Html.Partial(Model.TopBlockAddItemView, Model)
+
+    @if (Model.ShowSearch)
+    {
+        <div class="bcms-search-block">
+            <input data-bind="value: options().searchQuery, valueUpdate: 'afterkeydown', enterPress: searchItems, hasfocus: options().hasFocus" type="text" class="bcms-editor-field-box" placeholder="@RootGlobalization.WaterMark_Search" />
+            <div data-bind="click: searchItems" class="bcms-btn-search">@RootGlobalization.Button_Search</div>
+        </div>
+    }
+
+    @if (Model.AddPaging)
+    {
+        <!-- ko with: options().paging -->
+        <div class="bcms-featured-grid bcms-clearfix">
+            @Html.Partial(Model.PagingView, Model)
+        </div>
+        <!-- /ko -->
+    }
+</div>

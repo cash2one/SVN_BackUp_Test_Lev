@@ -1,0 +1,16 @@
+﻿@using BetterCms.Module.Root.Content.Resources
+@model IList<BetterCms.Module.Pages.ViewModels.Widgets.WidgetCategoryViewModel>
+
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var category in Model)
+    {
+        @Html.Partial("~/Areas/bcms-pages/Views/Content/Partial/WidgetCategory.cshtml", category)
+    }
+}
+else
+{
+    <div class="bcms-category bcms-content-sliders">           
+        <div class="bcms-category-titles">@RootGlobalization.Grid_NoDataAvailable_Message</div>
+    </div>
+}

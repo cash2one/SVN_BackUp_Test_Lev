@@ -1,0 +1,79 @@
+﻿@using BetterCms.Module.Pages
+@using BetterCms.Module.Pages.Content.Resources
+@using BetterCms.Module.Pages.Controllers
+@using BetterCms.Module.Pages.ViewModels.Templates
+@using BetterCms.Module.Root.Mvc.Helpers
+@using BetterCms.Module.Root.ViewModels.Shared
+@using Microsoft.Web.Mvc
+
+@model TemplateEditViewModel
+@if (Model == null)
+{
+    return;
+}
+<div class="bcms-tab-header">
+    <a class="bcms-tab-item bcms-active" data-name="#bcms-tab-1">@PagesGlobalization.EditTemplate_BasicPropertiesTab_Title</a>
+    <a class="bcms-tab-item" data-name="#bcms-tab-2">@PagesGlobalization.EditTemplate_RegionsTab_Title</a>
+    <a class="bcms-tab-item" data-name="#bcms-tab-3">@PagesGlobalization.EditTemplate_OptionsTab_Title</a>
+</div>
+
+<div class="bcms-scroll-window">
+    @Html.TabbedContentMessagesBox("bcms-edit-template-messages")
+    @using (Html.BeginForm<TemplatesController>(c => c.RegisterTemplate((TemplateEditViewModel)null), FormMethod.Post, new { @id = "bcms-template-form", @class = "bcms-ajax-form" }))
+    {
+        <div id="bcms-tab-1" class="bcms-tab-single">
+            <div class="bcms-padded-content">
+                <div class="bcms-input-list-holder">
+                    @Html.Tooltip(PagesGlobalization.Template_Title_Tooltip_Description)
+                    <div class="bcms-content-titles">@PagesGlobalization.Template_Title_Title</div>
+                    <div class="bcms-input-box">
+                        @Html.TextBoxFor(model => model.Name, new { @class = "bcms-editor-field-box" })
+                        @Html.BcmsValidationMessageFor(m => m.Name)
+                    </div>
+                </div>
+
+                <div class="bcms-input-list-holder">
+                    @Html.Tooltip(PagesGlobalization.Template_Url_Tooltip_Description)
+                    <div class="bcms-content-titles">@PagesGlobalization.Template_Url_Title</div>
+                    <div class="bcms-input-box">
+                        @Html.TextBoxFor(model => model.Url, new { @class = "bcms-editor-field-box" })
+                        @Html.BcmsValidationMessageFor(m => m.Url)
+                    </div>
+                </div>
+
+                <div class="bcms-input-list-holder">
+                    @Html.Tooltip(PagesGlobalization.TemplatePreviewImageUrl_Tooltip_Description)
+                    <div class="bcms-content-titles">@PagesGlobalization.TemplatePreviewImageUrl_Title</div>
+                    <div class="bcms-input-box">
+                        @Html.TextBoxFor(model => model.PreviewImageUrl, new { @class = "bcms-editor-field-box" })
+                        @Html.BcmsValidationMessageFor(m => m.PreviewImageUrl)
+                    </div>
+                </div>
+
+                <div class="bcms-input-list-holder">
+                    @Html.Tooltip(PagesGlobalization.TemplateImagePreview_Tooltip_Description)
+                    <div class="bcms-content-titles">@PagesGlobalization.TemplatePreviewImage_Title</div>
+
+                    <div class="bcms-preview-module-image">
+                        <div style="display: none;">
+                            <img id="bcms-template-preview-image" src="@Model.PreviewImageUrl" alt="" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+              
+        <div id="bcms-tab-2" class="bcms-tab-single">
+            @Html.Partial("Partial/EditTemplateRegions")
+        </div>
+        
+        <div id="bcms-tab-3" class="bcms-tab-single">
+            @Html.Partial(PagesConstants.OptionsGridTemplate, new EditableGridViewModel())
+        </div>
+            
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.Version)
+        @Html.HiddenSubmit()
+    }
+</div>

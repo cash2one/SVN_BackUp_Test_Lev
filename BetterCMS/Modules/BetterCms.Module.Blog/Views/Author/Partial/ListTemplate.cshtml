@@ -1,0 +1,27 @@
+﻿@using BetterCms.Module.Blog.Content.Resources;
+@using BetterCms.Module.Root;
+@using BetterCms.Module.Root.Mvc.Grids;
+@using BetterCms.Module.Root.ViewModels.Shared;
+
+@{
+    var gridViewModel = new EditableGridViewModel
+    {
+        TopBlockClass = "bcms-top-block-holder",
+        ShowMessages = true,
+        Columns = new List<EditableGridColumn>
+            {
+                new EditableGridColumn(BlogGlobalization.SiteSettings_AuthorsTab_AuthorImage_Title, "", "imageId")
+                    {
+                        HeaderAttributes = "style=\"width: 105px;\"",
+                        CellView = "Partial/ImageCell"
+                    },
+                new EditableGridColumn(BlogGlobalization.SiteSettings_AuthorsTab_AuthorName_Title, "Name", "name")
+                    {
+                        AutoFocus = true
+                    },
+                new EditableGridMultilineColumn(BlogGlobalization.SiteSettings_AuthorsTab_AuthorDescription_Title, "Description", "description")    
+            }
+    };
+}
+
+@Html.Partial(RootModuleConstants.EditableGridTemplate, gridViewModel)

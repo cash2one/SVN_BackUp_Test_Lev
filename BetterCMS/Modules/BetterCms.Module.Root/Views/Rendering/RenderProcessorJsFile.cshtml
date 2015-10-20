@@ -1,0 +1,125 @@
+﻿@using BetterCms.Module.Root.Mvc.Helpers
+@model BetterCms.Module.Root.ViewModels.Rendering.RenderProcessorJsViewModel
+
+/*jslint unparam: true, white: true, browser: true, devel: true */
+/*global bettercms */
+
+bettercms.define('bcms.processor', [@Model.JavaScriptModules.RenderCommaSeparatedNames()], function (@Model.JavaScriptModules.RenderCommaSeparatedFriendlyNames()) {
+    'use strict';
+    
+    var $ = bettercms.require('bcms.jquery'),
+
+        processor = {},
+
+        selectors = {
+            onClickModuleAction: '.bcms-onclick-action',
+            onChangeModuleAction: '.bcms-onchange-action'
+        },
+
+        externalModules  = [];
+    
+    processor.init = function() {
+        initializeLinks();
+        initializeGlobalization();    
+        registerExternalModules();
+        initializeModuleActionHandlers();
+    };
+    
+    processor.executeModuleAction = function(moduleName, actionString, sender) {
+        try
+        {
+            if (actionString.lastIndexOf('()') < 0) {
+                actionString = actionString + '(sender)';
+            }
+            var f = new Function("module", "sender", "module." + actionString);
+            f.call(this, externalModules[moduleName], sender);
+        }
+        catch (ex)
+        {
+            bcms.logger.error('Failed to execute action ' + moduleName + '.' + actionString + '. ' + ex.message);
+        }
+    }
+
+    function initializeModuleActionHandlers() {
+          $(document).on('click.bcms.action', selectors.onClickModuleAction, function (event) {
+            event.stopPropagation();
+
+            var target = $(this),
+                moduleName = target.data('bcms-module'),
+                actionName = target.data('bcms-action');
+
+            processor.executeModuleAction(moduleName, actionName, target);
+        });
+        
+        $(document).on('change.bcms.action', selectors.onChangeModuleAction, function (event) {
+            event.stopPropagation();
+
+            var target = $(this),
+                moduleName = target.data('bcms-module'),
+                actionName = target.data('bcms-action');
+
+            processor.executeModuleAction(moduleName, actionName, target);
+        });
+    }        
+    
+    function registerExternalModules() {
+        @foreach(var module in Model.JavaScriptModules)
+        {
+            <text>
+                externalModules['@module.Name'] = @module.FriendlyName;
+            </text>
+        }
+    }
+
+    function initializeLinks() {
+        @foreach(var module in Model.JavaScriptModules)
+        {
+            if (module.Links != null && module.Links.Projections != null && module.Links.Projections.Any())
+            {
+                <text>
+                    /* Initialize @module.Name module links. */
+                    try
+                    {
+                </text>
+                foreach (var item in module.Links.Projections)
+                {
+                    item.Render(Html);
+                }
+                <text>
+                    }                    
+                    catch (ex)
+                    {
+                        bcms.logger.error("Failed to initialize @module.Name links. ", ex.message);
+                    }
+                </text>
+            }
+        }
+    }
+    
+    function initializeGlobalization() {
+        @foreach(var module in Model.JavaScriptModules)
+        {
+            if (module.Globalization != null && module.Globalization.Projections != null && module.Globalization.Projections.Any())
+            {
+                <text>
+                    /* Initialize @module.Name module globalizations. */
+                    try
+                    {
+                </text>
+                foreach (var item in module.Globalization.Projections)
+                {
+                    item.Render(Html);
+                }
+                <text>
+                    }                    
+                    catch (ex)
+                    {
+                        bcms.logger.error("Failed to initialize @module.Name globalization. ", ex.message);
+                    }
+                </text>
+            }
+        }
+    }
+
+    return processor;
+});

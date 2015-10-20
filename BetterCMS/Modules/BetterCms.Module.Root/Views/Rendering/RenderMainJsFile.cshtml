@@ -1,0 +1,49 @@
+﻿@using BetterCms.Module.Root.Mvc.Helpers
+@model BetterCms.Module.Root.ViewModels.Rendering.RenderMainJsViewModel
+/* Better CMS
+* https://github.com/devbridge/BetterCMS
+*/
+
+/*global bettercms.require, bettercms.requirejs, bettercms.define, window */
+
+var console = window.console || {
+    log: function() { },
+    error: function() { },
+    warn: function() { }
+};
+
+bettercms.requirejs.config({
+    @if (Model.IsDebugMode && !Model.UseMinReferences)
+    {
+        <text>urlArgs: 'ver=' + '@Model.Version.ToString()',</text>
+    }
+
+    paths: {     
+         @Model.JavaScriptModules.RenderCommaSeparatedNamePathPairs(Model.UseMinReferences)
+    },    
+
+    shim: {
+        @Model.JavaScriptModules.RenderCommaSeparatedNameShimConfigPairs()
+    },
+    
+    waitSeconds: 15
+});
+
+bettercms.requirejs(['bcms.jquery', 'bcms', 'bcms.processor'],
+    
+    function ($, bcms, processor) {
+        'use strict';
+        bcms.logger.info('Initializing Better CMS.');
+
+        $(function () {
+            bcms.pageId = $('body').data("pageId");
+            bcms.language = $('body').data("language");
+            bcms.errorTrace = @(Model.IsDebugMode ? "true" : "false");
+            processor.init();
+            bcms.init();
+            @if (Model.IsDebugMode)
+            {
+                <text>window.bj = $;</text>
+            }
+    });
+});

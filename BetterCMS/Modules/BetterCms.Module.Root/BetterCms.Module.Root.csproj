@@ -1,0 +1,1879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{66E7E4DF-EEEA-4B1E-8663-A1B430EB7375}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BetterCms.Module.Root</RootNamespace>
+    <AssemblyName>BetterCms.Module.Root</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PrecompileBeforePublish>false</PrecompileBeforePublish>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Autofac.3.1.5\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="BetterModules.Core, Version=1.0.0.31, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BetterModules.Core.1.0.0-rc9\lib\net40\BetterModules.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BetterModules.Core.Web, Version=1.0.0.31, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BetterModules.Core.Web.1.0.0-rc9\lib\net40\BetterModules.Core.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentMigrator, Version=1.0.6.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentMigrator.1.0.6.0\lib\40\FluentMigrator.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.3.0.733, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentNHibernate.1.3.0.733\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Iesi.Collections.3.3.1.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Mvc3Futures.3.0.20105.0\lib\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib, Version=3.0.100.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\MvcContrib.Mvc3-ci.3.0.100.0\lib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BetterModules.Core.Web.1.0.0-rc9\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Accessors\CategoryAccessors.cs" />
+    <Compile Include="Commands\Authentication\GetAuthenticationInfo\GetAuthenticationInfoCommand.cs" />
+    <Compile Include="Commands\Authentication\SearchUsers\SearchUsersCommand.cs" />
+    <Compile Include="Commands\Authentication\SearchRoles\SearchRolesCommand.cs" />
+    <Compile Include="Commands\Category\DeleteCategoryTree\DeleteCategoryTreeCommand.cs" />
+    <Compile Include="Commands\Category\GetCategoryTreesList\GetCategoryTreesListCommand.cs" />
+    <Compile Include="Commands\Category\GetCategoryTree\GetCategoryTreeCommand.cs" />
+    <Compile Include="Commands\Category\SaveCategoryTree\SaveCategoryTreeCommand.cs" />
+    <Compile Include="Commands\Category\SearchCategory\SearchCategoriesCommand.cs" />
+    <Compile Include="Commands\Language\DeleteLanguage\DeleteLanguageCommand.cs" />
+    <Compile Include="Commands\Language\GetLanguageList\GetLanguageListCommand.cs" />
+    <Compile Include="Commands\Language\SaveLanguage\SaveLanguageCommand.cs" />
+    <Compile Include="Commands\Language\SuggestLanguages\SuggestLanguagesCommand.cs" />
+    <Compile Include="Content\Resources\RootGlobalization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RootGlobalization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Events\ContentEvents.cs" />
+    <Compile Include="Events\CategoryEvents.cs" />
+    <Compile Include="Events\LanguageEvents.cs" />
+    <Compile Include="Events\PageRetrievedEventArgs.cs" />
+    <Compile Include="Events\RootEvents.cs" />
+    <Compile Include="Events\PageRenderingEventArgs.cs" />
+    <Compile Include="Events\TagEvents.cs" />
+    <Compile Include="Commands\GetMainJsData\GetMainJsDataCommand.cs" />
+    <Compile Include="Commands\GetProcessorJsData\GetProcessorJsDataCommand.cs" />
+    <Compile Include="Commands\GetPageToRender\GetPageToRenderRequest.cs" />
+    <Compile Include="Commands\GetPageToRender\GetPageToRenderCommand.cs" />
+    <Compile Include="Commands\GetStyleSheetsToRender\GetStyleSheetsToRenderCommand.cs" />
+    <Compile Include="Commands\GetStyleSheetsToRender\GetStyleSheetsToRenderRequest.cs" />
+    <Compile Include="Commands\Tag\DeleteTag\DeleteTagCommand.cs" />
+    <Compile Include="Commands\Tag\DeleteTag\DeleteTagCommandRequest.cs" />
+    <Compile Include="Commands\Tag\GetTagList\GetTagListCommand.cs" />
+    <Compile Include="Commands\Tag\GetTag\GetTagCommand.cs" />
+    <Compile Include="Commands\Tag\SaveTag\SaveTagCommand.cs" />
+    <Compile Include="Commands\Tag\SearchTags\SearchTagsCommand.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CmsController.cs" />
+    <Compile Include="Controllers\PreviewController.cs" />
+    <Compile Include="Controllers\EmbeddedResourcesController.cs" />
+    <Compile Include="Controllers\RenderingController.cs" />
+    <Compile Include="Controllers\SidebarController.cs" />
+    <Compile Include="Controllers\SiteSettingsController.cs" />
+    <Compile Include="Controllers\TagsController.cs" />
+    <Compile Include="Helpers\CategoriesHelper.cs" />
+    <Compile Include="Models\Accessors\WidgetCategoryAccessor.cs" />
+    <Compile Include="Models\CategorizableItem.cs" />
+    <Compile Include="Models\Accessors\DefaultCategoryAccessor.cs" />
+    <Compile Include="Models\CategoryTree.cs" />
+    <Compile Include="Models\CategoryTreeCategorizableItem.cs" />
+    <Compile Include="Models\ChildContentOption.cs" />
+    <Compile Include="Models\ChildContentOptionTranslation.cs" />
+    <Compile Include="Models\ContentOptionTranslation.cs" />
+    <Compile Include="Models\ICategoryAccessor.cs" />
+    <Compile Include="Models\Maps\ChildContentOptionTranslationMap.cs" />
+    <Compile Include="Models\Maps\ContentOptionTranslationMap.cs" />
+    <Compile Include="Models\Maps\WidgetCategoryMap.cs" />
+    <Compile Include="Models\Migrations\Migration201509281017.cs" />
+    <Compile Include="Models\Migrations\Migration201502061445.cs" />
+    <Compile Include="Models\Migrations\Migration201510141900.cs" />
+    <Compile Include="Models\Migrations\Migration201510061845.cs" />
+    <Compile Include="Models\Migrations\Migration201509241740.cs" />
+    <Compile Include="Models\WidgetCategories.cs" />
+    <Compile Include="Models\IChildRegionContainer.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Extensions\CultureInfoExtensions.cs" />
+    <Compile Include="Models\Maps\CategorizableItemMap.cs" />
+    <Compile Include="Models\Maps\CategoryTreeCategorizableItemMap.cs" />
+    <Compile Include="Models\Maps\CategoryTreeMap.cs" />
+    <Compile Include="Models\Maps\LanguageMap.cs" />
+    <Compile Include="Models\Maps\ChildContentMap.cs" />
+    <Compile Include="Models\Maps\MasterPageMap.cs" />
+    <Compile Include="Models\Maps\ChildContentOptionMap.cs" />
+    <Compile Include="Models\Maps\PagesViewMap.cs" />
+    <Compile Include="Models\ChildContent.cs" />
+    <Compile Include="Models\MasterPage.cs" />
+    <Compile Include="Models\Maps\ContentRegionMap.cs" />
+    <Compile Include="Models\ContentRegion.cs" />
+    <Compile Include="Models\Migrations\Migration201404171400.cs" />
+    <Compile Include="Models\Migrations\Migration201312301700.cs" />
+    <Compile Include="Models\Migrations\Migration201312171300.cs" />
+    <Compile Include="Models\Migrations\Migration201312111700.cs" />
+    <Compile Include="Models\Migrations\Migration201312101400.cs" />
+    <Compile Include="Models\Migrations\Migration201310241500.cs" />
+    <Compile Include="Models\Migrations\Migration201310221445.cs" />
+    <Compile Include="Models\Migrations\Migration201310170919.cs" />
+    <Compile Include="Models\Migrations\Migration201310160818.cs" />
+    <Compile Include="Models\Migrations\Migration201310180900.cs" />
+    <Compile Include="Models\Migrations\Migration201501131230.cs" />
+    <Compile Include="Models\Migrations\Migration201408131530.cs" />
+    <Compile Include="Models\Migrations\Migration201407231054.cs" />
+    <Compile Include="Models\Migrations\Migration201406191600.cs" />
+    <Compile Include="Models\Migrations\Migration201406101600.cs" />
+    <Compile Include="Models\Migrations\Migration201502041430.cs" />
+    <Compile Include="Models\Migrations\Migration201501281145.cs" />
+    <Compile Include="Models\Migrations\Migration201502101035.cs" />
+    <Compile Include="Models\Migrations\Migration201502101136.cs" />
+    <Compile Include="Models\PagesView.cs" />
+    <Compile Include="Mvc\Attributes\DisallowHtmlAttribute.cs" />
+    <Compile Include="Mvc\Attributes\DisallowNonActiveDirectoryNameCompliantAttribute.cs" />
+    <Compile Include="Mvc\Attributes\DisallowNonAlphanumericAttribute.cs" />
+    <Compile Include="Mvc\Extensions\HtmlAttributesUtility.cs" />
+    <Compile Include="Mvc\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Mvc\Extensions\StringExtensions.cs" />
+    <Compile Include="Mvc\Grids\EditableGridMultilineColumn.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\PageContentRenderHelper.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\PageContentHtmlRenderer.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingContentOptionProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\IRenderingOption.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageContentProperties.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingOptionPropertyBase.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPropertyBase.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\IRenderingProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageIdProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageModifiedOnProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageCreatedOnProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageMetaDescriptionProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageMetaKeywordsProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageMetaTitleProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageUrlProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\IRenderingPageProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\PageHtmlRenderer.cs" />
+    <Compile Include="Mvc\Helpers\OptionsExtentions.cs" />
+    <Compile Include="Mvc\Helpers\ViewRenderingExtensions.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageOptionProperty.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageProperties.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPagePropertyBase.cs" />
+    <Compile Include="Mvc\PageHtmlRenderer\RenderingPageTitleProperty.cs" />
+    <Compile Include="Projections\ChildContentProjection.cs" />
+    <Compile Include="Providers\CustomOptionsProvider.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Content.cs" />
+    <Compile Include="Models\ContentOption.cs" />
+    <Compile Include="Models\AccessRule.cs" />
+    <Compile Include="Models\CustomOption.cs" />
+    <Compile Include="Models\Extensions\ListExtensions.cs" />
+    <Compile Include="Models\Maps\AccessRuleMap.cs" />
+    <Compile Include="Models\Maps\CustomOptionMap.cs" />
+    <Compile Include="Models\Maps\PageOptionMap.cs" />
+    <Compile Include="Models\Migrations\Migration201309221100.cs" />
+    <Compile Include="Models\Migrations\Migration201309040830.cs" />
+    <Compile Include="Models\Migrations\Migration201308300049.cs" />
+    <Compile Include="Models\Migrations\Migration201308292125.cs" />
+    <Compile Include="Models\Migrations\Migration201308272137.cs" />
+    <Compile Include="Models\Migrations\Migration201308252344.cs" />
+    <Compile Include="Models\Migrations\Migration201308211600.cs" />
+    <Compile Include="Models\Migrations\Migration201308121549.cs" />
+    <Compile Include="Models\Migrations\Migration201308060930.cs" />
+    <Compile Include="Models\Migrations\Migration201308051530.cs" />
+    <Compile Include="Models\PageOption.cs" />
+    <Compile Include="Models\LayoutOption.cs" />
+    <Compile Include="Models\Maps\LayoutOptionMap.cs" />
+    <Compile Include="Models\Maps\ModuleContentVersionMap.cs" />
+    <Compile Include="Models\Migrations\Migration201308021300.cs" />
+    <Compile Include="Models\Migrations\Migration201308021130.cs" />
+    <Compile Include="Models\Migrations\Migration201307191431.cs" />
+    <Compile Include="Models\Migrations\Migration201306101421.cs" />
+    <Compile Include="Models\ModuleContentVersion.cs" />
+    <Compile Include="Models\LayoutRegion.cs" />
+    <Compile Include="Models\Maps\CategoryMap.cs" />
+    <Compile Include="Models\Maps\ContentMap.cs" />
+    <Compile Include="Models\Maps\WidgetMap.cs" />
+    <Compile Include="Models\Maps\LayoutRegionMap.cs" />
+    <Compile Include="Models\Maps\PageContentOptionMap.cs" />
+    <Compile Include="Models\Maps\ContentOptionMap.cs" />
+    <Compile Include="Models\Maps\RegionMap.cs" />
+    <Compile Include="Models\Maps\TagMap.cs" />
+    <Compile Include="Models\Migrations\Migration201305230800.cs" />
+    <Compile Include="Models\Migrations\Migration201303261100.cs" />
+    <Compile Include="Models\Migrations\InitialSetup.cs" />
+    <Compile Include="Models\Migrations\Migration201302211227.cs" />
+    <Compile Include="Models\PageContentOption.cs" />
+    <Compile Include="Models\Layout.cs" />
+    <Compile Include="Models\Maps\ModuleMap.cs" />
+    <Compile Include="Models\Maps\LayoutMap.cs" />
+    <Compile Include="Models\Maps\PageContentMap.cs" />
+    <Compile Include="Models\Module.cs" />
+    <Compile Include="Models\PageContent.cs" />
+    <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\Widget.cs" />
+    <Compile Include="Mvc\CommandBase.cs" />
+    <Compile Include="Mvc\CommandHandler.cs" />
+    <Compile Include="Mvc\Converters.cs" />
+    <Compile Include="Mvc\Grids\EditableGridBooleanColumn.cs" />
+    <Compile Include="Mvc\Grids\EditableGridDropDownColumn.cs" />
+    <Compile Include="Mvc\Grids\EditableGridHiddenField.cs" />
+    <Compile Include="Mvc\Grids\Extensions\PagingExtensions.cs" />
+    <Compile Include="Mvc\Grids\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Mvc\Grids\Extensions\QueryOverExtensions.cs" />
+    <Compile Include="Mvc\Grids\Extensions\GridExtensions.cs" />
+    <Compile Include="Mvc\Grids\GridOptions\GridOptions.cs" />
+    <Compile Include="Mvc\Grids\IEditableGridItem.cs" />
+    <Compile Include="Mvc\Grids\PagerHelper.cs" />
+    <Compile Include="Mvc\Grids\TableRenderers\ScrollableEditableHtmlTableGridRenderer.cs" />
+    <Compile Include="Mvc\Grids\TableRenderers\EditableHtmlTableGridRenderer.cs" />
+    <Compile Include="Mvc\Grids\TableRenderers\HtmlTableGridSingleRowRenderer.cs" />
+    <Compile Include="Mvc\Grids\GridOptions\SearchableGridOptions.cs" />
+    <Compile Include="Mvc\Helpers\ContentExtensions.cs" />
+    <Compile Include="Mvc\Helpers\DynamicDictionary.cs" />
+    <Compile Include="Mvc\Helpers\LayoutHelper.cs" />
+    <Compile Include="Mvc\Helpers\LayoutRegionWrapper.cs" />
+    <Compile Include="Models\Extensions\OptionTypeExtensions.cs" />
+    <Compile Include="Mvc\Helpers\PreviewHelper.cs" />
+    <Compile Include="Mvc\Helpers\RegionContentWrapper.cs" />
+    <Compile Include="Mvc\Helpers\StringHelper.cs" />
+    <Compile Include="Mvc\Helpers\ValidationExtensions.cs" />
+    <Compile Include="Projections\PageStylesheetProjectionFactory.cs" />
+    <Compile Include="Projections\PageJavaScriptProjectionFactory.cs" />
+    <Compile Include="Projections\PageStylesheetProjection.cs" />
+    <Compile Include="Projections\PageContentProjection.cs" />
+    <Compile Include="Projections\PageContentProjectionFactory.cs" />
+    <Compile Include="Projections\PageJavaScriptProjection.cs" />
+    <Compile Include="Providers\ICustomOptionProvider.cs" />
+    <Compile Include="Registration\CustomValidationJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\AntiXssJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\AuthenticationJavaScriptModuleDescriptor.cs" />
+    <Compile Include="Registration\ContentJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\ContentTreeJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\BcmsJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\CodeEditorJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\LanguagesJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\OptionsJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\CategoriesJavaScriptModuleDescriptor.cs" />
+    <Compile Include="Registration\TagsJavaScriptModuleDescriptor.cs" />
+    <Compile Include="Registration\SecurityJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\KnockoutExtendersJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\PreviewJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\RedirectJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\InlineEditorJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\ModalJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\SidemenuJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\SiteSettingsJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\TooltipJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\DatePickerJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\DynamicContentJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\FormsJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\HtmlEditorJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Registration\MessagesJsModuleIncludeDescriptor.cs" />
+    <Compile Include="Models\LookupKeyValue.cs" />
+    <Compile Include="Models\Maps\PageMap.cs" />
+    <Compile Include="Models\Migrations\MigrationVersionMetaData.cs" />
+    <Compile Include="Models\Page.cs" />
+    <Compile Include="Mvc\Helpers\SelectHelper.cs" />
+    <Compile Include="Mvc\UI\DateBoxHelper.cs" />
+    <Compile Include="Mvc\Helpers\FormHelper.cs" />
+    <Compile Include="Mvc\Helpers\MessagesHelper.cs" />
+    <Compile Include="Registration\TabsJsModuleIncludeDescriptor.cs" />
+    <Compile Include="RootModuleConstants.cs" />
+    <Compile Include="Services\Categories\Nodes\DefaultCategoryNodeService.cs" />
+    <Compile Include="Services\Categories\Nodes\ICategoryNodeService.cs" />
+    <Compile Include="Services\Categories\CategoryNodeModel.cs" />
+    <Compile Include="Services\Categories\Tree\DefaultCategoryTreeService.cs" />
+    <Compile Include="Services\Categories\Tree\DeleteCategoryTreeRequest.cs" />
+    <Compile Include="Services\Categories\Tree\GetCategoryTreeRequest.cs" />
+    <Compile Include="Services\Categories\Tree\GetCategoryTreeResponse.cs" />
+    <Compile Include="Services\Categories\Tree\ICategoryTreeService.cs" />
+    <Compile Include="Services\Categories\Tree\SaveCategoryTreeRequest.cs" />
+    <Compile Include="Services\DefaultCategoryService.cs" />
+    <Compile Include="Services\DefaultChildContentService.cs" />
+    <Compile Include="Services\DefaultContentProjectionService.cs" />
+    <Compile Include="Services\DefaultLanguageService.cs" />
+    <Compile Include="Services\ICategoryService.cs" />
+    <Compile Include="Services\IChildContentService.cs" />
+    <Compile Include="Services\IContentProjectionService.cs" />
+    <Compile Include="Services\ILanguageService.cs" />
+    <Compile Include="Services\DefaultEntityTrackingCacheService.cs" />
+    <Compile Include="Services\IEntityTrackingCacheService.cs" />
+    <Compile Include="Services\DefaultAccessControlService.cs" />
+    <Compile Include="Services\DefaultContentService.cs" />
+    <Compile Include="Services\DefaultEntityTrackingService.cs" />
+    <Compile Include="Services\DefaultOptionService.cs" />
+    <Compile Include="Services\DefaultRenderingService.cs" />
+    <Compile Include="Services\DefaultSecurityService.cs" />
+    <Compile Include="Services\EmptyUserProfileUrlResolver.cs" />
+    <Compile Include="Services\IContentService.cs" />
+    <Compile Include="Services\IEntityTrackingService.cs" />
+    <Compile Include="Services\IOptionService.cs" />
+    <Compile Include="Services\IRenderingService.cs" />
+    <Compile Include="Services\IUserProfileUrlResolver.cs" />
+    <Compile Include="ViewModels\Authentication\InfoViewModel.cs" />
+    <Compile Include="ViewModels\Autocomplete\SuggestionViewModel.cs" />
+    <Compile Include="ViewModels\CategoryTreesFilter.cs" />
+    <Compile Include="ViewModels\Category\CategorySuggestionViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryTreeNodeViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryTreesGridViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryTreeGridViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategorizableItemViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryTreeViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryTemplateViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\Cms\CmsRequestViewModel.cs" />
+    <Compile Include="ViewModels\Cms\PageRegionViewModel.cs" />
+    <Compile Include="DataContracts\Enums\PageRetrievedEventResults.cs" />
+    <Compile Include="ViewModels\Cms\RedirectViewModel.cs" />
+    <Compile Include="ViewModels\Cms\RenderPageViewModel.cs" />
+    <Compile Include="ViewModels\Cms\RenderWidgetViewModel.cs" />
+    <Compile Include="ViewModels\Content\ChildContentModel.cs" />
+    <Compile Include="ViewModels\Language\LanguageViewModel.cs" />
+    <Compile Include="ViewModels\Option\ContentOptionValuesViewModel.cs" />
+    <Compile Include="ViewModels\Option\CustomOptionViewModel.cs" />
+    <Compile Include="ViewModels\Option\OptionTranslationViewModel.cs" />
+    <Compile Include="ViewModels\Option\OptionValueEditViewModel.cs" />
+    <Compile Include="ViewModels\Option\OptionValueViewModel.cs" />
+    <Compile Include="ViewModels\Option\OptionViewModel.cs" />
+    <Compile Include="ViewModels\Option\OptionViewModelBase.cs" />
+    <Compile Include="ViewModels\PageProjectionsViewModel.cs" />
+    <Compile Include="ViewModels\Rendering\RenderProcessorJsViewModel.cs" />
+    <Compile Include="ViewModels\Rendering\JavaScriptModuleInclude.cs" />
+    <Compile Include="ViewModels\Rendering\RenderMainJsViewModel.cs" />
+    <Compile Include="ViewModels\Rendering\RenderStyleSheetIncludesViewModel.cs" />
+    <Compile Include="Mvc\Grids\EditableGridColumn.cs" />
+    <Compile Include="ViewModels\Rendering\JavaScriptModuleShimConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\Security\IAccessSecuredViewModel.cs" />
+    <Compile Include="ViewModels\Security\UserAccessTemplateViewModel.cs" />
+    <Compile Include="ViewModels\Security\UserAccessViewModel.cs" />
+    <Compile Include="ViewModels\Shared\EditableGridViewModel.cs" />
+    <Compile Include="ViewModels\Sidebar\SidebarContainerViewModel.cs" />
+    <Compile Include="ViewModels\ProjectionsViewModel.cs" />
+    <Compile Include="ViewModels\SiteSettings\SearchableGridViewModel.cs" />
+    <Compile Include="ViewModels\SiteSettings\SiteSettingCategoryTreeViewModel.cs" />
+    <Compile Include="ViewModels\SiteSettings\SiteSettingsContainerViewModel.cs" />
+    <Compile Include="Mvc\Helpers\JavaScriptModulesHelper.cs" />
+    <Compile Include="Mvc\MimeTypeRouteConstraint.cs" />
+    <Compile Include="Mvc\CmsControllerBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mvc\Helpers\TooltipHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RootModuleDescriptor.cs" />
+    <Compile Include="ViewModels\Tags\TagItemViewModel.cs" />
+    <Compile Include="ViewModels\Tags\TagsTemplateViewModel.cs" />
+    <Compile Include="Views\Authentication\Info.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Info.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\CategoryTreeEdit.generated.cs">
+      <DependentUpon>CategoryTreeEdit.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Category\CategoryTrees.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoryTrees.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category\Partial\CategoryTree.generated.cs">
+      <DependentUpon>CategoryTree.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Category\Partial\CategoryTreeTemplate.generated.cs">
+      <DependentUpon>CategoryTreeTemplate.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Category\CategoriesTemplate.generated.cs">
+      <DependentUpon>CategoriesTemplate.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Cms\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Language\List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rendering\RenderMainJsFile.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RenderMainJsFile.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rendering\RenderProcessorJsFile.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RenderProcessorJsFile.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rendering\RenderStyleSheetIncludes.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RenderStyleSheetIncludes.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\AccessControlTemplate.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessControlTemplate.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\BaseLayout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseLayout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditableGrid\Grid.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grid.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditableGrid\Partial\BooleanCell.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooleanCell.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditableGrid\Partial\Cell.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cell.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditableGrid\Partial\DropDownCell.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DropDownCell.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditableGrid\Partial\Header.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Header.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditableGrid\Partial\MultilineTextCell.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultilineTextCell.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditableGrid\Partial\TopBlock.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopBlock.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\EditableGrid\Partial\TopBlockAddItem.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopBlockAddItem.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Layouts\OneColumnLayout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OneColumnLayout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Layouts\Preview.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Preview.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\Alert.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Alert.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\Confirm.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Confirm.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\ContentOverlay.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContentOverlay.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\ContentsTree.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContentsTree.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\ImagePreview.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImagePreview.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\Info.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Info.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\MasterPagesPath.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MasterPagesPath.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\Modal.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modal.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\Paging.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Paging.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\Region.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Region.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\SiteSettingTab.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteSettingTab.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\SupportBrowser.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupportBrowser.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\SupportCookie.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupportCookie.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\SupportJavaScript.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupportJavaScript.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Partial\Tooltip.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tooltip.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\RootLayout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RootLayout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sidebar\Body.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Body.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sidebar\Container.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Container.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sidebar\Footer.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Footer.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sidebar\Header.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Header.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sidebar\Side.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Side.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SiteSettings\Container.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Container.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tags\ListTags.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListTags.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tags\TagsTemplate.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TagsTemplate.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Resources\RootGlobalization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>RootGlobalization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\bcms.authentication.js" />
+    <EmbeddedResource Include="Scripts\bcms.datepicker.js" />
+    <EmbeddedResource Include="Scripts\bcms.htmlEditor.js" />
+    <EmbeddedResource Include="Scripts\bcms.messages.js" />
+    <EmbeddedResource Include="Scripts\bcms.preview.js" />
+    <EmbeddedResource Include="Scripts\bcms.redirect.js" />
+    <EmbeddedResource Include="Scripts\bcms.tabs.js" />
+    <EmbeddedResource Include="Scripts\bcms.tooltip.js" />
+    <EmbeddedResource Include="Scripts\bcms.jquery.unobtrusive-ajax.js" />
+    <EmbeddedResource Include="Scripts\bcms.jquery.validate.js" />
+    <EmbeddedResource Include="Scripts\bcms.jquery.validate.unobtrusive.js" />
+    <EmbeddedResource Include="Scripts\bcms.slides.jquery.js" />
+    <EmbeddedResource Include="Scripts\bcms.modal.js" />
+    <EmbeddedResource Include="Scripts\bcms.siteSettings.js" />
+    <EmbeddedResource Include="Scripts\bcms.forms.js" />
+    <EmbeddedResource Include="Content\Styles\images\bcms-no-image-1.png" />
+    <EmbeddedResource Include="Content\Styles\images\bcms-no-image-2.png" />
+    <EmbeddedResource Include="Content\Styles\images\bcms-no-image-3.png" />
+    <EmbeddedResource Include="Content\Styles\images\bcms-sidebar-select.png" />
+    <EmbeddedResource Include="Content\Styles\images\icn-calendar.png" />
+    <EmbeddedResource Include="Content\Styles\images\icn-sidebg.png" />
+    <EmbeddedResource Include="Content\Styles\images\icn-zoom.png" />
+    <EmbeddedResource Include="Content\Styles\images\loading.gif" />
+    <EmbeddedResource Include="Content\Styles\images\modal-back.png" />
+    <EmbeddedResource Include="Content\Styles\images\sprite-base-1.png" />
+    <EmbeddedResource Include="Content\Styles\images\sprite-base-2.png" />
+    <EmbeddedResource Include="Scripts\bcms.spinner.jquery.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\icons.png" />
+    <EmbeddedResource Include="Scripts\html5shiv.js" />
+    <EmbeddedResource Include="Scripts\bcms.inlineEdit.js" />
+    <EmbeddedResource Include="Scripts\bcms.jquery-ui-1.9.0.js" />
+    <EmbeddedResource Include="Scripts\bcms.jquery-1.7.2.js" />
+    <EmbeddedResource Include="Scripts\bcms.sidemenu.js" />
+    <EmbeddedResource Include="Scripts\bcms.security.js" />
+    <EmbeddedResource Include="Scripts\bcms.content.js" />
+    <Content Include="BuildConfiguration.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Content\Styles\images\icn-zoom-notcompatible.png" />
+    <EmbeddedResource Include="Scripts\bcms.knockout-2.2.1.js" />
+    <EmbeddedResource Include="Scripts\bcms.require-2.1.5.js" />
+    <EmbeddedResource Include="Content\Styles\images\cookies.png" />
+    <EmbeddedResource Include="Content\Styles\images\error-back.png" />
+    <EmbeddedResource Include="Content\Styles\images\error-bg.png" />
+    <EmbeddedResource Include="Content\Styles\images\js.png" />
+    <EmbeddedResource Include="Content\Styles\images\message-bg.jpg" />
+    <EmbeddedResource Include="Content\Styles\images\message-chrome.png" />
+    <EmbeddedResource Include="Content\Styles\images\message-circle.png" />
+    <EmbeddedResource Include="Content\Styles\images\message-ff.png" />
+    <EmbeddedResource Include="Content\Styles\images\message-ie.png" />
+    <EmbeddedResource Include="Content\Styles\images\msg-bg.jpg" />
+    <EmbeddedResource Include="Scripts\bcms.dynamicContent.js" />
+    <EmbeddedResource Include="Scripts\bcms.js" />
+    <EmbeddedResource Include="Scripts\bcms.grid.js" />
+    <EmbeddedResource Include="Scripts\bcms.jquery.autocomplete.js" />
+    <EmbeddedResource Include="Scripts\bcms.ko.extenders.js" />
+    <EmbeddedResource Include="Content\Styles\images\bcms-arrows-sprite.png" />
+    <EmbeddedResource Include="Models\Migrations\Migration201307191431.sqlserver.sql" />
+    <EmbeddedResource Include="Scripts\bcms.ko.grid.js" />
+    <EmbeddedResource Include="Scripts\bcms.options.js" />
+    <EmbeddedResource Include="Scripts\bcms.autocomplete.js" />
+    <EmbeddedResource Include="Scripts\bcms.tags.js" />
+    <EmbeddedResource Include="Models\Migrations\Migration201310170919.sqlserver.sql" />
+    <EmbeddedResource Include="Models\Migrations\Migration201310221445.sqlserver.sql" />
+    <EmbeddedResource Include="Scripts\ace\ace.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-chromevox.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-elastic_tabstops_lite.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-emmet.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-keybinding_menu.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-language_tools.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-modelist.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-old_ie.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-searchbox.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-settings_menu.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-spellcheck.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-split.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-static_highlight.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-statusbar.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-textarea.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-themelist.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-whitespace.js" />
+    <EmbeddedResource Include="Scripts\ace\keybinding-emacs.js" />
+    <EmbeddedResource Include="Scripts\ace\keybinding-vim.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-abap.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-actionscript.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-ada.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-asciidoc.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-assembly_x86.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-autohotkey.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-batchfile.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-c9search.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-clojure.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-cobol.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-coffee.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-coldfusion.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-csharp.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-css.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-curly.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-c_cpp.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-d.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-dart.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-diff.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-django.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-dot.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-ejs.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-erlang.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-forth.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-ftl.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-glsl.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-golang.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-groovy.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-haml.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-handlebars.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-haskell.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-haxe.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-html.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-html_ruby.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-ini.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-jack.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-jade.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-java.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-javascript.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-json.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-jsoniq.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-jsp.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-jsx.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-julia.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-latex.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-less.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-liquid.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-lisp.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-livescript.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-logiql.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-lsl.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-lua.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-luapage.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-lucene.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-makefile.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-markdown.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-matlab.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-mushcode.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-mysql.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-nix.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-objectivec.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-ocaml.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-pascal.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-perl.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-pgsql.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-php.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-plain_text.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-powershell.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-prolog.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-properties.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-protobuf.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-python.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-r.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-rdoc.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-rhtml.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-ruby.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-rust.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-sass.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-scad.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-scala.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-scheme.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-scss.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-sh.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-sjs.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-snippets.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-soy_template.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-space.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-sql.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-stylus.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-svg.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-tcl.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-tex.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-text.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-textile.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-toml.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-twig.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-typescript.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-vbscript.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-velocity.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-verilog.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-vhdl.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-xml.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-xquery.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-yaml.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-ambiance.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-chaos.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-chrome.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-clouds.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-clouds_midnight.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-cobalt.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-crimson_editor.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-dawn.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-dreamweaver.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-eclipse.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-github.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-idle_fingers.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-merbivore.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-merbivore_soft.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-monokai.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-mono_industrial.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-pastel_on_dark.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-solarized_dark.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-solarized_light.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-terminal.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-textmate.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-tomorrow.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-tomorrow_night.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-tomorrow_night_blue.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-tomorrow_night_bright.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-tomorrow_night_eighties.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-twilight.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-vibrant_ink.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-xcode.js" />
+    <EmbeddedResource Include="Scripts\ace\worker-coffee.js" />
+    <EmbeddedResource Include="Scripts\ace\worker-css.js" />
+    <EmbeddedResource Include="Scripts\ace\worker-javascript.js" />
+    <EmbeddedResource Include="Scripts\ace\worker-json.js" />
+    <EmbeddedResource Include="Scripts\ace\worker-lua.js" />
+    <EmbeddedResource Include="Scripts\ace\worker-php.js" />
+    <EmbeddedResource Include="Scripts\ace\worker-xquery.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\abap.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\actionscript.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\ada.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\asciidoc.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\assembly_x86.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\autohotkey.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\batchfile.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\c9search.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\clojure.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\cobol.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\coffee.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\coldfusion.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\csharp.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\css.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\curly.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\c_cpp.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\d.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\dart.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\diff.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\django.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\dot.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\ejs.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\erlang.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\forth.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\ftl.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\glsl.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\golang.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\groovy.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\haml.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\handlebars.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\haskell.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\haxe.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\html.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\html_ruby.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\ini.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\jack.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\jade.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\java.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\javascript.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\json.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\jsoniq.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\jsp.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\jsx.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\julia.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\latex.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\less.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\liquid.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\lisp.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\livescript.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\logiql.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\lsl.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\lua.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\luapage.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\lucene.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\makefile.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\markdown.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\matlab.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\mushcode.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\mysql.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\nix.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\objectivec.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\ocaml.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\pascal.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\perl.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\pgsql.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\php.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\plain_text.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\powershell.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\prolog.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\properties.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\protobuf.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\python.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\r.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\rdoc.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\rhtml.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\ruby.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\rust.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\sass.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\scad.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\scala.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\scheme.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\scss.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\sh.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\sjs.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\snippets.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\soy_template.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\space.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\sql.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\stylus.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\svg.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\tcl.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\tex.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\text.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\textile.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\toml.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\twig.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\typescript.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\vbscript.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\velocity.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\verilog.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\vhdl.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\xml.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\xquery.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\yaml.js" />
+    <EmbeddedResource Include="Scripts\bcms.codeEditor.js" />
+    <EmbeddedResource Include="Scripts\bcms.languages.js" />
+    <EmbeddedResource Include="Models\Migrations\Migration201406101600.sqlserver.sql" />
+    <EmbeddedResource Include="Scripts\ckeditor\build-config.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\ckeditor.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\config.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\contents.css" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\af.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ar.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\bg.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\bn.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\bs.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ca.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\cy.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\cs.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\da.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\de.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\el.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\en-au.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\en-ca.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\en-gb.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\en.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\eo.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\es.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\et.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\eu.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\fa.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\fi.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\fo.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\fr-ca.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\fr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\gl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\gu.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\he.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\hi.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\hr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\hu.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\id.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\is.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\it.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ja.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ka.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\km.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ko.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ku.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\lt.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\lv.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\mk.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\mn.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ms.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\nb.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\nl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\no.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\pl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\pt-br.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\pt.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ro.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ru.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\si.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\sk.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\sl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\sq.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\sr-latn.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\sr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\sv.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\th.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\tr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\ug.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\uk.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\vi.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\zh-cn.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\lang\zh.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\about\dialogs\about.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\aceeditor\plugin.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\cms-dynamicregion\plugin.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\cms-filemanager\plugin.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\cms-imagemanager\plugin.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\cms-modelvalues\plugin.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\cms-widget\plugin.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\div\dialogs\div.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\find\dialogs\find.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\flash\dialogs\flash.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\flash\images\placeholder.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\forms\dialogs\button.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\forms\dialogs\form.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\forms\dialogs\radio.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\forms\dialogs\select.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\icons_hidpi.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\iframe\images\placeholder.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\image\dialogs\image.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\image\images\noimage.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\link\dialogs\anchor.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\link\dialogs\link.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\link\images\anchor.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\magicline\images\icon.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\pastefromword\filter\default.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\preview\preview.html" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\scayt\dialogs\options.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_address.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_div.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_p.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\envelope.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\envelope.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\heart.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\heart.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\kiss.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\kiss.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\table\dialogs\table.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\templates\dialogs\templates.css" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\templates\dialogs\templates.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\templates\templates\default.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\wsc\dialogs\tmp.html" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\styles.js" />
+    <EmbeddedResource Include="Scripts\bcms.content.tree.js" />
+    <EmbeddedResource Include="Scripts\bcms.store.js" />
+    <EmbeddedResource Include="Scripts\bcms.categories.js" />
+    <EmbeddedResource Include="Scripts\bcms.multiple.select.js" />
+    <EmbeddedResource Include="Content\Styles\multiple-select.png" />
+    <EmbeddedResource Include="Models\Migrations\Migration201502101136.sqlserver.sql" />
+    <EmbeddedResource Include="Models\Migrations\Migration201502061445.sqlserver.sql" />
+    <EmbeddedResource Include="Scripts\ace\ext-beautify.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-error_marker.js" />
+    <EmbeddedResource Include="Scripts\ace\ext-linking.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-abc.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-apache_conf.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-applescript.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-cirru.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-dockerfile.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-eiffel.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-elixir.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-elm.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-gcode.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-gherkin.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-gitignore.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-io.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-lean.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-live_script.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-mask.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-mel.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-mipsassembler.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-mips_assembler.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-praat.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-smarty.js" />
+    <EmbeddedResource Include="Scripts\ace\mode-vala.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\abc.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\apache_conf.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\applescript.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\cirru.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\dockerfile.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\eiffel.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\elixir.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\elm.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\gcode.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\gherkin.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\gitignore.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\io.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\lean.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\live_script.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\mask.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\mel.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\mipsassembler.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\mips_assembler.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\praat.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\smarty.js" />
+    <EmbeddedResource Include="Scripts\ace\snippets\vala.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-katzenmilch.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-kr_theme.js" />
+    <EmbeddedResource Include="Scripts\ace\theme-kuroir.js" />
+    <EmbeddedResource Include="Scripts\ace\worker-html.js" />
+    <EmbeddedResource Include="Scripts\ace\worker-xml.js" />
+    <EmbeddedResource Include="Scripts\bcms.antiXss.js" />
+    <EmbeddedResource Include="Scripts\bcms.customValidation.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\cms-togglelinewrap\plugin.js" />
+    <EmbeddedResource Include="Content\Styles\bcms.root.css" />
+    <EmbeddedResource Include="Content\Styles\bcms.root.min.css" />
+    <Content Include="Gulpfile.js" />
+    <Content Include="gulp\compile-sass\compile-sass.js" />
+    <Content Include="gulp\create-data-uri-vars\create-data-uri-vars.js" />
+    <Content Include="gulp\gulp.config.js" />
+    <Content Include="gulp\utils\utils.js" />
+    <Content Include="gulp\watch-files\watch-files.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\cms-option\plugin.js" />
+    <EmbeddedResource Include="Scripts\bcms.markdown.js" />
+    <EmbeddedResource Include="Scripts\bcms.jquery.markitup.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\skins\bettercms\skin.js" />
+    <EmbeddedResource Include="Scripts\ckeditor\skins\bettercms\editor.css" />
+    <EmbeddedResource Include="Scripts\ckeditor\skins\bettercms\dialog.css" />
+    <Content Include="Scss\base_64\icons\add-content.svg" />
+    <Content Include="Scss\base_64\icons\close.svg" />
+    <Content Include="Scss\base_64\icons\cp-add-new.svg" />
+    <Content Include="Scss\base_64\icons\cp-clone.svg" />
+    <Content Include="Scss\base_64\icons\cp-delete.svg" />
+    <Content Include="Scss\base_64\icons\cp-drag-handle.svg" />
+    <Content Include="Scss\base_64\icons\cp-hide-right.svg" />
+    <Content Include="Scss\base_64\icons\cp-hide.svg" />
+    <Content Include="Scss\base_64\icons\cp-indicate-button.svg" />
+    <Content Include="Scss\base_64\icons\cp-indicate-off.svg" />
+    <Content Include="Scss\base_64\icons\cp-indicate-on.svg" />
+    <Content Include="Scss\base_64\icons\cp-notification-ok.svg" />
+    <Content Include="Scss\base_64\icons\cp-notification-warn.svg" />
+    <Content Include="Scss\base_64\icons\cp-pub-ok.svg" />
+    <Content Include="Scss\base_64\icons\cp-pub-warn.svg" />
+    <Content Include="Scss\base_64\icons\cp-seo-ok.svg" />
+    <Content Include="Scss\base_64\icons\cp-seo-warn.svg" />
+    <Content Include="Scss\base_64\icons\cp-settings.svg" />
+    <Content Include="Scss\base_64\icons\cp-show-right.svg" />
+    <Content Include="Scss\base_64\icons\cp-show.svg" />
+    <Content Include="Scss\base_64\icons\cp-stick-handle-right.svg" />
+    <Content Include="Scss\base_64\icons\cp-stick-handle.svg" />
+    <Content Include="Scss\base_64\icons\cp-texture.svg" />
+    <Content Include="Scss\base_64\icons\cp-translate.svg" />
+    <Content Include="Scss\base_64\icons\cp-user.svg" />
+    <Content Include="Scss\base_64\icons\datepicker-arrow-left.svg" />
+    <Content Include="Scss\base_64\icons\datepicker-arrow-right.svg" />
+    <Content Include="Scss\base_64\icons\editor-blockquote.svg" />
+    <Content Include="Scss\base_64\icons\editor-bold.svg" />
+    <Content Include="Scss\base_64\icons\editor-bulletedlist.svg" />
+    <Content Include="Scss\base_64\icons\editor-close.svg" />
+    <Content Include="Scss\base_64\icons\editor-cmsdynamicregion.svg" />
+    <Content Include="Scss\base_64\icons\editor-cmsimage.svg" />
+    <Content Include="Scss\base_64\icons\editor-cmsoption.svg" />
+    <Content Include="Scss\base_64\icons\editor-cmstogglelinebreak.svg" />
+    <Content Include="Scss\base_64\icons\editor-cmswidget.svg" />
+    <Content Include="Scss\base_64\icons\editor-copy.svg" />
+    <Content Include="Scss\base_64\icons\editor-cut.svg" />
+    <Content Include="Scss\base_64\icons\editor-italic.svg" />
+    <Content Include="Scss\base_64\icons\editor-justifyblock.svg" />
+    <Content Include="Scss\base_64\icons\editor-justifycenter.svg" />
+    <Content Include="Scss\base_64\icons\editor-justifyleft.svg" />
+    <Content Include="Scss\base_64\icons\editor-justifyright.svg" />
+    <Content Include="Scss\base_64\icons\editor-link.svg" />
+    <Content Include="Scss\base_64\icons\editor-maximize.svg" />
+    <Content Include="Scss\base_64\icons\editor-numberedlist.svg" />
+    <Content Include="Scss\base_64\icons\editor-paste.svg" />
+    <Content Include="Scss\base_64\icons\editor-redo.svg" />
+    <Content Include="Scss\base_64\icons\editor-source.svg" />
+    <Content Include="Scss\base_64\icons\editor-specialchar.svg" />
+    <Content Include="Scss\base_64\icons\editor-strike.svg" />
+    <Content Include="Scss\base_64\icons\editor-table.svg" />
+    <Content Include="Scss\base_64\icons\editor-templates.svg" />
+    <Content Include="Scss\base_64\icons\editor-underline.svg" />
+    <Content Include="Scss\base_64\icons\editor-undo.svg" />
+    <Content Include="Scss\base_64\icons\editor-unlink.svg" />
+    <Content Include="Scss\base_64\icons\manage.svg" />
+    <Content Include="Scss\base_64\icons\manager-add-content.svg" />
+    <Content Include="Scss\base_64\icons\manager-content.svg" />
+    <Content Include="Scss\base_64\icons\manager-delete.svg" />
+    <Content Include="Scss\base_64\icons\manager-edit.svg" />
+    <Content Include="Scss\base_64\icons\manager-history.svg" />
+    <Content Include="Scss\base_64\icons\manager-options.svg" />
+    <Content Include="Scss\base_64\icons\manager-region.svg" />
+    <Content Include="Scss\base_64\icons\overlay-delete.svg" />
+    <Content Include="Scss\base_64\icons\overlay-edit-child.svg" />
+    <Content Include="Scss\base_64\icons\overlay-edit.svg" />
+    <Content Include="Scss\base_64\icons\overlay-history.svg" />
+    <Content Include="Scss\base_64\icons\overlay-options.svg" />
+    <Content Include="Scss\base_64\icons\overlay-widget.svg" />
+    <Content Include="Scss\base_64\icons\search.svg" />
+    <Content Include="Scss\base_64\icons\texture.svg" />
+    <Content Include="Scss\base_64\icons\toolbar-h1.svg" />
+    <Content Include="Scss\base_64\icons\toolbar-h2.svg" />
+    <Content Include="Scss\base_64\icons\toolbar-h3.svg" />
+    <Content Include="Scss\base_64\icons\toolbar-h4.svg" />
+    <Content Include="Scss\base_64\icons\toolbar-h5.svg" />
+    <Content Include="Scss\base_64\icons\toolbar-h6.svg" />
+    <Content Include="Scss\base_64\icons\validation.svg" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Category\CategoryTreeEdit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CategoryTreeEdit.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="package.json" />
+    <Content Include="Scss\components\_forms.scss" />
+    <Content Include="Scss\components\_normalize.scss" />
+    <Content Include="Scss\components\_tables.scss" />
+    <Content Include="Scss\core\_mixins.scss" />
+    <Content Include="Scss\core\_variables.scss" />
+    <Content Include="Scss\blog.scss" />
+    <Content Include="Scss\installation.scss" />
+    <Content Include="Scss\pages.scss" />
+    <Content Include="Scss\bcms-modules\pages\_index.scss" />
+    <Content Include="Scss\users.scss" />
+    <Content Include="Scss\structure\_modules.scss" />
+    <Content Include="Scss\bcms-modules\pages\_navigation.scss" />
+    <Content Include="Scss\media.scss" />
+    <Content Include="Scss\structure\_layout.scss" />
+    <Content Include="Scss\structure\_tabs.scss" />
+    <Content Include="Scss\bcms-modules\blog\_index.scss" />
+    <Content Include="Scss\bcms-modules\installation\_index.scss" />
+    <Content Include="Scss\bcms-modules\media\_index.scss" />
+    <Content Include="Scss\bcms-modules\users\_index.scss" />
+    <Content Include="Scss\bcms-modules\media\_crop.scss" />
+    <Content Include="Scss\bcms-modules\media\_manager.scss" />
+    <Content Include="Scss\bcms-modules\media\_types.scss" />
+    <Content Include="Scss\bcms-modules\media\_uploader.scss" />
+    <Content Include="Scss\bcms-modules\pages\_history.scss" />
+    <Content Include="Scss\bcms-modules\pages\_editseo.scss" />
+    <Content Include="Scss\bcms-modules\pages\_nodedropzone.scss" />
+    <Content Include="Scss\root.scss" />
+    <Content Include="Scss\bcms-modules\root\_buttons.scss" />
+    <Content Include="Scss\bcms-modules\root\_controlpanel.scss" />
+    <Content Include="Scss\bcms-modules\root\_index.scss" />
+    <Content Include="Scss\bcms-modules\root\_messages.scss" />
+    <Content Include="Scss\bcms-modules\root\_notifications.scss" />
+    <Content Include="Scss\bcms-modules\root\_overlays.scss" />
+    <Content Include="Scss\base_64\webfonts\OpenSans-Bold.ttf" />
+    <Content Include="Scss\base_64\webfonts\OpenSans-Italic.ttf" />
+    <Content Include="Scss\base_64\webfonts\OpenSans-Light.ttf" />
+    <Content Include="Scss\base_64\webfonts\OpenSans-Regular.ttf" />
+    <Content Include="Scss\base_64\webfonts\OpenSans-Semibold.ttf" />
+    <Content Include="Scss\core\_assets.scss" />
+    <Content Include="Scss\editor.scss" />
+    <Content Include="Scss\plugins\_ckeditor.scss" />
+    <Content Include="Scss\plugins\_markitup.scss" />
+    <Content Include="Scss\plugins\_jquerycalendar.scss" />
+    <Content Include="Scss\bcms-modules\root\_contentstree.scss" />
+    <Content Include="Scss\bcms-modules\blog\_settings.scss" />
+    <None Include="Views\Category\CategoryTrees.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CategoryTrees.generated.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Category\Partial\CategoryTree.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CategoryTree.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Category\Partial\CategoryTreeTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CategoryTreeTemplate.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Category\CategoriesTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CategoriesTemplate.generated.cs</LastGenOutput>
+    </Content>
+    <None Include="Views\Shared\EditableGrid\Partial\MultilineTextCell.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>MultilineTextCell.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Partial\ContentsTree.cshtml">
+      <LastGenOutput>ContentsTree.generated.cs</LastGenOutput>
+      <Generator>RazorGenerator</Generator>
+    </None>
+    <None Include="Views\Sidebar\Container.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Container.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Rendering\RenderMainJsFile.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>RenderMainJsFile.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\SiteSettings\Container.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Container.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Sidebar\Header.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Header.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Sidebar\Side.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Side.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Rendering\RenderStyleSheetIncludes.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>RenderStyleSheetIncludes.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Rendering\RenderProcessorJsFile.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>RenderProcessorJsFile.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Sidebar\Footer.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Footer.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Sidebar\Body.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Body.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Authentication\Info.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Info.generated.cs</LastGenOutput>
+    </None>
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Views\Cms\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BetterCMS.Configuration\BetterCms.Configuration.csproj">
+      <Project>{DA2B225E-6AEE-4465-8B08-4D5B1C1CED49}</Project>
+      <Name>BetterCms.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BetterCMS.Core\BetterCms.Core.csproj">
+      <Project>{694ca5ca-a0e2-4578-a249-648498b058d7}</Project>
+      <Name>BetterCms.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Layouts\OneColumnLayout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>OneColumnLayout.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Layouts\Preview.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Preview.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\Alert.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Alert.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\Confirm.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Confirm.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\ContentOverlay.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ContentOverlay.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\ImagePreview.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ImagePreview.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\Info.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Info.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\Modal.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Modal.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\Region.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Region.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\SiteSettingTab.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteSettingTab.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\Tooltip.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Tooltip.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\RootLayout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>RootLayout.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\SupportBrowser.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SupportBrowser.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\SupportCookie.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SupportCookie.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\SupportJavaScript.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SupportJavaScript.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\Paging.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Paging.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Tags\ListTags.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ListTags.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Tags\TagsTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TagsTemplate.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Security\AccessControlTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AccessControlTemplate.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\EditableGrid\Grid.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Grid.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\EditableGrid\Partial\BooleanCell.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>BooleanCell.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\EditableGrid\Partial\Cell.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Cell.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\EditableGrid\Partial\DropDownCell.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>DropDownCell.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\EditableGrid\Partial\Header.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Header.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\EditableGrid\Partial\TopBlock.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TopBlock.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\ace\LICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\BaseLayout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>BaseLayout.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\Partial\MasterPagesPath.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>MasterPagesPath.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Shared\EditableGrid\Partial\TopBlockAddItem.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TopBlockAddItem.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Language\List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>List.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\scayt\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\wsc\LICENSE.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\ckeditor\plugins\wsc\README.md" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(MSBuildBinPath)\msbuild.exe" /p:Configuration=$(ConfigurationName) /p:SolutionDir="$(SolutionDir)\" /p:ProjectDir="$(ProjectDir)\" "$(ProjectDir)BuildConfiguration.xml"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

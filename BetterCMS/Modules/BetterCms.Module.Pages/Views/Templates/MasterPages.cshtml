@@ -1,0 +1,72 @@
+﻿@using BetterCms.Module.Pages.Content.Resources
+@using BetterCms.Module.Pages.Controllers
+@using BetterCms.Module.Pages.ViewModels.SiteSettings
+@using BetterCms.Module.Root
+@using BetterCms.Module.Root.Content.Resources
+@using BetterCms.Module.Root.Mvc
+@using BetterCms.Module.Root.Mvc.Grids.Extensions
+@using BetterCms.Module.Root.Mvc.Grids.TableRenderers
+@using BetterCms.Module.Root.Mvc.Helpers
+@using Microsoft.Web.Mvc
+@using MvcContrib.UI.Grid
+
+@model BetterCms.Module.Pages.ViewModels.Filter.PagesGridViewModel<SiteSettingPageViewModel>
+@{
+    var controller = (CmsControllerBase)ViewContext.Controller;
+    var roles = string.Format("{0},{1},{2}",
+        RootModuleConstants.UserRoles.PublishContent,
+        RootModuleConstants.UserRoles.EditContent,
+        RootModuleConstants.UserRoles.DeleteContent);
+    var canViewPages = controller.SecurityService.IsAuthorized(roles);
+    
+    Action<ColumnBuilder<SiteSettingPageViewModel>> columns = column =>
+    {
+        column.EditButtonColumn();
+        column.For(m => string.Format("<a class=\"bcms-tables-link bcms-page-title\" data-id=\"{0}\" data-url=\"{2}\">{1}</a>", m.Id, System.Web.Security.AntiXss.AntiXssEncoder.HtmlEncode(m.Title ?? "", true), m.Url))
+            .Named(PagesGlobalization.SiteSettings_Pages_TitleColumn)
+            .SortColumnName("Title")
+            .Attributes()
+            .Encode(false);
+
+        if (canViewPages) {
+            column.For(f => string.Format("<a class=\"bcms-template-usage\" data-id=\"{0}\">{1}</a>", f.Id, PagesGlobalization.SiteSettings_MasterPages_Usage))
+               .Named("")
+               .HeaderAttributes(@style => "width: 100px;")
+               .Sortable(false)
+               .Encode(false);
+        }
+        
+        if ((ViewContext.Controller as CmsControllerBase).SecurityService.IsAuthorized(RootModuleConstants.UserRoles.DeleteContent))
+        {
+            column.DeleteButtonColumn();
+        }
+        else
+        {
+            column.EmptyColumn();
+        }
+    };
+}
+
+@using (Html.BeginForm<TemplatesController>(f => f.MasterPages(null), FormMethod.Post, new { @id = "bcms-master-pages-form", @class = "bcms-ajax-form" }))
+{
+    @Html.HiddenGridOptions(Model.GridOptions)
+
+    <div class="bcms-top-block-holder">
+        <div class="bcms-btn-links-main" id="bcms-create-page-button">@PagesGlobalization.SiteSettings_Pages_AddNew</div>
+        <div class="bcms-search-block">
+            @Html.TextBoxFor(m => m.SearchQuery, new { @class = "bcms-editor-field-box bcms-search-query", @placeholder = RootGlobalization.WaterMark_Search })
+            <div class="bcms-btn-search" id="bcms-pages-search-btn">@PagesGlobalization.SiteSettings_Pages_Search</div>
+        </div>
+        
+        <div class="bcms-featured-grid bcms-clearfix">
+            @Html.RenderPaging(Model)
+        </div>
+    </div>
+    @Html.SiteSettingsMessagesBox()
+
+    @Html.Grid(Model.Items).Sort(Model.GridOptions).Columns(columns).Attributes(@class => "bcms-tables").RenderUsing(new EditableHtmlTableGridRenderer<SiteSettingPageViewModel>())
+}
+
+<script type="text/html" id="bcms-pages-list-row-template">
+    @Html.Grid(new List<SiteSettingPageViewModel> { new SiteSettingPageViewModel() }).Columns(columns).Attributes(@class => "bcms-tables").RenderUsing(new HtmlTableGridSingleRowRenderer<SiteSettingPageViewModel>())
+</script>

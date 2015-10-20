@@ -1,0 +1,837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessControl_UserAccess_AddNewRole" xml:space="preserve">
+    <value>Add Role</value>
+  </data>
+  <data name="AccessControl_UserAccess_AddNewUser" xml:space="preserve">
+    <value>Add User</value>
+  </data>
+  <data name="AccessControl_UserAccess_NoAccess" xml:space="preserve">
+    <value>No Access</value>
+  </data>
+  <data name="AccessControl_UserAccess_Read" xml:space="preserve">
+    <value>Only Read</value>
+  </data>
+  <data name="AccessControl_UserAccess_ReadAndEdit" xml:space="preserve">
+    <value>Read &amp; Edit</value>
+  </data>
+  <data name="AccessControl_UserAccess_Title" xml:space="preserve">
+    <value>Users Access</value>
+  </data>
+  <data name="AccessControl_UserAccess_Tooltip_Description" xml:space="preserve">
+    <value>Set user access</value>
+  </data>
+  <data name="AccessControl_UserAccess_User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Alert_DefaultTitle" xml:space="preserve">
+    <value>Attention!</value>
+  </data>
+  <data name="Alert_ErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Authentication_LogOutConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to log out?</value>
+  </data>
+  <data name="Boolean_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Boolean_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="BrowserSupport_Outdated_IE_Message" xml:space="preserve">
+    <value>Sorry, looks like you are using an outdated version of &lt;span&gt;Internet Explorer&lt;/span&gt;</value>
+  </data>
+  <data name="BrowserSupport_UprgradeBrowser_Close_Button" xml:space="preserve">
+    <value>Close Message</value>
+  </data>
+  <data name="BrowserSupport_UprgradeBrowser_Message_FirstLine" xml:space="preserve">
+    <value>To get better browsing experience and enhanced security</value>
+  </data>
+  <data name="BrowserSupport_UprgradeBrowser_Message_SecondLine" xml:space="preserve">
+    <value>please &lt;span&gt;upgrade&lt;/span&gt; your browser</value>
+  </data>
+  <data name="BrowserSupport_UprgradeBrowser_Message_ThirdLine" xml:space="preserve">
+    <value>to one of the following modern browsers:</value>
+  </data>
+  <data name="Button_AddNew" xml:space="preserve">
+    <value>Add New +</value>
+  </data>
+  <data name="Button_Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Button_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Button_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Button_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Button_Filter_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Button_Filter_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Button_History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="Button_Insert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="Button_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Button_Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Button_Paging_Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Button_Paging_Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Button_Preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Button_Rename" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="Button_Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Button_SaveAndPublish" xml:space="preserve">
+    <value>Save &amp; Publish</value>
+  </data>
+  <data name="Button_SaveDraft" xml:space="preserve">
+    <value>Save Draft</value>
+  </data>
+  <data name="Button_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Button_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Confirm_DefaultTitle" xml:space="preserve">
+    <value>Attention!</value>
+  </data>
+  <data name="Confirm_Delete_DefaultMessage" xml:space="preserve">
+    <value>Are you sure you want to delete selected object?</value>
+  </data>
+  <data name="ContentStatus_Draft" xml:space="preserve">
+    <value>Draft</value>
+  </data>
+  <data name="ContentStatus_Published" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="ContentStatus_PublishedWithDraft" xml:space="preserve">
+    <value>Published (with draft)</value>
+  </data>
+  <data name="CookieSupport_MustBeEnabled_Message_FirstLine" xml:space="preserve">
+    <value>Sorry, looks like &lt;b&gt;cookies are disabled&lt;/b&gt; in your browser. For full web experience</value>
+  </data>
+  <data name="CookieSupport_MustBeEnabled_Message_SecondLine" xml:space="preserve">
+    <value>Cookies must be enabled.</value>
+  </data>
+  <data name="CreateCategory_CreatedSuccessfully_Message" xml:space="preserve">
+    <value>Category created successfully.</value>
+  </data>
+  <data name="CreateTag_CreatedSuccessfully_Message" xml:space="preserve">
+    <value>Tag created successfully.</value>
+  </data>
+  <data name="Date_Picker_Tooltip_Title" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="DeleteCategory_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>Category deleted successfully.</value>
+  </data>
+  <data name="DeleteOption_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete option "{0}"?</value>
+  </data>
+  <data name="DeleteTag_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>Tag removed successfully.</value>
+  </data>
+  <data name="DynamicContent_DialogForbidden_Message" xml:space="preserve">
+    <value>Forbidden: Access is denied.</value>
+  </data>
+  <data name="DynamicContent_DialogLoadingCancelled_Message" xml:space="preserve">
+    <value>The loading of dialog was cancelled by user.</value>
+  </data>
+  <data name="DynamicContent_FailedLoadDialog_Message" xml:space="preserve">
+    <value>Failed to load dialog. Internal server error. Please try again later.</value>
+  </data>
+  <data name="Grid_NoDataAvailable_Message" xml:space="preserve">
+    <value>There is no data available.</value>
+  </data>
+  <data name="Info_DefaultTitle" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="JavascriptSupport_MustBeEnabled_Message_FirstLine" xml:space="preserve">
+    <value>Sorry, looks like &lt;b&gt;JavaScript is disabled&lt;/b&gt; in your browser. For full web experience</value>
+  </data>
+  <data name="JavascriptSupport_MustBeEnabled_Message_SecondLine" xml:space="preserve">
+    <value>JavaScript must be enabled</value>
+  </data>
+  <data name="MasterPagesPath_HidePath_Button" xml:space="preserve">
+    <value>Hide Path</value>
+  </data>
+  <data name="MasterPagesPath_ShowPath_Button" xml:space="preserve">
+    <value>Show Path</value>
+  </data>
+  <data name="MasterPage_Or_Layout_OnlyOne_ShouldBeSelected_ValidationMessage" xml:space="preserve">
+    <value>Only one of master page and template can be specified.</value>
+  </data>
+  <data name="MasterPage_Or_Layout_ShouldBeSelected_ValidationMessage" xml:space="preserve">
+    <value>Template or master page should be selected.</value>
+  </data>
+  <data name="Message_AccessForbidden" xml:space="preserve">
+    <value>Forbidden: Access is denied.</value>
+  </data>
+  <data name="Message_ConcurentDataException" xml:space="preserve">
+    <value>The record was updated by another user. Please refresh page before performing update.</value>
+  </data>
+  <data name="Message_Deleting" xml:space="preserve">
+    <value>Deleting ...</value>
+  </data>
+  <data name="Message_EntityNotFoundException" xml:space="preserve">
+    <value>The record does not exist. Probably it was deleted by another user. Please refresh page.</value>
+  </data>
+  <data name="Message_FailedToLoadDialog" xml:space="preserve">
+    <value>Failed to load dialog. Please retry.</value>
+  </data>
+  <data name="Message_FailedToProcessRequest_Message" xml:space="preserve">
+    <value>Failed to process request. Response status: {0} {1}.</value>
+  </data>
+  <data name="Message_FailedToRenderContent" xml:space="preserve">
+    <value>Failed To Render Content.</value>
+  </data>
+  <data name="Message_FailedToSaveData" xml:space="preserve">
+    <value>Unable to save information. Please retry.</value>
+  </data>
+  <data name="Message_InternalServerErrorPleaseRetry" xml:space="preserve">
+    <value>Sorry. Internal server error occured. Please retry later or contact administrator.</value>
+  </data>
+  <data name="Message_Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Message_ReadOnlyMode" xml:space="preserve">
+    <value>Dialog opened in read-only mode.</value>
+  </data>
+  <data name="Message_Saving" xml:space="preserve">
+    <value>Saving ...</value>
+  </data>
+  <data name="Message_SessionExpiredLoginToContinue_Message" xml:space="preserve">
+    <value>Your session has expired. Please login to continue.</value>
+  </data>
+  <data name="OptionTypes_Boolean_Title" xml:space="preserve">
+    <value>Boolean</value>
+  </data>
+  <data name="OptionTypes_CssUrl_Title" xml:space="preserve">
+    <value>CSS Include URL</value>
+  </data>
+  <data name="OptionTypes_Custom_Title" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="OptionTypes_DateTime_Title" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OptionTypes_Float_Title" xml:space="preserve">
+    <value>Float</value>
+  </data>
+  <data name="OptionTypes_Integer_Title" xml:space="preserve">
+    <value>Integer</value>
+  </data>
+  <data name="OptionTypes_JavaScriptUrl_Title" xml:space="preserve">
+    <value>JS Include URL</value>
+  </data>
+  <data name="OptionTypes_Text_Title" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="Option_DuplicateKey_Message" xml:space="preserve">
+    <value>Option "{0}" specified more than once. Option names should be unique.</value>
+  </data>
+  <data name="Option_Invalid_Message" xml:space="preserve">
+    <value>Option "{0}" value is invalid. Should be of type: {1}.</value>
+  </data>
+  <data name="Paging_Page_Title" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="Redirect_Message" xml:space="preserve">
+    <value>Please wait while page is redirecting.</value>
+  </data>
+  <data name="Redirect_Title" xml:space="preserve">
+    <value>Redirecting</value>
+  </data>
+  <data name="Reload_Message" xml:space="preserve">
+    <value>Please wait while page is reloading.</value>
+  </data>
+  <data name="Reload_Title" xml:space="preserve">
+    <value>Reloading page</value>
+  </data>
+  <data name="SaveCategory_CategoryExists_Message" xml:space="preserve">
+    <value>Category already exists. </value>
+  </data>
+  <data name="SaveOptions_CannotDeleteOption_Message" xml:space="preserve">
+    <value>Cannot delete option "{0}", because it's marked as non-deletable.</value>
+  </data>
+  <data name="SaveTag_TagExists_Message" xml:space="preserve">
+    <value>Tag already exists.</value>
+  </data>
+  <data name="Sidebar_DragTitle" xml:space="preserve">
+    <value>Drag to adjust sidebar position</value>
+  </data>
+  <data name="Sidebar_EditOnOffTitle" xml:space="preserve">
+    <value>Turn CMS edit mode ON or OFF</value>
+  </data>
+  <data name="Sidebar_Footer_DragTooltip" xml:space="preserve">
+    <value>Move sidebar to the other side</value>
+  </data>
+  <data name="Sidebar_Footer_Left_DragTitle" xml:space="preserve">
+    <value>stick to the left</value>
+  </data>
+  <data name="Sidebar_Footer_Right_DragTitle" xml:space="preserve">
+    <value>stick to the right</value>
+  </data>
+  <data name="Sidebar_Hide" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="Sidebar_LoggedInAsTitle" xml:space="preserve">
+    <value>View page as:</value>
+  </data>
+  <data name="Sidebar_LogoutButton" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="Sidebar_OpenShowTitle" xml:space="preserve">
+    <value>Open/Close CMS sidebar</value>
+  </data>
+  <data name="Sidebar_Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="Sidebar_SiteSettingsButtonTitle" xml:space="preserve">
+    <value>Site settings</value>
+  </data>
+  <data name="SiteSettings_CategoriesMenuItem" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="SiteSettings_Categories_AddNewCategory" xml:space="preserve">
+    <value>Add New +</value>
+  </data>
+  <data name="SiteSettings_Categories_DeleteCategoryMessage" xml:space="preserve">
+    <value>Are you sure you want to delete the "{0}" category?</value>
+  </data>
+  <data name="SiteSettings_Categories_NameColumn" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="SiteSettings_Categories_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SiteSettings_Categories_Title" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="SiteSettings_TagsMenuItem" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="SiteSettings_Tags_AddNewTag" xml:space="preserve">
+    <value>Add New +</value>
+  </data>
+  <data name="SiteSettings_Tags_DeleteTagMessage" xml:space="preserve">
+    <value>Are you sure you want to delete the "{0}" tag?</value>
+  </data>
+  <data name="SiteSettings_Tags_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SiteSettings_Tags_TagColumn" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="SiteSettings_Tags_Title" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="SiteSettings_Title" xml:space="preserve">
+    <value>Site Settings</value>
+  </data>
+  <data name="UserRole_Administration" xml:space="preserve">
+    <value>Manage Widgets, Templates, Users, etc.</value>
+  </data>
+  <data name="UserRole_DeleteContent" xml:space="preserve">
+    <value>Delete Content, Images, Files, Folders, etc.</value>
+  </data>
+  <data name="UserRole_EditContent" xml:space="preserve">
+    <value>Add / Edit Content</value>
+  </data>
+  <data name="UserRole_PublishContent" xml:space="preserve">
+    <value>Publish / Unpublish Content, Restore Content from History</value>
+  </data>
+  <data name="Validation_CurrentUserHasNoRightsToUpdateOrDelete_Message" xml:space="preserve">
+    <value>Current user "{0}" has no access rights to update or delete the "{1}" secured record.</value>
+  </data>
+  <data name="Validation_Email_Message" xml:space="preserve">
+    <value>Invalid email address.</value>
+  </data>
+  <data name="Validation_FieldIsRequired_Message" xml:space="preserve">
+    <value>This field is required.</value>
+  </data>
+  <data name="Validation_MaximumLengthExceeded_Message" xml:space="preserve">
+    <value>Maximum length cannot exceed {0} characters.</value>
+  </data>
+  <data name="Validation_RangeAttribute_Message" xml:space="preserve">
+    <value>Field must be a number with value between {1} and {2}.</value>
+  </data>
+  <data name="Validation_RegularExpressionAttribute_Message" xml:space="preserve">
+    <value>The field must match the regular expression.</value>
+  </data>
+  <data name="Validation_RegularExpression_Message" xml:space="preserve">
+    <value>The field must match the regular expression.</value>
+  </data>
+  <data name="Validation_RequiredAttribute_Message" xml:space="preserve">
+    <value>Field is required.</value>
+  </data>
+  <data name="Validation_SecuredObjectShouldHaveAccess_Message" xml:space="preserve">
+    <value>User access rules can't be updated because of the complete access lose.</value>
+  </data>
+  <data name="Validation_StringLengthAttribute_Message" xml:space="preserve">
+    <value>The field must be the string with a maximum length of {1}.</value>
+  </data>
+  <data name="WaterMark_Search" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="WidgetStatus_Draft" xml:space="preserve">
+    <value>Draft</value>
+  </data>
+  <data name="WidgetStatus_Published" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="WidgetStatus_PublishedWithDraft" xml:space="preserve">
+    <value>Published (With Draft)</value>
+  </data>
+  <data name="Message_NoItemToSelect" xml:space="preserve">
+    <value>No item to select.</value>
+  </data>
+  <data name="SiteSettings_LanguagesMenuItem" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="CreateLanguage_CreatedSuccessfully_Message" xml:space="preserve">
+    <value>Language created successfully</value>
+  </data>
+  <data name="DeleteLanguage_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete the language "{0}"?</value>
+  </data>
+  <data name="DeleteLanguage_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>Language deleted successfully</value>
+  </data>
+  <data name="SaveLanguageCommand_CodeAlreadyExists_Message" xml:space="preserve">
+    <value>Language with code {0} already exists.</value>
+  </data>
+  <data name="SaveLanguageCommand_NameAlreadyExists_Message" xml:space="preserve">
+    <value>Language with name "{0}" already exists.</value>
+  </data>
+  <data name="SiteSettings_Languages_Code_Title" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="SiteSettings_Languages_Name_Title" xml:space="preserve">
+    <value>Custom name</value>
+  </data>
+  <data name="SiteSettings_Languages_Title" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="Button_Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="SaveLanguageCommand_LanguageNotExists_Message" xml:space="preserve">
+    <value>Language "{0}" doesn't exist.</value>
+  </data>
+  <data name="DeleteLanguageCommand_PagesAreUsingLanguage_Message" xml:space="preserve">
+    <value>Cannot delete language "{0}", because it's used in pages.</value>
+  </data>
+  <data name="InvariantLanguage_Title" xml:space="preserve">
+    <value>Default language</value>
+  </data>
+  <data name="DynamicContent_DialogUnauthorized_Message" xml:space="preserve">
+    <value>Your session is expired. Please re-login to continue.</value>
+  </data>
+  <data name="ChildContent_WidgetNotFound_ById" xml:space="preserve">
+    <value>Widget not found by specified id.</value>
+  </data>
+  <data name="ChildContent_AssignmentAlreadyAdded" xml:space="preserve">
+    <value>Assignment with id "{0}" added more than once as the child widget.</value>
+  </data>
+  <data name="ChildContent_CirculatReferenceDetected" xml:space="preserve">
+    <value>Cannot add widget as child widget! One of child widgets references widget "{0}", which causes circular reference.</value>
+  </data>
+  <data name="ChildContent_FailedToParseAssignmentId_MEssage" xml:space="preserve">
+    <value>Failed while parsing child widgets from content. Child widget tag should contain data-assign-id attribute with child widget assignment id.</value>
+  </data>
+  <data name="ChildContent_FailedToParseWidgetId_Message" xml:space="preserve">
+    <value>Failed while parsing child widgets from content. Child widget tag should contain data-id attribute with child widget id.</value>
+  </data>
+  <data name="TagsTemplate_AddTags_Title" xml:space="preserve">
+    <value>Add Tags</value>
+  </data>
+  <data name="Authentication_ViewAsPublic_Public" xml:space="preserve">
+    <value>Anonymous</value>
+  </data>
+  <data name="MasterPagesPath_CurrentPage_Title" xml:space="preserve">
+    <value>Current page</value>
+  </data>
+  <data name="SaveContent_ContentHasChildrenContents_RegionDeleteConfirmationMessage" xml:space="preserve">
+    <value>You are trying to delete dynamic regions. There are some children pages, which have contents created within these regions. If you delete this region, children page contens will be deleted also. Anyway, you can restore them by restoring archived version of current content. &lt;br /&gt;&lt;br /&gt;Are you sure you want to continue?</value>
+  </data>
+  <data name="ContentsTree_Dialog_Title" xml:space="preserve">
+    <value>Page structure</value>
+  </data>
+  <data name="ContentsSort_ResetSortChanges_Button" xml:space="preserve">
+    <value>Discard changes</value>
+  </data>
+  <data name="ContentsSort_SaveSortChanges_Button" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="ContentsSort_SaveSortChanges_ConfirmationMessage" xml:space="preserve">
+    <value>Some contents were sorted / moved to another regions. Do you want to save these changes before continue?</value>
+  </data>
+  <data name="Button_Manage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="ContentsTree_InvisibleItems_Title" xml:space="preserve">
+    <value>Lost &amp; Found regions</value>
+  </data>
+  <data name="ContentsTree_VisibleItems_Title" xml:space="preserve">
+    <value>Visible regions</value>
+  </data>
+  <data name="SiteSettings_CategoryTrees_AddNewCategoryTree" xml:space="preserve">
+    <value>Add New +</value>
+  </data>
+  <data name="SiteSettings_CategoryTrees_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SiteSettings_CategoryTrees_Title" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="SiteSettings_CategoryTrees_TitleColumn" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="CategoryTree_CreatorDialog_Title" xml:space="preserve">
+    <value>Add New Category</value>
+  </data>
+  <data name="CategoryTree_Dialog_Title_RequiredMessage" xml:space="preserve">
+    <value>Title is required.</value>
+  </data>
+  <data name="CategoryTree_DeleteNode_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete item "{0}"?</value>
+  </data>
+  <data name="CategoryTree_EditorDialog_Title" xml:space="preserve">
+    <value>Edit Category</value>
+  </data>
+  <data name="CategoryTree_PlaceLinkHere_Message" xml:space="preserve">
+    <value>Place category item here.</value>
+  </data>
+  <data name="CategoryTree_SomeNodesAreInEditingState" xml:space="preserve">
+    <value>At least one item is in editing mode.</value>
+  </data>
+  <data name="CategoryTree_TreeIsEmpty_Message" xml:space="preserve">
+    <value>Category has no items.</value>
+  </data>
+  <data name="CategoryTree_Button_CollapseAll" xml:space="preserve">
+    <value>Collapse All</value>
+  </data>
+  <data name="CategoryTree_Button_ExpandAll" xml:space="preserve">
+    <value>Expand All</value>
+  </data>
+  <data name="CategoryTree_EditDialog_Title_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="CategoryTree_EditDialog_Title_Tooltip_Description" xml:space="preserve">
+    <value>Edit the title of this category tree.</value>
+  </data>
+  <data name="CategoryTree_CategoryTreeCreatedSuccessfully_Message" xml:space="preserve">
+    <value>Category tree created successfully.</value>
+  </data>
+  <data name="CategoryTree_Dialog_NodeTitle_RequiredMessage" xml:space="preserve">
+    <value>Title is required.</value>
+  </data>
+  <data name="CategoryTree_NodeEdit_Macro_Placeholder_Message" xml:space="preserve">
+    <value>Type custom application data (macro) ...</value>
+  </data>
+  <data name="CategoryTree_NodeEdit_Macro_Tooltip_Message" xml:space="preserve">
+    <value>Edit the field dedicated to application developers for specific / custom functionality.</value>
+  </data>
+  <data name="CategoryTree_NodeEdit_Title_Tooltip_Message" xml:space="preserve">
+    <value>Edit the title of the category item as you would like it displayed.</value>
+  </data>
+  <data name="CategoryTree_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>Category tree deleted successfully.</value>
+  </data>
+  <data name="CategoryTree_Delete_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete the category tree?</value>
+  </data>
+  <data name="CategoryTree_Macro_Placeholder_Message" xml:space="preserve">
+    <value>Type custom application data (macro) ...</value>
+  </data>
+  <data name="CategoryTree_EditDialog_Macro_Title" xml:space="preserve">
+    <value>Macro</value>
+  </data>
+  <data name="CategoryTree_EditDialog_Macro_Tooltip_Message" xml:space="preserve">
+    <value>Edit the field dedicated to application developers for specific / custom functionality.</value>
+  </data>
+  <data name="CategoriesTemplate_AddCategories_Title" xml:space="preserve">
+    <value>Add Categories</value>
+  </data>
+  <data name="CategoryTree_EditDialog_UsedFor_Title" xml:space="preserve">
+    <value>Use For</value>
+  </data>
+  <data name="CategoryTree_EditDialog_UsedFor_Tooltip_Description" xml:space="preserve">
+    <value>This category will be used for selected objects. "Use For" items can be unchecked only if none of the category nodes are used for them.</value>
+  </data>
+  <data name="CategoryTree_EditDialog_NodesTab_Title" xml:space="preserve">
+    <value>Nodes</value>
+  </data>
+  <data name="CategoryTree_EditDialog_PropertiesTab_Title" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Validation_Category_Unavailable_Message" xml:space="preserve">
+    <value>Selected category '{0}' cannot be assigned.</value>
+  </data>
+  <data name="AntiXss_Contains_Html_Error" xml:space="preserve">
+    <value>The field must not contain html.</value>
+  </data>
+  <data name="Validation_DisallowHtml_Title_Message" xml:space="preserve">
+    <value>Title field must not contain HTML.</value>
+  </data>
+  <data name="Validation_DisallowHtml_Field_Message" xml:space="preserve">
+    <value>Field must not contain HTML.</value>
+  </data>
+  <data name="Validation_DisallowHtml_Name_Message" xml:space="preserve">
+    <value>Name field must not contain HTML.</value>
+  </data>
+  <data name="Validation_PreventHtml_Message" xml:space="preserve">
+    <value>This field cannot contain HTML.</value>
+  </data>
+  <data name="Validation_DisallowHtml_PageUrl_Message" xml:space="preserve">
+    <value>Page URL must not contain HTML.</value>
+  </data>
+  <data name="Validation_DisallowHtml_RedirectUrl_Message" xml:space="preserve">
+    <value>Redirect URL must not contain HTML.</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>Validation_PreventNonAlphanumeric_Message</value>
+  </data>
+  <data name="Validation_PreventNonAlphanumeric_Message" xml:space="preserve">
+    <value>Field invalid. Field can only contain alphanumeric characters: 'a-z', 'A-Z', '0-9'.</value>
+  </data>
+  <data name="Validation_ActiveDirectoryCompliant_Message" xml:space="preserve">
+    <value>The field must not contain any of the following characters: " / [ ] : ; | = , + * ? &lt; &gt; % or backslash</value>
+  </data>
+  <data name="Validation_ActiveDirectoryCompliant_TagMessage" xml:space="preserve">
+    <value>Tag must not contain any of the following characters: " / [ ] : ; | = , + * ? &lt; &gt; % or backslash</value>
+  </data>
+  <data name="Validation_ActiveDirectoryCompliant_CategoryMessage" xml:space="preserve">
+    <value>Category title must not contain any of the following characters: " / [ ] : ; | = , + * ? &lt; &gt; % or backslash</value>
+  </data>
+  <data name="SmartTag_BlogActivationDate_Title" xml:space="preserve">
+    <value>Blog post activation date</value>
+  </data>
+  <data name="SmartTag_BlogAuthor_Title" xml:space="preserve">
+    <value>Blog post author</value>
+  </data>
+  <data name="SmartTag_BlogExpirationDate_Title" xml:space="preserve">
+    <value>Blog post expiration date</value>
+  </data>
+  <data name="SmartTag_PageCategory_Title" xml:space="preserve">
+    <value>Category name</value>
+  </data>
+  <data name="SmartTag_PageCreatedOn_Title" xml:space="preserve">
+    <value>Page creation date</value>
+  </data>
+  <data name="SmartTag_PageFeaturedImageUrl_Title" xml:space="preserve">
+    <value>Featured image URL</value>
+  </data>
+  <data name="SmartTag_PageId_Title" xml:space="preserve">
+    <value>Page id</value>
+  </data>
+  <data name="SmartTag_PageMainImageUrl_Title" xml:space="preserve">
+    <value>Main image URL</value>
+  </data>
+  <data name="SmartTag_PageMetaDescription_Title" xml:space="preserve">
+    <value>Meta description</value>
+  </data>
+  <data name="SmartTag_PageMetaKeywords_Title" xml:space="preserve">
+    <value>Meta keywords</value>
+  </data>
+  <data name="SmartTag_PageMetaTitle_Title" xml:space="preserve">
+    <value>Meta title</value>
+  </data>
+  <data name="SmartTag_PageModifiedOn_Title" xml:space="preserve">
+    <value>Page last modification date</value>
+  </data>
+  <data name="SmartTag_PageOption_Title" xml:space="preserve">
+    <value>Page option</value>
+  </data>
+  <data name="SmartTag_PageSecondaryImageUrl_Title" xml:space="preserve">
+    <value>Secondary image URL</value>
+  </data>
+  <data name="SmartTag_PageTitle_Title" xml:space="preserve">
+    <value>Page title</value>
+  </data>
+  <data name="SmartTag_PageUrl_Title" xml:space="preserve">
+    <value>Page URL</value>
+  </data>
+  <data name="SmartTag_WidgetOption_Title" xml:space="preserve">
+    <value>Widget option</value>
+  </data>
+  <data name="Button_AddContent_Html" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="Button_AddContent_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
+  <data name="Button_AddContent_PlainText" xml:space="preserve">
+    <value>Plain text</value>
+  </data>
+  <data name="OptionTypes_MultilineText_Title" xml:space="preserve">
+    <value>Multi-line Text</value>
+  </data>
+  <data name="Button_AddContent_Widget" xml:space="preserve">
+    <value>Widget</value>
+  </data>
+  <data name="ContentEditMode_Html" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="ContentEditMode_Markdown" xml:space="preserve">
+    <value>Markdown</value>
+  </data>
+  <data name="ContentEditMode_SimpleText" xml:space="preserve">
+    <value>Simple Text</value>
+  </data>
+</root>

@@ -1,0 +1,49 @@
+﻿@using BetterCms.Module.Root.Mvc.Helpers
+@using BetterCms.Module.Search
+@using BetterCms.Module.Search.Content.Resources
+@model BetterCms.Module.Search.ViewModels.SearchResultsViewModel
+
+@if (Model != null)
+{
+    if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="bcms-search-results-error">
+            @Model.ErrorMessage 
+        </div>
+    } 
+    else if (Model.Results != null && !string.IsNullOrWhiteSpace(Model.Results.Query) && Model.Results.Items != null)
+    {
+        var showTotalResults = Model.WidgetViewModel.GetOptionValue<bool>(SearchModuleConstants.WidgetOptionNames.ShowTotalResults);
+
+        if (showTotalResults)
+        {
+            var message = Model.WidgetViewModel.GetOptionValue<string>(SearchModuleConstants.WidgetOptionNames.TotalCountMessage);
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                message = SearchGlobalization.SearchResults_TotalCount_Message;
+            }
+            message = string.Format(message, 
+                Model.Results.Items.Count, 
+                Model.Results.TotalResults, 
+                string.Format("<span class=\"bcms-total-search-results-query\">{0}</span>", HttpUtility.HtmlEncode(Model.Results.Query)));
+            
+            <div class="bcms-total-search-results">
+                @Html.Raw(message)
+            </div>
+        }
+
+        foreach (var item in Model.Results.Items)
+        {
+            var cssClass = !item.IsDenied ? "bcms-search-result" : "bcms-search-result bcms-denied-search-result";
+
+            <article class="@cssClass">
+                <h3>@item.Title</h3>
+                @if (!item.IsDenied)
+                {
+                    <a href="@(item.Link ?? "#")">@item.FormattedUrl</a>
+                }
+                <p>@item.Snippet</p>            
+            </article>
+        }
+    }
+}

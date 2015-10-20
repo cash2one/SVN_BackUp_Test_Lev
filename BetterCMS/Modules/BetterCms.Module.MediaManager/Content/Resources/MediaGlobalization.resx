@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AudiosTab_Title" xml:space="preserve">
+    <value>Audios</value>
+  </data>
+  <data name="AudiosTab_UploadAudio" xml:space="preserve">
+    <value>Upload Audio</value>
+  </data>
+  <data name="CreateFolder_CreatedSuccessfully_Message" xml:space="preserve">
+    <value>Folder created successfully.</value>
+  </data>
+  <data name="DeleteAudio_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete audio file {0}?</value>
+  </data>
+  <data name="DeleteAudio_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>Audio deleted successfully.</value>
+  </data>
+  <data name="DeleteFile_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete file {0}?</value>
+  </data>
+  <data name="DeleteFile_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>File deleted successfully.</value>
+  </data>
+  <data name="DeleteFolder_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to delete folder {0}?</value>
+  </data>
+  <data name="DeleteFolder_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>Folder deleted successfully.</value>
+  </data>
+  <data name="DeleteImage_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete the image {0}?</value>
+  </data>
+  <data name="DeleteImage_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>Image deleted successfully.</value>
+  </data>
+  <data name="DeleteVideo_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete video file {0}?</value>
+  </data>
+  <data name="DeleteVideo_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>Video deleted successfully.</value>
+  </data>
+  <data name="FileNotSelected_MessageMessage" xml:space="preserve">
+    <value>Click on file to select it.</value>
+  </data>
+  <data name="FileNotSelected_MessageTitle" xml:space="preserve">
+    <value>Select file</value>
+  </data>
+  <data name="FilesTab_Title" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="FilesTab_UploadFile" xml:space="preserve">
+    <value>Upload file</value>
+  </data>
+  <data name="FileUpload_Failed_ImageFormatNotSuported" xml:space="preserve">
+    <value>Failed! Can upload only gif, jpg, jpeg, png or bmp.</value>
+  </data>
+  <data name="ImageEditor_CroppingDialog_SubTitle" xml:space="preserve">
+    <value>Select area to crop.</value>
+  </data>
+  <data name="ImageEditor_Dialog_AligmentTitle" xml:space="preserve">
+    <value>Image alignment</value>
+  </data>
+  <data name="ImageEditor_Dialog_Caption" xml:space="preserve">
+    <value>Caption</value>
+  </data>
+  <data name="ImageEditor_Dialog_Caption_Tooltip_Description" xml:space="preserve">
+    <value>Edit the title of this image.</value>
+  </data>
+  <data name="ImageEditor_Dialog_ChangeSize_Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="ImageEditor_Dialog_ChangeSize_Title" xml:space="preserve">
+    <value>Change Image Size</value>
+  </data>
+  <data name="ImageEditor_Dialog_ChangeSize_Tooltip_Description" xml:space="preserve">
+    <value>Purpose of image size changing is ...</value>
+  </data>
+  <data name="ImageEditor_Dialog_ChangeSize_Width" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="ImageEditor_Dialog_CropImage_Title" xml:space="preserve">
+    <value>Crop image</value>
+  </data>
+  <data name="ImageEditor_Dialog_CropImage_Tooltip_Description" xml:space="preserve">
+    <value>Click and drag to select the portion of the image you would like to use in this post.</value>
+  </data>
+  <data name="ImageEditor_Dialog_Dimensions" xml:space="preserve">
+    <value>Dimensions (pixels)</value>
+  </data>
+  <data name="ImageEditor_Dialog_FileName" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ImageEditor_Dialog_FileSize" xml:space="preserve">
+    <value>File size</value>
+  </data>
+  <data name="ImageEditor_Dialog_FitImage_Title" xml:space="preserve">
+    <value>Fit Image</value>
+  </data>
+  <data name="ImageEditor_Dialog_ImageCaption_MaxLengthMessage" xml:space="preserve">
+    <value>Caption max length exceeded.</value>
+  </data>
+  <data name="ImageEditor_Dialog_ImageHeight_RangeMessage" xml:space="preserve">
+    <value>Image height can not be less than 1 px and bigger that 9999.</value>
+  </data>
+  <data name="ImageEditor_Dialog_ImageHeight_RequiredMessage" xml:space="preserve">
+    <value>Image height is required.</value>
+  </data>
+  <data name="ImageEditor_Dialog_ImageName_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="ImageEditor_Dialog_ImageTitle_Title" xml:space="preserve">
+    <value>Change Image Name</value>
+  </data>
+  <data name="ImageEditor_Dialog_ImageTitle_Tooltip_Description" xml:space="preserve">
+    <value>Image Name</value>
+  </data>
+  <data name="ImageEditor_Dialog_ImageWidth_RangeMessage" xml:space="preserve">
+    <value>Image width can not be less than 1 px and bigger that 9999.</value>
+  </data>
+  <data name="ImageEditor_Dialog_ImageWidth_RequiredMessage" xml:space="preserve">
+    <value>Image width is required.</value>
+  </data>
+  <data name="ImageEditor_Dialog_RestoreOriginalSize_Title" xml:space="preserve">
+    <value>Restore Original Size</value>
+  </data>
+  <data name="ImageEditor_Dialog_SubTitle" xml:space="preserve">
+    <value>Image Information</value>
+  </data>
+  <data name="ImageEditor_Dialog_Title" xml:space="preserve">
+    <value>Image properties</value>
+  </data>
+  <data name="ImageEditor_InsertDialog_AcceptButton" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="ImageEditor_InsertDialog_Title" xml:space="preserve">
+    <value>Insert Image Options</value>
+  </data>
+  <data name="ImageEditor_UpdateFailureMessage_Message" xml:space="preserve">
+    <value>Failed to save image properties.</value>
+  </data>
+  <data name="ImageEditor_UpdateFailureMessage_Title" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+  <data name="ImageNotSelected_MessageMessage" xml:space="preserve">
+    <value>Click on image to select it.</value>
+  </data>
+  <data name="ImageNotSelected_MessageTitle" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="ImagesTab_Grid" xml:space="preserve">
+    <value>Grid</value>
+  </data>
+  <data name="ImagesTab_List" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="ImagesTab_Title" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="ImagesTab_UploadImage" xml:space="preserve">
+    <value>Upload Image</value>
+  </data>
+  <data name="InsertFile_Dialog_Title" xml:space="preserve">
+    <value>Insert File</value>
+  </data>
+  <data name="InsertFile_FailureMessage_Message" xml:space="preserve">
+    <value>Failed to get files list.</value>
+  </data>
+  <data name="InsertFile_FailureMessage_Title" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+  <data name="InsertImage_Dialog_Title" xml:space="preserve">
+    <value>Insert Image</value>
+  </data>
+  <data name="InsertImage_FailureMessage_Message" xml:space="preserve">
+    <value>Failed to get image list.</value>
+  </data>
+  <data name="InsertImage_FailureMessage_Title" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+  <data name="MediaList_FileNameColumn" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="MediaList_FileSizeColumn" xml:space="preserve">
+    <value>File Size</value>
+  </data>
+  <data name="MediaList_FileTypeColumn" xml:space="preserve">
+    <value>File Type</value>
+  </data>
+  <data name="MediaManager_AddNewFolder" xml:space="preserve">
+    <value>Add New Folder</value>
+  </data>
+  <data name="MediaManager_ButtonDownload" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="MediaManager_ButtonInsertFile" xml:space="preserve">
+    <value>Insert File</value>
+  </data>
+  <data name="MediaManager_ButtonInsertImage" xml:space="preserve">
+    <value>Insert Image</value>
+  </data>
+  <data name="MediaManager_ButtonInsertImageWithOptions" xml:space="preserve">
+    <value>Insert Image With Options</value>
+  </data>
+  <data name="MediaManager_ButtonPreviewImage" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="MediaManager_NewFolder" xml:space="preserve">
+    <value>New Folder</value>
+  </data>
+  <data name="MultiFileUpload_CancelUploading" xml:space="preserve">
+    <value>Cancel All Uploads</value>
+  </data>
+  <data name="MultiFileUpload_DialogTitle" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="MultiFileUpload_DragDropBox" xml:space="preserve">
+    <value>Drag files here to upload</value>
+  </data>
+  <data name="MultiFileUpload_OverriveOption" xml:space="preserve">
+    <value>Override options</value>
+  </data>
+  <data name="MultiFileUpload_Failed" xml:space="preserve">
+    <value>Your upload attempt failed!</value>
+  </data>
+  <data name="MultiFileUpload_FileSize" xml:space="preserve">
+    <value>Size:</value>
+  </data>
+  <data name="MultiFileUpload_FileUploadedMessage" xml:space="preserve">
+    <value>Success! Image uploaded.</value>
+  </data>
+  <data name="MultiFileUpload_ImageFormatNotSuported" xml:space="preserve">
+    <value>It is not an image or file format is not supported.</value>
+  </data>
+  <data name="MultiFileUpload_SaveFailed" xml:space="preserve">
+    <value>Failed to save uploaded files.</value>
+  </data>
+  <data name="MultiFileUpload_SaveFailed_FolderDeleted" xml:space="preserve">
+    <value>Folder you trying to save uploaded files is deleted.</value>
+  </data>
+  <data name="MultiFileUpload_SelectFolder" xml:space="preserve">
+    <value>Select folder where to upload files</value>
+  </data>
+  <data name="MultiFileUpload_SelectFolder_Help_Message" xml:space="preserve">
+    <value>Select the folder where you would like to store your files.</value>
+  </data>
+  <data name="MultiFileUpload_Success" xml:space="preserve">
+    <value>Success! File uploaded.</value>
+  </data>
+  <data name="MultiFileUpload_Title" xml:space="preserve">
+    <value>Upload New File</value>
+  </data>
+  <data name="MultiFileUpload_UploadButton" xml:space="preserve">
+    <value>Upload from computer</value>
+  </data>
+  <data name="MultiFileUpload_Uploading" xml:space="preserve">
+    <value>Uploading...</value>
+  </data>
+  <data name="SingleFileUpload_DragDropBox" xml:space="preserve">
+    <value>Select file to upload</value>
+  </data>
+  <data name="SiteSettings_MediaManagerMenuItem" xml:space="preserve">
+    <value>Media Manager</value>
+  </data>
+  <data name="VideosTab_Title" xml:space="preserve">
+    <value>Videos</value>
+  </data>
+  <data name="VideosTab_UploadVideo" xml:space="preserve">
+    <value>Upload Video</value>
+  </data>
+  <data name="MediaManager_FailedToProcessFile_Message" xml:space="preserve">
+    <value>Failed to process file</value>
+  </data>
+  <data name="MediaManager_FileStillProcessing_Message" xml:space="preserve">
+    <value>File is still processing</value>
+  </data>
+  <data name="MultiFileUpload_Processing_ServerSide" xml:space="preserve">
+    <value>Upload completed. File is still processing in the server.</value>
+  </data>
+  <data name="ImageEditor_Dialog_PublicUrl" xml:space="preserve">
+    <value>Public URL</value>
+  </data>
+  <data name="MediaManager_IncludeArchived_Message" xml:space="preserve">
+    <value>Include archived items</value>
+  </data>
+  <data name="MediaManager_SearchInHistoryItems_Message" xml:space="preserve">
+    <value>Search in history items</value>
+  </data>
+  <data name="ArchiveFile_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to send the file {0} to archive?</value>
+  </data>
+  <data name="ArchiveImage_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to send the image {0} to archive?</value>
+  </data>
+  <data name="ArchiveMedia_ArchivedSuccessfully_Message" xml:space="preserve">
+    <value>Media sent to archive successfully.</value>
+  </data>
+  <data name="ArchiveMedia_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to send the folder {0} to archive?</value>
+  </data>
+  <data name="ArchiveVideo_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to send the video {0} to archive?</value>
+  </data>
+  <data name="MediaManager_ButtonArchive" xml:space="preserve">
+    <value>Archive</value>
+  </data>
+  <data name="MediaManager_ButtonUnarchive" xml:space="preserve">
+    <value>Unarchive</value>
+  </data>
+  <data name="UnarchiveFile_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to pull out file {0} from archive?</value>
+  </data>
+  <data name="UnarchiveImage_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to pull out image {0} from archive?</value>
+  </data>
+  <data name="UnarchiveMedia_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to pull out folder {0} from archive?</value>
+  </data>
+  <data name="UnarchiveMedia_UnarchivedSuccessfully_Message" xml:space="preserve">
+    <value>Media pulled out from archive successfully.</value>
+  </data>
+  <data name="UnarchiveVideo_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to pull out video {0} from archive?</value>
+  </data>
+  <data name="Button_Reupload" xml:space="preserve">
+    <value>Re-upload</value>
+  </data>
+  <data name="MultiFileUpload_DragDropBox_Reupload" xml:space="preserve">
+    <value>Drag file here to re-upload</value>
+  </data>
+  <data name="MediaHistory_Column_ArchivedOn" xml:space="preserve">
+    <value>Archived On</value>
+  </data>
+  <data name="MediaHistory_Column_PublishedByUser" xml:space="preserve">
+    <value>Published By</value>
+  </data>
+  <data name="MediaHistory_Column_PublishedOn" xml:space="preserve">
+    <value>Published On</value>
+  </data>
+  <data name="MediaHistory_Column_DisplayedFor" xml:space="preserve">
+    <value>Active For</value>
+  </data>
+  <data name="MediaHistory_Column_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="MediaHistory_SelectVersionToPreviewMessage" xml:space="preserve">
+    <value>Select version to preview history</value>
+  </data>
+  <data name="MediaHistory_OlderVersions" xml:space="preserve">
+    <value>Older Versions</value>
+  </data>
+  <data name="MediaHistory_DialogTitle" xml:space="preserve">
+    <value>History - Media Versions Preview</value>
+  </data>
+  <data name="MediaHistory_Restore_AcceptButtonTitle" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="MediaHistory_Restore_ConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to restore to older version?</value>
+  </data>
+  <data name="Button_ShowHistory" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="MediaHistory_Preview_PropertiesTitle" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="MediaHistory_Preview_Properties_Caption" xml:space="preserve">
+    <value>Caption</value>
+  </data>
+  <data name="MediaHistory_Preview_Properties_FileSize" xml:space="preserve">
+    <value>File Size</value>
+  </data>
+  <data name="MediaHistory_Preview_Properties_ImageDimensions" xml:space="preserve">
+    <value>Dimensions (pixels)</value>
+  </data>
+  <data name="MediaHistory_Preview_Properties_PublicThumbnailUrl" xml:space="preserve">
+    <value>Public Thumbnail Url</value>
+  </data>
+  <data name="MediaHistory_Preview_Properties_PublicUrl" xml:space="preserve">
+    <value>Public URL</value>
+  </data>
+  <data name="MediaHistory_Preview_Properties_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="MediaHistory_Status_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="MediaHistory_Status_Archived" xml:space="preserve">
+    <value>Archived</value>
+  </data>
+  <data name="MediaList_RootFolderName" xml:space="preserve">
+    <value>(root)</value>
+  </data>
+  <data name="MediaManager_MultipleFilesWarning_Message" xml:space="preserve">
+    <value>You can select only one file to re-upload.</value>
+  </data>
+  <data name="FileEditor_Dialog_Title" xml:space="preserve">
+    <value>File Properties</value>
+  </data>
+  <data name="FileEditor_UpdateFailureMessage_Message" xml:space="preserve">
+    <value>Failed to save file properties.</value>
+  </data>
+  <data name="FileEditor_UpdateFailureMessage_Title" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+  <data name="FileEditor_Dialog_FileSize" xml:space="preserve">
+    <value>File size</value>
+  </data>
+  <data name="FileEditor_Dialog_Title_Tooltip_Description" xml:space="preserve">
+    <value>Edit the title of this file.</value>
+  </data>
+  <data name="FileProperties_Dialog_PublicUrl" xml:space="preserve">
+    <value>Public URL</value>
+  </data>
+  <data name="FileEditor_Dialog_PublicUrl_Tooltip_Description" xml:space="preserve">
+    <value>Public URL for direct access. It is posible to copy it.</value>
+  </data>
+  <data name="FileEditor_Dialog_AddTags_Tooltip_Description" xml:space="preserve">
+    <value>Add tags to this file to identify it with related files.</value>
+  </data>
+  <data name="SiteSettings_FilterByTags" xml:space="preserve">
+    <value>By Tags</value>
+  </data>
+  <data name="FileEditor_Dialog_Image_SelectButtonTitle" xml:space="preserve">
+    <value>Select Image</value>
+  </data>
+  <data name="FileEditor_Dialog_Image_Title" xml:space="preserve">
+    <value>Thumbnail image</value>
+  </data>
+  <data name="FileEditor_Dialog_Image_Tooltip_Description" xml:space="preserve">
+    <value>Image will be displayed as a thumbnail with the file.</value>
+  </data>
+  <data name="FileEditor_Dialog_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="FileEditor_Dialog_Description_Tooltip_Description" xml:space="preserve">
+    <value>Type or paste the description text of the file.</value>
+  </data>
+  <data name="ImageEditor_Dialog_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ImageEditor_Dialog_Description_Tooltip_Description" xml:space="preserve">
+    <value>Type or paste the description text of the image.</value>
+  </data>
+  <data name="MediaHistory_Preview_Properties_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MediaHistory_Preview_Properties_Thumbnail" xml:space="preserve">
+    <value>Thumbnail</value>
+  </data>
+  <data name="SiteSettings_Media_FilterIsModified" xml:space="preserve">
+    <value>modified</value>
+  </data>
+  <data name="MediaManager_ButtonProperties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="MediaManager_ItemParentFolder_Prefix" xml:space="preserve">
+    <value>In folder</value>
+  </data>
+  <data name="MediaManager_SearchedInPath_Prefix" xml:space="preserve">
+    <value>Searched in</value>
+  </data>
+  <data name="ImageEditor_Dialog_Tags_Title" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="TokenBasedSecurity_NotSupported_Message" xml:space="preserve">
+    <value>Current storage service doesn't support token based security. Change storage configuration or all the files will be uploaded as unsecured.</value>
+  </data>
+  <data name="InsertImage_InsertButton_Title" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="MediaManager_ButtonSelectFolder" xml:space="preserve">
+    <value>Select folder</value>
+  </data>
+  <data name="SelectFolder_Dialog_Title" xml:space="preserve">
+    <value>Select Folder</value>
+  </data>
+  <data name="SelectFolder_FailureMessage_Message" xml:space="preserve">
+    <value>Failed to get folders list.</value>
+  </data>
+  <data name="SelectFolder_FailureMessage_Title" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+  <data name="SelectFolder_SelectButton_Title" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="RootFolder_Title" xml:space="preserve">
+    <value>Root folder</value>
+  </data>
+  <data name="MediaManager_ImageDimensions" xml:space="preserve">
+    <value>Image dimensions</value>
+  </data>
+  <data name="MediaManager_ImageSize" xml:space="preserve">
+    <value>File size</value>
+  </data>
+  <data name="ImageEditor_Dialog_CroppedDimensions" xml:space="preserve">
+    <value>Cropped image dimensions (pixels)</value>
+  </data>
+  <data name="MediaHistory_Preview_Properties_CroppedImageDimensions" xml:space="preserve">
+    <value>Cropped image dimensions (pixels)</value>
+  </data>
+  <data name="MediaManager_Search_NoMatchesFound" xml:space="preserve">
+    <value>No matches found for "{0}".</value>
+  </data>
+  <data name="MediaManager_Search_TrySearchInHistory" xml:space="preserve">
+    <value>Try searching again in older versions of media items.</value>
+  </data>
+  <data name="FileEditor_Dialog_Reupload_Title" xml:space="preserve">
+    <value>Re-upload</value>
+  </data>
+  <data name="ImageEditor_Dialog_Reupload_Title" xml:space="preserve">
+    <value>Re-upload</value>
+  </data>
+  <data name="FileEditor_HasChanges_Message" xml:space="preserve">
+    <value>File properies have changed. Do you want to save a file before continue?</value>
+  </data>
+  <data name="ImageEditor_HasChanges_Message" xml:space="preserve">
+    <value>Image properties have changed. Do you want to save an image before continue?</value>
+  </data>
+  <data name="FileEditor_Dialog_Title_Title" xml:space="preserve">
+    <value>File title</value>
+  </data>
+  <data name="MediaHistory_RestoreAsNewVersion_AcceptButtonTitle" xml:space="preserve">
+    <value>Restore as new</value>
+  </data>
+  <data name="MediaHistory_RestoreWithOverride_AcceptButtonTitle" xml:space="preserve">
+    <value>Restore with override</value>
+  </data>
+  <data name="ImageEditor_Save_Title" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ImageEditor_SaveWithOverride_Title" xml:space="preserve">
+    <value>Save with override</value>
+  </data>
+  <data name="ImageEditor_SaveAsNewVersion_Title" xml:space="preserve">
+    <value>Save new version</value>
+  </data>
+  <data name="ImageUpload_SaveWithOverride_Title" xml:space="preserve">
+    <value>Upload with override</value>
+  </data>
+  <data name="ImageUpload_SaveAsNewVersion_Title" xml:space="preserve">
+    <value>Upload as new version</value>
+  </data>
+  <data name="FileEditor_Dialog_Category_Title" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="FileEditor_Dialog_Category_Tooltip_Description" xml:space="preserve">
+    <value>Assign this file to a category to identify it with similar files.</value>
+  </data>
+  <data name="ImageEditor_Dialog_Category_Title" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="ImageEditor_Dialog_Category_Tooltip_Description" xml:space="preserve">
+    <value>Assign this image to a category to identify it with similar images.</value>
+  </data>
+  <data name="SiteSettings_FilterByCategory" xml:space="preserve">
+    <value>By Category</value>
+  </data>
+</root>

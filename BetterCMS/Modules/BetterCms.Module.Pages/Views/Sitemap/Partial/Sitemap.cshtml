@@ -1,0 +1,12 @@
+﻿@using BetterCms.Module.Pages.Content.Resources
+@using BetterCms.Module.Root.Content.Resources
+@using BetterCms.Module.Root.Mvc.Helpers
+@model BetterCms.Module.Pages.ViewModels.Sitemap.SitemapNodeViewModel
+<!-- ko with: sitemap -->
+<!-- ko if: hasChildNodes() && showHasNoDataMessage() -->
+<div class="bcms-nodes-dropzone bcms-nodes-dropzone-active">
+    <div class="bcms-node-infotext">@RootGlobalization.Grid_NoDataAvailable_Message</div>
+</div>
+<!-- /ko -->
+<div data-bind='template: { name: "bcms-navigation-sitemapnode-template" }'></div>
+<!-- /ko -->

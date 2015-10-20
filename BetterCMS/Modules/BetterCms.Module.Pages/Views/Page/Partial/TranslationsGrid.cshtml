@@ -1,0 +1,69 @@
+﻿@using BetterCms.Module.Pages.Content.Resources
+@using BetterCms.Module.Root.Content.Resources
+    
+<div data-bind="with: translations" class="bcms-page-translations-content">
+    <div class="bcms-add-language-button">
+        <div class="bcms-btn-links-main" data-bind="click: startEditMode">@PagesGlobalization.EditPageTranslations_AddTranslation_ButtonTitle</div>
+    </div>
+    
+    <table class="bcms-tables">
+        <thead>
+            <tr>
+                <th></th>
+                <th style="width: 350px;">@PagesGlobalization.EditPageTranslations_Title_Title</th>
+                <th style="width: 250px;">@PagesGlobalization.EditPageTranslations_Language_Title</th>
+                <th>@PagesGlobalization.EditPageTranslations_Url_Title</th>
+                <th class="bcms-tables-nohover" style="width: 145px;">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <!-- ko foreach: items -->
+            <tr>
+                <td></td>
+                <td data-bind="html: title()"></td>
+                <td data-bind="html: languageName()"></td>
+                <td><a data-bind="html: url(), attr: {href: url()}" target="_blank"></a></td>
+                <td>
+                    <a class="bcms-icn-delete" data-bind="click: $parent.unassignPage">@RootGlobalization.Button_Delete</a>
+                </td>
+            </tr>
+            <!-- /ko -->
+            
+            <!-- ko if: items().length == 0 && !isInAddMode() -->
+            <tr>
+                <td colspan="5"><span class="bcms-table-no-data">@RootGlobalization.Grid_NoDataAvailable_Message</span></td>
+            </tr>
+            <!-- /ko -->
+
+            <!-- ko if: isInAddMode() -->
+            <tr class="bcms-table-row-active">
+                <td></td>
+                <td>
+                    <input  style="width: 230px;" type="text" class="bcms-editor-field-box" data-bind="value: addPageTitle, autocomplete: 'onlyExisting', hasfocus: hasFocus, enterPress: addTranslation, escPress: endEditMode" placeholder="@PagesGlobalization.EditPageProperties_TranslationsTab_PageSelectionPlaceholder" />
+                    <div class="bcms-btn-links-main" data-bind="click: selectPage">BROWSE...</div>
+                </td>
+                <td colspan="2">
+                    <!-- ko if: addPageId() && addingPageLanguages().length > 1 -->
+                    <select style="width: 100%;" class="bcms-global-select" data-bind="options: addingPageLanguages, optionsText: 'value', optionsValue: 'key', value: addLanguageId"></select>
+                    <!-- /ko -->
+                    <!-- ko if: addPageId() && addingPageLanguages().length == 1 -->
+                    <span data-bind="html: addingPageLanguages()[0].value"></span>
+                    <!-- /ko -->
+                </td>
+                <td>
+                    <!-- ko if: addLanguageId() -->
+                    <div class="bcms-btn-small" data-bind="click: addTranslation">@RootGlobalization.Button_Ok</div>
+                    <!-- /ko -->
+                    <div class="bcms-btn-links-small" data-bind="click: endEditMode">@RootGlobalization.Button_Cancel</div>
+                </td>
+            </tr>
+            <!-- /ko -->
+        </tbody>
+    </table>
+</div>
+
+<!-- ko foreach: translations.items -->
+<input type="hidden" data-bind="attr: { name: getPropertyIndexer($index(), 'LanguageId') }, value: languageId()" />
+<input type="hidden" data-bind="attr: { name: getPropertyIndexer($index(), 'Id') }, value: id()" />
+<!-- /ko -->

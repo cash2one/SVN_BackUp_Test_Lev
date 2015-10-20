@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BlogPost_LiveFrom_DateNotValidationMessage" xml:space="preserve">
+    <value>The field Live From must be a date.</value>
+  </data>
+  <data name="BlogPost_LiveFrom_RequiredMessage" xml:space="preserve">
+    <value>The field Live From is required.</value>
+  </data>
+  <data name="BlogPost_LiveTo_DateNotValidationMessage" xml:space="preserve">
+    <value>The field Live To must be a date.</value>
+  </data>
+  <data name="BlogPost_LiveTo_ValidationMessage" xml:space="preserve">
+    <value>Live To date must be greater than Live From.</value>
+  </data>
+  <data name="CreateAuthor_CreatedSuccessfully_Message" xml:space="preserve">
+    <value>Author created successfully</value>
+  </data>
+  <data name="CreateNewPost_Dialog_Title" xml:space="preserve">
+    <value>Create New Post</value>
+  </data>
+  <data name="Date_Picker_Tooltip_Title" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="DeleteAuthor_Confirmation_Message" xml:space="preserve">
+    <value>Are you sure you want to delete author {0}?</value>
+  </data>
+  <data name="DeleteAuthor_DeletedSuccessfully_Message" xml:space="preserve">
+    <value>Author deleted successfully</value>
+  </data>
+  <data name="DeletePost_Dialog_Title" xml:space="preserve">
+    <value>Delete Blog</value>
+  </data>
+  <data name="EditBlockPost_AddTags_Title" xml:space="preserve">
+    <value>Add Tags</value>
+  </data>
+  <data name="EditBlogPost_Author_Title" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="EditBlogPost_Author_Tooltip_Description" xml:space="preserve">
+    <value>Specify the author of this post.</value>
+  </data>
+  <data name="EditBlockPost_Category_Title" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="EditBlogPost_Category_Tooltip_Description" xml:space="preserve">
+    <value>Assign this post to a category to identify it with similar posts.</value>
+  </data>
+  <data name="EditBlogPost_Content_Title" xml:space="preserve">
+    <value>Full Post</value>
+  </data>
+  <data name="EditBlogPost_Content_Tooltip_Description" xml:space="preserve">
+    <value>Type or paste the entire body of the post.</value>
+  </data>
+  <data name="EditBlogPost_FeaturedImage_Description" xml:space="preserve">
+    <value>Image will be displayed as a thumbnail with your post.</value>
+  </data>
+  <data name="EditBlogPost_FeaturedImage_Title" xml:space="preserve">
+    <value>Main Image</value>
+  </data>
+  <data name="EditBlogPost_FeaturedImage_Tooltip_Description" xml:space="preserve">
+    <value>Select an image that will accompany your post.</value>
+  </data>
+  <data name="EditBlogPost_IntroText_Title" xml:space="preserve">
+    <value>Intro / Featured Text</value>
+  </data>
+  <data name="EditBlogPost_IntroText_Tooltip_Description" xml:space="preserve">
+    <value>Type or paste the introductory text of the post.</value>
+  </data>
+  <data name="EditBlogPost_LiveDates_Tooltip_Description" xml:space="preserve">
+    <value>Specify the date you would like this post to be visible on your website. If applicable, specify the date this post should expire.</value>
+  </data>
+  <data name="EditBlogPost_LiveFrom_Title" xml:space="preserve">
+    <value>Live From</value>
+  </data>
+  <data name="EditBlogPost_LiveTo_Title" xml:space="preserve">
+    <value>Live To</value>
+  </data>
+  <data name="EditBlogPost_SelectImage_Button_Title" xml:space="preserve">
+    <value>Select Image</value>
+  </data>
+  <data name="EditBlogPost_Tags_Tooltip_Description" xml:space="preserve">
+    <value>Add tags to this post to identify it with related posts.</value>
+  </data>
+  <data name="EditBlogPost_Title_Title" xml:space="preserve">
+    <value>Title of the Post (H1)</value>
+  </data>
+  <data name="EditBlogPost_Title_Tooltip_Description" xml:space="preserve">
+    <value>Edit the title of this post.</value>
+  </data>
+  <data name="EditPost_Dialog_Title" xml:space="preserve">
+    <value>Edit article</value>
+  </data>
+  <data name="SaveBlogPost_LayoutNotFound_Message" xml:space="preserve">
+    <value>There are no compatible layouts for blog post.</value>
+  </data>
+  <data name="SaveBlogPost_RegionNotFound_Message" xml:space="preserve">
+    <value>Region {0} not found. It's the default region for blog post content.</value>
+  </data>
+  <data name="Sidebar_AddNewPostButtonTitle" xml:space="preserve">
+    <value>Post new article</value>
+  </data>
+  <data name="SiteSettings_AuthorsTab_AuthorImage_Title" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="SiteSettings_AuthorsTab_AuthorName_Title" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SiteSettings_BlogsMenuItem" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="SiteSettings_Blogs_AddNew" xml:space="preserve">
+    <value>Add New +</value>
+  </data>
+  <data name="SiteSettings_Blogs_AuthorsTab_Title" xml:space="preserve">
+    <value>Authors</value>
+  </data>
+  <data name="SiteSettings_Blogs_CreatedColumn" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="SiteSettings_Blogs_PageStatusColumn" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="SiteSettings_Blogs_ModifiedByColumn" xml:space="preserve">
+    <value>LastEdited By</value>
+  </data>
+  <data name="SiteSettings_Blogs_ModifiedColumn" xml:space="preserve">
+    <value>Last Edited</value>
+  </data>
+  <data name="SiteSettings_Blogs_PostsTab_Title" xml:space="preserve">
+    <value>Posts</value>
+  </data>
+  <data name="SiteSettings_Blogs_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SiteSettings_Blogs_SettingsTab_Title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SiteSettings_Blogs_TitleColumn" xml:space="preserve">
+    <value>Posts Title</value>
+  </data>
+  <data name="SiteSettings_Templates_DefaultTemplate" xml:space="preserve">
+    <value>Default Layout</value>
+  </data>
+  <data name="SiteSettings_Templates_IncompatibleTemplate" xml:space="preserve">
+    <value>Not Compatible</value>
+  </data>
+  <data name="SiteSettings_Templates_SelectButton" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="SiteSettings_Templates_Title" xml:space="preserve">
+    <value>Select Default Blog Layout</value>
+  </data>
+  <data name="CreatePost_CreatedSuccessfully_Message" xml:space="preserve">
+    <value>Post created successfully</value>
+  </data>
+  <data name="EditBlogPost_PagePermalink_MaxLengthMessage" xml:space="preserve">
+    <value>Page permalink max length exceeded.</value>
+  </data>
+  <data name="EditBlogPost_Permalink" xml:space="preserve">
+    <value>Change Post URL</value>
+  </data>
+  <data name="EditBlogPost_Permalink_Tooltip_Description" xml:space="preserve">
+    <value>Edit the URL visitors will use to navigate to this post.</value>
+  </data>
+  <data name="EditBlogPost_CreatePermanentRedirectToOldUrl_Title" xml:space="preserve">
+    <value>Create permanent redirect entry from old URL to new URL.</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterByCategory" xml:space="preserve">
+    <value>By Category</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterByTags" xml:space="preserve">
+    <value>By Tags</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SiteSettings_Blogs_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterIncludeArchived" xml:space="preserve">
+    <value>Include archived items</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterIsModified" xml:space="preserve">
+    <value>modified</value>
+  </data>
+  <data name="EditBlogPost_UseCanonicalUrl" xml:space="preserve">
+    <value>Use canonical URL.</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterByLanguage" xml:space="preserve">
+    <value>By Language</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterBySEO" xml:space="preserve">
+    <value>By SEO status</value>
+  </data>
+  <data name="SiteSettings_Blogs_FilterByStatus" xml:space="preserve">
+    <value>By page status</value>
+  </data>
+  <data name="SiteSettings_Blogs_Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="SaveBlogPost_FailedToSave_InaccessibleMasterPage" xml:space="preserve">
+    <value>Cannot save blog post. Master page, which is selected as default blog post layout is inaccessible.</value>
+  </data>
+  <data name="ImportBlogPosts_Dialog_Title" xml:space="preserve">
+    <value>Import blog posts</value>
+  </data>
+  <data name="ImportBlogPosts_File_ButtonTitle" xml:space="preserve">
+    <value>Select XML file</value>
+  </data>
+  <data name="ImportBlogPosts_File_Description" xml:space="preserve">
+    <value>File to be imported in the Blog ML format</value>
+  </data>
+  <data name="ImportBlogPosts_PleaseSelectAFile_message" xml:space="preserve">
+    <value>Please select a file!</value>
+  </data>
+  <data name="BlogPost_IntroText_MaxLengthMessage" xml:space="preserve">
+    <value>Blog post intro text maximum length ({1}) exceeded.</value>
+  </data>
+  <data name="BlogPost_Title_MaxLengthMessage" xml:space="preserve">
+    <value>Blog post title maximum length ({1}) exceeded.</value>
+  </data>
+  <data name="BlogPost_Title_RequiredMessage" xml:space="preserve">
+    <value>Blog post title is required</value>
+  </data>
+  <data name="ImportBlogPosts_ImportButton_Title" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportBlogPosts_ImportFileHasNoBlogs_Message" xml:space="preserve">
+    <value>Import file contains no blog posts.</value>
+  </data>
+  <data name="ImportBlogPosts_UploadButton_Title" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="ImportBlogPosts_ImportingBlogPostIdIsNotSet_Message" xml:space="preserve">
+    <value>The ID of importing blog post should be set.</value>
+  </data>
+  <data name="ImportBlogPosts_FailedToSaveFileToStorage_Message" xml:space="preserve">
+    <value>Failed to save blog posts import file to storage.</value>
+  </data>
+  <data name="ImportBlogPosts_FailedToRetrieveFileFileStorage_Message" xml:space="preserve">
+    <value>Failed to retrieve blog posts import file from storage.</value>
+  </data>
+  <data name="ImportBlogPosts_CreateRedirects_Title" xml:space="preserve">
+    <value>Create redirects</value>
+  </data>
+  <data name="ImportBlogPosts_Results_Title_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="ImportBlogPosts_Results_Url_Title" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="ImportBlogPosts_ImportCompletedSuccessfully_Message" xml:space="preserve">
+    <value>Import completed successfully</value>
+  </data>
+  <data name="ImportBlogPosts_PleaseSelectPostsToImport_Message" xml:space="preserve">
+    <value>Please select blog posts to import</value>
+  </data>
+  <data name="ImportBlogPosts_NoBlogPostSelected_Message" xml:space="preserve">
+    <value>At least one blog post should be selected for import to continue.</value>
+  </data>
+  <data name="ImportBlogPosts_FailedToCreateRedirectFor_Message" xml:space="preserve">
+    <value>Failed to create a redirect. Invalid URL "{0}".</value>
+  </data>
+  <data name="ImportBlogPosts_RedirectWasAlreadyCreatedFor_Message" xml:space="preserve">
+    <value>Redirect for URL "{0}" wasn't created, because it already exists.</value>
+  </data>
+  <data name="ImportBlogPosts_Skipped_Title" xml:space="preserve">
+    <value>Skipped import</value>
+  </data>
+  <data name="BlogPost_MetaTitle_MaxLengthMessage" xml:space="preserve">
+    <value>Blog post meta title maximum length ({1}) exceeded.</value>
+  </data>
+  <data name="ImportBlogPosts_FailedToDeserializeXML_Message" xml:space="preserve">
+    <value>Failed to deserialize provided XML file.</value>
+  </data>
+  <data name="ImportBlogPosts_FileIsNotValidXML_Message" xml:space="preserve">
+    <value>Provided file is not a valid XML file.</value>
+  </data>
+  <data name="ImportBlogPosts_DuplicateId_Message" xml:space="preserve">
+    <value>Duplicate ID found ({0})!</value>
+  </data>
+  <data name="ImportBlogPosts_DownloadSampleFile_Title" xml:space="preserve">
+    <value>Sample import XML file</value>
+  </data>
+  <data name="SiteSettings_Blogs_Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ImportBlogPosts_AuthorByRefNotFound_Message" xml:space="preserve">
+    <value>Author with ID "{0}" wasn't found in the list of importing authors</value>
+  </data>
+  <data name="ImportBlogPosts_CategoryByRefNotFound_Message" xml:space="preserve">
+    <value>Category with ID "{0}" wasn't found in the list of importing categories</value>
+  </data>
+  <data name="SiteSettings_BlogSettingsTab_SettingName_Title" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="SiteSettings_BlogSettingsTab_SettingValue_Title" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="SiteSettings_BlogSettingsTab_DefaultEditMode_Title" xml:space="preserve">
+    <value>Default content edit mode</value>
+  </data>
+  <data name="SiteSettings_Blogs_TemplatesTab_Title" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="SiteSettings_BlogSettingsTab_Header" xml:space="preserve">
+    <value>Blog Settings</value>
+  </data>
+  <data name="SiteSettings_AuthorsTab_AuthorDescription_Title" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EditBlogPost_ContentTab_Title" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="EditBlogPost_PropertiesTab_Title" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+</root>
