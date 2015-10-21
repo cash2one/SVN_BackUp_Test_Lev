@@ -1,0 +1,877 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEB91F9F-ECE2-480C-B39C-A44BBF1F7B01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FubuMVC.Tests</RootNamespace>
+    <AssemblyName>FubuMVC.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fixie.TestDriven">
+      <HintPath>..\..\packages\Fixie\lib\net45\Fixie.TestDriven.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AboutEndpointTester.cs" />
+    <Compile Include="AddressClasses.cs" />
+    <Compile Include="AjaxExtensionsTester.cs" />
+    <Compile Include="Ajax\AjaxContinuationPolicyIntegratedTester.cs" />
+    <Compile Include="Ajax\AjaxContinuationTester.cs" />
+    <Compile Include="Assets\AssetSettingsTester.cs" />
+    <Compile Include="Assets\JavascriptRouterTester.cs" />
+    <Compile Include="Assets\ScriptTagTester.cs" />
+    <Compile Include="Bugs\DoubleRegistrationOfImports.cs" />
+    <Compile Include="Bugs\FubuPackageRegistry_should_honor_the_url_prefix.cs" />
+    <Compile Include="Bugs\Issue101.cs" />
+    <Compile Include="Bugs\Issue504.cs" />
+    <Compile Include="client_message_mechanics_Tester.cs" />
+    <Compile Include="ConfigurationActionSetTester.cs" />
+    <Compile Include="ContainerExtensions.cs" />
+    <Compile Include="deactivators_are_called_in_fuburuntime_dispose.cs" />
+    <Compile Include="DiagnosticsSettingsTester.cs" />
+    <Compile Include="Diagnostics\apply_authorization_rights_to_all_diagnostics_pages.cs" />
+    <Compile Include="Diagnostics\Assets\DiagnosticAssetsTester.cs" />
+    <Compile Include="Diagnostics\Bootstrapping_Integration_Testing.cs" />
+    <Compile Include="Diagnostics\DiagnosticChainTester.cs" />
+    <Compile Include="Diagnostics\DiagnosticSettings_TraceLevel_Registration_Tester.cs" />
+    <Compile Include="Diagnostics\FakeFubuDiagnostics.cs" />
+    <Compile Include="Diagnostics\HttpRequestSummaryTester.cs" />
+    <Compile Include="Diagnostics\Instrumentation\ActivityTester.cs" />
+    <Compile Include="Diagnostics\Instrumentation\BehaviorTracerTester.cs" />
+    <Compile Include="Diagnostics\Instrumentation\ChainExecutionHistoryTester.cs" />
+    <Compile Include="Diagnostics\Instrumentation\ChainExecutionListenerTester.cs" />
+    <Compile Include="Diagnostics\Instrumentation\ChainExecutionLogTester.cs" />
+    <Compile Include="Diagnostics\Instrumentation\PerformanceHistoryTester.cs" />
+    <Compile Include="Diagnostics\Instrumentation\ProductionExecutionLoggerTester.cs" />
+    <Compile Include="Diagnostics\Instrumentation\VerboseExecutionLoggerTester.cs" />
+    <Compile Include="Diagnostics\InteractionContextExtensions.cs" />
+    <Compile Include="Diagnostics\PerfTimerSmokeTester.cs" />
+    <Compile Include="Diagnostics\Routes\EndpointReportTester.cs" />
+    <Compile Include="Diagnostics\Runtime\ApplyTracingIntegrationTesting.cs" />
+    <Compile Include="Diagnostics\Runtime\BehaviorTracerNodeTester.cs" />
+    <Compile Include="Diagnostics\Runtime\BehaviorTracer_and_DiagnosticBehavior_construction_testing.cs" />
+    <Compile Include="Diagnostics\Runtime\Diagnostic_tracing_attachment_filtering_Tester.cs" />
+    <Compile Include="Diagnostics\Runtime\Tracing_is_not_applied_to_chains_that_are_tagged_no_tracing.cs" />
+    <Compile Include="Diagnostics\Visualization\Visualizers\ModelBindingLogEndpointTester.cs" />
+    <Compile Include="Docs\Introduction\Overview\HomeEndpoint.cs" />
+    <Compile Include="Docs\Topics\Authorization\AuthorizationPolicyController.cs" />
+    <Compile Include="Docs\Topics\Authorization\Controller.cs" />
+    <Compile Include="Docs\Topics\Authorization\ProductController.cs" />
+    <Compile Include="Docs\Topics\Authorization\PurchasedProductPolicy.cs" />
+    <Compile Include="Docs\Topics\Authorization\PurchaseProductAuthorizationPolicy.cs" />
+    <Compile Include="Docs\Topics\Authorization\RoleModelAuthorizationPolicy.cs" />
+    <Compile Include="Environment\FileExistsTester.cs" />
+    <Compile Include="Environment\FolderExistsTester.cs" />
+    <Compile Include="FixieConventions.cs" />
+    <Compile Include="FubuApplication_registers_the_FubuRuntime_in_bootstrap.cs" />
+    <Compile Include="FubuExtensionFinderTester.cs" />
+    <Compile Include="Http\Compression\ContentCompressionExtensionTester.cs" />
+    <Compile Include="Http\Compression\DeflateEncodingTester.cs" />
+    <Compile Include="Http\ConnegQuerystringTester.cs" />
+    <Compile Include="Http\ConnegSettingsTester.cs" />
+    <Compile Include="Http\Cookies\CookieStateTester.cs" />
+    <Compile Include="Http\Cookies\CookiesTester.cs" />
+    <Compile Include="Http\Cookies\CookieTester.cs" />
+    <Compile Include="Http\Cookies\CookieParserTester.cs" />
+    <Compile Include="Http\Cookies\CookieValueSourceTester.cs" />
+    <Compile Include="Http\Cookies\CookieValueTester.cs" />
+    <Compile Include="Http\Cookies\SegmentTester.cs" />
+    <Compile Include="Http\CurrentHttpRequestExtensionsTester.cs" />
+    <Compile Include="Http\HeaderValueSourceTester.cs" />
+    <Compile Include="Http\Compression\ContentEncodingTester.cs" />
+    <Compile Include="Http\Compression\GZipEncodingTester.cs" />
+    <Compile Include="Http\Compression\HttpContentEncodersTester.cs" />
+    <Compile Include="Http\Compression\HttpContentEncodingFilterTester.cs" />
+    <Compile Include="Http\Hosting\fuburuntime_scenario_support_Tester.cs" />
+    <Compile Include="Http\Owin\CurrentHttpRequestExtensions_integration_with_OWIN_Tester.cs" />
+    <Compile Include="Http\Owin\DictionaryExtensionsTester.cs" />
+    <Compile Include="Http\Owin\FormRequestReaderTester.cs" />
+    <Compile Include="Http\Owin\Middleware\MiddlewareContinuationTester.cs" />
+    <Compile Include="Http\Owin\Middleware\StaticFiles\DenyConfigRuleTester.cs" />
+    <Compile Include="Http\Owin\Middleware\StaticFiles\StaticFileMiddlewareTester.cs" />
+    <Compile Include="Http\Owin\Middleware\StaticFiles\WriteFileContinuationTester.cs" />
+    <Compile Include="Http\Owin\Middleware\StaticFiles\WriteFileHeadContinuationTester.cs" />
+    <Compile Include="Http\Owin\Middleware\StaticFiles\WriteStatusCodeContinuationTester.cs" />
+    <Compile Include="Http\Owin\OwinHeaderSettingsTester.cs" />
+    <Compile Include="Http\Owin\OwinHttpRequestTester.cs" />
+    <Compile Include="Http\Owin\OwinCurrentHttpRequest_ClientConnectivityTester.cs" />
+    <Compile Include="Http\Owin\OwinHttpResponseTester.cs" />
+    <Compile Include="Http\Owin\OwinServiceArgumentsTester.cs" />
+    <Compile Include="Http\Owin\OwinSettingsTester.cs" />
+    <Compile Include="Http\Owin\OwnCurrentHttpRequestTester.cs" />
+    <Compile Include="Http\Owin\OwnHttpWriterTester.cs" />
+    <Compile Include="Http\StreamExtensions.cs" />
+    <Compile Include="Registration\ActionLessView_chain_source_specs.cs" />
+    <Compile Include="Registration\RouteCollectionTester.cs" />
+    <Compile Include="Runtime\Files\ChangeSetTester.cs" />
+    <Compile Include="Runtime\Files\StubFubuFile.cs" />
+    <Compile Include="Runtime\Files\TrackedSetTester.cs" />
+    <Compile Include="Security\Authorization\RequireRoleTester.cs" />
+    <Compile Include="ServerSentEvents\ChannelTester.cs" />
+    <Compile Include="ServerSentEvents\ChannelWriterTester.cs" />
+    <Compile Include="ServerSentEvents\EventPublisherTester.cs" />
+    <Compile Include="ServerSentEvents\EventQueryFactoryTester.cs" />
+    <Compile Include="ServerSentEvents\ServerEventWriterTester.cs" />
+    <Compile Include="ServerSentEvents\ServerSentEventExtensionIntegratedTester.cs" />
+    <Compile Include="ServerSentEvents\ServicesRegistrationTester.cs" />
+    <Compile Include="ServerSentEvents\SimpleEventQueueTester.cs" />
+    <Compile Include="ServerSentEvents\TopicChannelCacheTester.cs" />
+    <Compile Include="ServerSentEvents\TopicFamilyTester.cs" />
+    <Compile Include="ServiceBus\Polling\PollingJobChainTester.cs" />
+    <Compile Include="TestSupport\GenericVoidMethod.cs" />
+    <Compile Include="TestSupport\InteractionContext.cs" />
+    <Compile Include="Json\ComplexType.cs" />
+    <Compile Include="Json\ComplexTypeConverter.cs" />
+    <Compile Include="Json\JObjectValuesTester.cs" />
+    <Compile Include="Json\NewtonSoftBindingReaderTester.cs" />
+    <Compile Include="Json\NewtonSoftJsonReaderTester.cs" />
+    <Compile Include="Json\ParentType.cs" />
+    <Compile Include="Json\when_deserializing_an_object.cs" />
+    <Compile Include="Json\when_serializing_an_object_without_metadata.cs" />
+    <Compile Include="Json\when_serializing_an_object_with_metadata.cs" />
+    <Compile Include="Localization\HtmlTagExtensionsTester.cs" />
+    <Compile Include="Localization\IntegratedBootstrappingTests.cs" />
+    <Compile Include="Localization\LocalizationBootstrappingTester.cs" />
+    <Compile Include="Localization\localization_is_disabled_by_default.cs" />
+    <Compile Include="Localization\SpinUpLocalizationCachesTester.cs" />
+    <Compile Include="MockedFubuRequestContext.cs" />
+    <Compile Include="Projections\ChildProjectionTester.cs" />
+    <Compile Include="Projections\child_and_enumerable_children_sourced_by_services.cs" />
+    <Compile Include="Projections\DelegatingProjectionTester.cs" />
+    <Compile Include="Projections\DictionaryMediaNodeTester.cs" />
+    <Compile Include="Projections\EnumerableProjectionIntegratedTester.cs" />
+    <Compile Include="Projections\ExternallyFormattedValueProjectorTester.cs" />
+    <Compile Include="Projections\pascal_to_camel_casing_names_policy.cs" />
+    <Compile Include="Projections\ProjectionContextTester.cs" />
+    <Compile Include="Projections\ProjectionRunnerTester.cs" />
+    <Compile Include="Projections\ProjectMyself_handling_in_an_accessor_projection.cs" />
+    <Compile Include="Projections\SelfProjectingValueProjectorTester.cs" />
+    <Compile Include="Projections\SimpleValueSource.cs" />
+    <Compile Include="Projections\Using_a_custom_value_projector.cs" />
+    <Compile Include="Projections\ValueSourceTester.cs" />
+    <Compile Include="ReflectionExtensionsTester.cs" />
+    <Compile Include="Registration\AccessOverridesFinderIntegratedTester.cs" />
+    <Compile Include="Registration\ActionFilterTester.cs" />
+    <Compile Include="Registration\Application_settings_alteration_wins_out_over_an_import.cs" />
+    <Compile Include="Registration\Conventions\BehaviorGraphExtensions.cs" />
+    <Compile Include="Registration\Conventions\DefaultRouteConventionBasedUrlPolicyTester.cs" />
+    <Compile Include="Registration\Conventions\DefaultUrlPolicyTester.cs" />
+    <Compile Include="Registration\Conventions\EndpointActionSourceTester.cs" />
+    <Compile Include="Registration\Conventions\RegisterAllSettingsTester.cs" />
+    <Compile Include="Registration\Conventions\UrlPatternAttributeOnViewModelPolicyTester.cs" />
+    <Compile Include="Registration\default_action_discovery.cs" />
+    <Compile Include="Registration\FilterAttributeTester.cs" />
+    <Compile Include="Registration\Nodes\RoutedChainTester.cs" />
+    <Compile Include="Registration\OutputBeforeAjaxContinuationPolicyTester.cs" />
+    <Compile Include="Registration\Querying\ChainResoluationCacheRootAt.cs" />
+    <Compile Include="Registration\Registration\FubuPackageRegistry_Importing_Mechanics_Specs.cs" />
+    <Compile Include="Registration\SettingsCollectionTester.cs" />
+    <Compile Include="Registration\SettingsCollection_creates_with_the_app_setting_provider_Tester.cs" />
+    <Compile Include="Registration\when_importing_urls.cs" />
+    <Compile Include="required_service_registrations.cs" />
+    <Compile Include="Resources\Conneg\ConnegGraphTester.cs" />
+    <Compile Include="Resources\Conneg\ReaderChoiceTester.cs" />
+    <Compile Include="Resources\Hypermedia\LinkExpressionTester.cs" />
+    <Compile Include="Resources\Hypermedia\LinkSourceTester.cs" />
+    <Compile Include="Resources\Hypermedia\LinksSourceTester.cs" />
+    <Compile Include="Resources\PathBased\RouteRankingIntegratedTester.cs" />
+    <Compile Include="Runtime\AsyncCoordinatorTester.cs" />
+    <Compile Include="Runtime\Conditionals\ConditionalServiceTester.cs" />
+    <Compile Include="Runtime\Files\FubuApplicationFilesSmokeTester.cs" />
+    <Compile Include="Runtime\Files\FubuFileTester.cs" />
+    <Compile Include="Runtime\PartialChainSwitcherTester.cs" />
+    <Compile Include="Runtime\RequestCompletionTester.cs" />
+    <Compile Include="Runtime\SimpleSessionStateTester.cs" />
+    <Compile Include="Runtime\SynchronousCoordinator.cs" />
+    <Compile Include="Security\AntiForgery\AntiForgeryBehaviorTester.cs" />
+    <Compile Include="Security\AntiForgery\AntiForgeryServiceTester.cs" />
+    <Compile Include="Security\AntiForgery\AntiForgerySettingsTester.cs" />
+    <Compile Include="Security\AntiForgery\AntiForgeryTokenAttributeTester.cs" />
+    <Compile Include="Security\AntiForgery\AntiForgeryTokenProviderTester.cs" />
+    <Compile Include="Security\AntiForgery\AntiForgeryValidatorTester.cs" />
+    <Compile Include="Security\AntiForgery\BinaryAntiForgerySerializerTester.cs" />
+    <Compile Include="Security\AntiForgery\Default_policy_applies_anti_forgery_to_post_routes.cs" />
+    <Compile Include="Security\AntiForgery\MachineKeyAntiForgeryEncoderTester.cs" />
+    <Compile Include="Security\Authentication\AjaxAuthenticationRedirectTester.cs" />
+    <Compile Include="Security\Authentication\ApplyAuthenticationPolicyTester.cs" />
+    <Compile Include="Security\Authentication\AuthenticationBootstrapperTests.cs" />
+    <Compile Include="Security\Authentication\AuthenticationFilterNodeTester.cs" />
+    <Compile Include="Security\Authentication\AuthenticationFilterTester.cs" />
+    <Compile Include="Security\Authentication\AuthenticationIsConfiguredTester.cs" />
+    <Compile Include="Security\Authentication\AuthenticationNodeTester.cs" />
+    <Compile Include="Security\Authentication\AuthenticationServiceRegistryTester.cs" />
+    <Compile Include="Security\Authentication\AuthenticationServiceTester.cs" />
+    <Compile Include="Security\Authentication\AuthenticationSettingsTester.cs" />
+    <Compile Include="Security\Authentication\AuthResultTester.cs" />
+    <Compile Include="Security\Authentication\BasicAuthenticationTester.cs" />
+    <Compile Include="Security\Authentication\Cookies\CookieSettingsTester.cs" />
+    <Compile Include="Security\Authentication\Cookies\LoginCookieServiceTester.cs" />
+    <Compile Include="Security\Authentication\DefaultAuthenticationRedirectTester.cs" />
+    <Compile Include="Security\Authentication\Endpoints\LoginControllerTests.cs" />
+    <Compile Include="Security\Authentication\Endpoints\when_logging_out.cs" />
+    <Compile Include="Security\Authentication\FubuPrincipalTester.cs" />
+    <Compile Include="Security\Authentication\LockedOutRuleTester.cs" />
+    <Compile Include="Security\Authentication\LoginRequestTester.cs" />
+    <Compile Include="Security\Authentication\LoginSuccessHandlerTester.cs" />
+    <Compile Include="Security\Authentication\LogoutSuccessHandlerTester.cs" />
+    <Compile Include="Security\Authentication\Membership\MembershipAuthenticationTester.cs" />
+    <Compile Include="Security\Authentication\Membership\MembershipNodeTester.cs" />
+    <Compile Include="Security\Authentication\Membership\UserInfoTester.cs" />
+    <Compile Include="Security\Authentication\NotAuthenticatedModel.cs" />
+    <Compile Include="Security\Authentication\PassThroughAuthenticationFilterTester.cs" />
+    <Compile Include="Security\Authentication\pass_through_authentication_for_a_partial.cs" />
+    <Compile Include="Security\Authentication\register_membership_with_a_default_repository_if_none_exists.cs" />
+    <Compile Include="Security\Authentication\ThreadPrincipalContextTester.cs" />
+    <Compile Include="Security\Authentication\Tickets\EncryptionTester.cs" />
+    <Compile Include="Security\Authentication\Tickets\TicketAuthenticationSessionTester.cs" />
+    <Compile Include="Security\Authentication\when_redirecting_an_unauthenticated_ajax_request.cs" />
+    <Compile Include="Security\Authorization\AlwaysAllowPolicyTester.cs" />
+    <Compile Include="Security\Authorization\AlwaysDenyPolicyTester.cs" />
+    <Compile Include="Security\Authorization\AuthorizationByServiceTester.cs" />
+    <Compile Include="Security\Authorization\AuthorizationCheckPolicyTester.cs" />
+    <Compile Include="Security\Authorization\SecuritySettingsTester.cs" />
+    <Compile Include="ServiceBus\Async\AsyncChainExecutionContinuationTester.cs" />
+    <Compile Include="ServiceBus\Async\AsyncHandlerInvokerTester.cs" />
+    <Compile Include="ServiceBus\Async\AsyncHandlingConventionTester.cs" />
+    <Compile Include="ServiceBus\Async\AsynchHandlingTester.cs" />
+    <Compile Include="ServiceBus\Async\FullAsyncHandlingIntegrationTester.cs" />
+    <Compile Include="ServiceBus\Async\when_invoking_with_cascading_messages.cs" />
+    <Compile Include="ServiceBus\Configuration\ByTaskSchedulerMakerTester.cs" />
+    <Compile Include="ServiceBus\Configuration\ChannelGraphTester.cs" />
+    <Compile Include="ServiceBus\Configuration\ChannelGraph_can_read_thread_and_task_counts_from_config.cs" />
+    <Compile Include="ServiceBus\Configuration\ChannelGraph_has_to_be_a_StructureMap_singleton.cs" />
+    <Compile Include="ServiceBus\Configuration\ChannelNodeTester.cs" />
+    <Compile Include="ServiceBus\Configuration\Configuring_envelope_modifier_by_channel.cs" />
+    <Compile Include="ServiceBus\Configuration\FubuTransportRegistryTester.cs" />
+    <Compile Include="ServiceBus\Configuration\FubuTransportRegistry_register_subscription_requirements_Tester.cs" />
+    <Compile Include="ServiceBus\Configuration\HandlerChainTester.cs" />
+    <Compile Include="ServiceBus\Configuration\HandlerChain_Exception_Handling_Rules_Registration_Tester.cs" />
+    <Compile Include="ServiceBus\Configuration\HandlerGraphTester.cs" />
+    <Compile Include="ServiceBus\Configuration\UriExtensionsTester.cs" />
+    <Compile Include="ServiceBus\Diagnostics\MessageRecordListenerTester.cs" />
+    <Compile Include="ServiceBus\Diagnostics\MessageRecordTester.cs" />
+    <Compile Include="ServiceBus\Docs\Basics\ErrorHandlingSamples.cs" />
+    <Compile Include="ServiceBus\Docs\Basics\PubSubSamples.cs" />
+    <Compile Include="ServiceBus\Docs\Basics\ReceivingSamples.cs" />
+    <Compile Include="ServiceBus\Docs\Basics\SendingSamples.cs" />
+    <Compile Include="ServiceBus\Docs\GettingStarted\GettingStartedSettings.cs" />
+    <Compile Include="ServiceBus\Docs\GettingStarted\GettingStartedTransportRegistry.cs" />
+    <Compile Include="ServiceBus\Docs\GettingStarted\Handlers.cs" />
+    <Compile Include="ServiceBus\Docs\Polling\PollingJobSamples.cs" />
+    <Compile Include="ServiceBus\Docs\Sagas\SagaRepositorySample.cs" />
+    <Compile Include="ServiceBus\Docs\Sagas\SimpleSaga.cs" />
+    <Compile Include="ServiceBus\Docs\Transports\LightningQueuesSamples.cs" />
+    <Compile Include="ServiceBus\envelope_handlers_are_registered_in_the_right_order.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\CompositeContinuation_integration_testing.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\DelayedRetryContinuationTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\ErrorHandlerBehavior_attachment_to_the_handler_chains.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\ErrorHandlerTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\ErrorHandling_services_have_descriptions_for_diagnostics.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\ErrorReportTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\ExceptionHandlerBehaviorTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\ExceptionMatchingExpression_and_ExpressionMatch_Tester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\ExceptionTypeMatchTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\MoveToErrorQueueHandlerTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\MovetoErrorQueueTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\RequeueContinuationTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\RespondWithMessageContinuationTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\RespondWithMessageHandlerTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\RetryNowContinuationTester.cs" />
+    <Compile Include="ServiceBus\ErrorHandling\RetryNow_integration_testing.cs" />
+    <Compile Include="ServiceBus\Events\EventAggregatorTester.cs" />
+    <Compile Include="ServiceBus\Events\ExpiringListenerCleanupTester.cs" />
+    <Compile Include="ServiceBus\FakeHandlers.cs" />
+    <Compile Include="ServiceBus\FubuTransportRegistry_application_of_policies_Tester.cs" />
+    <Compile Include="ServiceBus\FubuTransportRegistry_default_handler_source_policies_spec.cs" />
+    <Compile Include="ServiceBus\FubuTransportRegistry_HandlerSource_registration_Tester.cs" />
+    <Compile Include="ServiceBus\FubuTransportServiceRegistry_spec.cs" />
+    <Compile Include="ServiceBus\FullStackConfigurationIntegrationTester.cs" />
+    <Compile Include="ServiceBus\IntegratedFubuTransportRegistryTester.cs" />
+    <Compile Include="ServiceBus\Logging\EventAggregationListenerTester.cs" />
+    <Compile Include="ServiceBus\Monitoring\FakePersistentTask.cs" />
+    <Compile Include="ServiceBus\Monitoring\FakePersistentTaskAgent.cs" />
+    <Compile Include="ServiceBus\Monitoring\FakePersistentTasks.cs" />
+    <Compile Include="ServiceBus\Monitoring\FakePersistentTaskSource.cs" />
+    <Compile Include="ServiceBus\Monitoring\FakeTransportPeer.cs" />
+    <Compile Include="ServiceBus\Monitoring\Monitoring_handlers_are_registered.cs" />
+    <Compile Include="ServiceBus\Monitoring\Monitoring_health_polling_job_is_registered.cs" />
+    <Compile Include="ServiceBus\Monitoring\OrderedAssignmentTester.cs" />
+    <Compile Include="ServiceBus\Monitoring\PermanentTaskController\CurrentlyOwnedSubjectsTester.cs" />
+    <Compile Include="ServiceBus\Monitoring\PermanentTaskController\PersistentTaskControllerContext.cs" />
+    <Compile Include="ServiceBus\Monitoring\PermanentTaskController\TakeOwnership_specs.cs" />
+    <Compile Include="ServiceBus\Monitoring\PermanentTaskController\when_checking_status.cs" />
+    <Compile Include="ServiceBus\Monitoring\PermanentTaskController\when_checking_the_status_of_owned_tasks.cs" />
+    <Compile Include="ServiceBus\Monitoring\PermanentTaskController\when_finding_a_task.cs" />
+    <Compile Include="ServiceBus\Monitoring\PermanentTaskController\when_stopping_a_task.cs" />
+    <Compile Include="ServiceBus\Monitoring\PersistentTaskAgentTester.cs" />
+    <Compile Include="ServiceBus\Monitoring\PersistentTaskMessageModifierTester.cs" />
+    <Compile Include="ServiceBus\Monitoring\RiggedServiceBus.cs" />
+    <Compile Include="ServiceBus\Monitoring\Service_registration_specs.cs" />
+    <Compile Include="ServiceBus\Monitoring\TaskHealthResponseTester.cs" />
+    <Compile Include="ServiceBus\Monitoring\TransportPeerTester.cs" />
+    <Compile Include="ServiceBus\ObjectMother.cs" />
+    <Compile Include="ServiceBus\Polling\DefaultTimerTester.cs" />
+    <Compile Include="ServiceBus\Polling\EnvelopeToken_is_polling_job_related_Tester.cs" />
+    <Compile Include="ServiceBus\Polling\JobTimeoutTester.cs" />
+    <Compile Include="ServiceBus\Polling\PollingJobActivatorTester.cs" />
+    <Compile Include="ServiceBus\Polling\PollingJobIntegrationTester.cs" />
+    <Compile Include="ServiceBus\Polling\PollingJobRunImmediatelyIntegrationTester.cs" />
+    <Compile Include="ServiceBus\Polling\PollingJobTester.cs" />
+    <Compile Include="ServiceBus\Polling\PollingServicesRegistry_spec.cs" />
+    <Compile Include="ServiceBus\Publishing\EventPublisherTester.cs" />
+    <Compile Include="ServiceBus\RecordingChannel.cs" />
+    <Compile Include="ServiceBus\RecordingEnvelopeSender.cs" />
+    <Compile Include="ServiceBus\RecordingReceiver.cs" />
+    <Compile Include="ServiceBus\RecordingServiceBusTester.cs" />
+    <Compile Include="ServiceBus\Registration\FuncBuilderTester.cs" />
+    <Compile Include="ServiceBus\Registration\HandlerSourceTester.cs" />
+    <Compile Include="ServiceBus\Registration\Nodes\HandlerCallTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Cascading\DelayedResponseTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Cascading\OutgoingSenderTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Cascading\RespondTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Cascading\RespondToSenderTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Cascading\SendDirectlyToTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Delayed\DelayedEnvelopeProcessorTester.cs" />
+    <Compile Include="ServiceBus\Runtime\EnvelopeModifierTester.cs" />
+    <Compile Include="ServiceBus\Runtime\EnvelopeSenderTester.cs" />
+    <Compile Include="ServiceBus\Runtime\EnvelopeTester.cs" />
+    <Compile Include="ServiceBus\Runtime\generic_handlers_are_called_for_messages_that_match.cs" />
+    <Compile Include="ServiceBus\Runtime\Headers\Headers_testing.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\CascadingHandlerInvokerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\ChainExecutionEnvelopeHandlerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\ChainFailureContinuationTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\ChainInvokerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\ChainSuccessContinuationTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\CompositeContinuationTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\DelayedEnvelopeHandlerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\DeserializationFailureContinuationTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\HandlerPipelineTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\InvocationContext.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\InvocationContextTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\multiple_handlers_for_one_message.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\NoSubscriberHandlerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\ResponseEnvelopeHandlerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\sending_a_message_with_no_consumer.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\SimpleHandlerInvokerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\simplest_possible_invocation.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\StubServiceFactory.cs" />
+    <Compile Include="ServiceBus\Runtime\Invocation\WhenInvokingWithNoHandlerForMessageType.cs" />
+    <Compile Include="ServiceBus\Runtime\ReceiverTester.cs" />
+    <Compile Include="ServiceBus\Runtime\ReplyListenerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Routing\AssemblyRuleTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Routing\LambdaRoutingRuleTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Routing\NamespaceRuleTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Routing\SingleTypeRoutingRuleTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Serializers\BasicJsonMessageSerializerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Serializers\BinarySerializerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Serializers\EnvelopeSerializerIntegratedTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Serializers\EnvelopeSerializerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Serializers\XmlMessageSerializerRhinoMessageTester.cs" />
+    <Compile Include="ServiceBus\Runtime\Serializers\XmlMessageSerializerTester.cs" />
+    <Compile Include="ServiceBus\Runtime\when_requesting_a_response.cs" />
+    <Compile Include="ServiceBus\Runtime\when_sending_with_the_expectation_of_a_response.cs" />
+    <Compile Include="ServiceBus\Sagas\SagaBehaviorTester.cs" />
+    <Compile Include="ServiceBus\Sagas\SagaIntegrationTester.cs" />
+    <Compile Include="ServiceBus\Sagas\SagaTypesTester.cs" />
+    <Compile Include="ServiceBus\Sagas\StatefulSagaConventionTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\EveryDayAtSpecificTimeJobSchedulerTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\InMemorySchedulePersistenceTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\JobExecutionRecordTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\JobScheduleTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\JobStatusTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\JobTimerIntegratedTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\ScheduledJobController_integration_Tester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\ScheduledJobGraphTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\ScheduledJobPersistentTaskTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\ScheduledJobTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\ScheduledStatusMonitorTester.cs" />
+    <Compile Include="ServiceBus\ScheduledJobs\ScheduleRepositoryTester.cs" />
+    <Compile Include="ServiceBus\Scheduling\TaskSchedulerTester.cs" />
+    <Compile Include="ServiceBus\Scheduling\ThreadSchedulerTester.cs" />
+    <Compile Include="ServiceBus\ServiceBus_Consume_right_now_Mr_Tester.cs" />
+    <Compile Include="ServiceBus\ServiceBus_DelaySend_Tester.cs" />
+    <Compile Include="ServiceBus\ServiceBus_RemoveSubscriptions_Tester.cs" />
+    <Compile Include="ServiceBus\ServiceBus_Send_to_destination_Tester.cs" />
+    <Compile Include="ServiceBus\StubChannelNode.cs" />
+    <Compile Include="ServiceBus\Subscriptions\SubscriptionCache_clearing_tester.cs" />
+    <Compile Include="ServiceBus\Subscriptions\SubscriptionCache_replace_subscriptions_tester.cs" />
+    <Compile Include="ServiceBus\Subscriptions\SubscriptionCache_routing_with_subscription_Tester.cs" />
+    <Compile Include="ServiceBus\Subscriptions\SubscriptionHandler_is_registered_in_fubu_application_apps.cs" />
+    <Compile Include="ServiceBus\Subscriptions\SubscriptionRepositoryTester.cs" />
+    <Compile Include="ServiceBus\Subscriptions\SubscriptionsHandlerTester.cs" />
+    <Compile Include="ServiceBus\Subscriptions\SubscriptionsIntegrationTester.cs" />
+    <Compile Include="ServiceBus\Subscriptions\Subscription_equality_tester.cs" />
+    <Compile Include="ServiceBus\Subscriptions\Subscription_matches_tester.cs" />
+    <Compile Include="ServiceBus\Subscriptions\TransportNodeTester.cs" />
+    <Compile Include="ServiceBus\Subscriptions\when_creating_grouped_subscriptions.cs" />
+    <Compile Include="ServiceBus\Subscriptions\when_creating_local_subscriptions.cs" />
+    <Compile Include="ServiceBus\TestEnvelopeContext.cs" />
+    <Compile Include="ServiceBus\TestingSupportClasses.cs" />
+    <Compile Include="ServiceBus\TestSupport\MessageWatcherTester.cs" />
+    <Compile Include="ServiceBus\TimeoutRunnerTester.cs" />
+    <Compile Include="ServiceBus\TransportActivatorTester.cs" />
+    <Compile Include="ServiceBus\TransportSettingsTester.cs" />
+    <Compile Include="ServiceBus\TypeExtensionsTester.cs" />
+    <Compile Include="Services\ApplicationLoaderFinderTester.cs" />
+    <Compile Include="Services\Messaging\EventAggregatorTester.cs" />
+    <Compile Include="Services\Messaging\MessageWaitConditionTester.cs" />
+    <Compile Include="Services\Messaging\MessagingHubTester.cs" />
+    <Compile Include="Services\Messaging\RemoteListenerTester.cs" />
+    <Compile Include="Services\Messaging\Tracking\MessageHistoryTester.cs" />
+    <Compile Include="Services\Messaging\Tracking\MessageSentTester.cs" />
+    <Compile Include="Services\Messaging\WaitTester.cs" />
+    <Compile Include="Services\Remote\AssemblyRequirementTester.cs" />
+    <Compile Include="Services\Remote\BigRemoteServicesIntegrationTester.cs" />
+    <Compile Include="Services\Remote\RemoteDomainExpressionTester.cs" />
+    <Compile Include="Runtime\SessionState\flashing_an_object.cs" />
+    <Compile Include="Runtime\SessionState\retrieving_an_existing_item_from_flash.cs" />
+    <Compile Include="Runtime\SessionState\retrieving_an_item_when_flash_is_empty.cs" />
+    <Compile Include="Behaviors\AsyncContinueWithBehaviorTests.cs" />
+    <Compile Include="Behaviors\BasicBehaviorTester.cs" />
+    <Compile Include="Behaviors\Conditional\AlwaysTester.cs" />
+    <Compile Include="Behaviors\InterceptExceptionBehaviorTester.cs" />
+    <Compile Include="Behaviors\ITargetController.cs" />
+    <Compile Include="can_find_and_load_bottles_with_the_FubuModule_attribute.cs" />
+    <Compile Include="FakeHttpContext.cs" />
+    <Compile Include="FubuApplicationTester.cs" />
+    <Compile Include="Http\AspNet\AspNetCurrentHttpRequestTester.cs" />
+    <Compile Include="Http\AspNet\AspNetModelBindingTester.cs" />
+    <Compile Include="Http\AspNet\AspNetServiceArgumentsTester.cs" />
+    <Compile Include="Http\CurrentChainTester.cs" />
+    <Compile Include="Http\CurrentMimeTypeModelBinderTester.cs" />
+    <Compile Include="Http\CurrentMimeTypeTester.cs" />
+    <Compile Include="Http\CurrentRequestFullUrlPropertyBinderTester.cs" />
+    <Compile Include="Http\CurrentRequestRelativeUrlPropertyBinderTester.cs" />
+    <Compile Include="Http\Headers\HeaderTester.cs" />
+    <Compile Include="Http\Headers\HttpHeaderValuesTester.cs" />
+    <Compile Include="Http\HttpRequestHeadersTester.cs" />
+    <Compile Include="Http\MimeTypeListTester.cs" />
+    <Compile Include="Http\RouteDataValuesTester.cs" />
+    <Compile Include="Resources\Conneg\FormatterWriterTester.cs" />
+    <Compile Include="Resources\Conneg\FormatterReaderTester.cs" />
+    <Compile Include="Resources\Conneg\InputNodeTester.cs" />
+    <Compile Include="Resources\Conneg\InputOutputNodePlacementIntegrationTester.cs" />
+    <Compile Include="Resources\Conneg\OutputNodeIntegratedTester.cs" />
+    <Compile Include="Resources\Conneg\ModelBindingReaderTester.cs" />
+    <Compile Include="Resources\Conneg\StringWriterTester.cs" />
+    <Compile Include="Resources\Conneg\HtmlStringWriterTester.cs" />
+    <Compile Include="Resources\Conneg\OutputBehaviorTester.cs" />
+    <Compile Include="Resources\Conneg\OutputNodeTester.cs" />
+    <Compile Include="Registration\ActionMethodFilterTester.cs" />
+    <Compile Include="Registration\Conventions\actions_that_return_IDictionary_are_json.cs" />
+    <Compile Include="Registration\Conventions\AsyncContinueWithHandlerConventionTester.cs" />
+    <Compile Include="Registration\Conventions\DefaultConnegOutputIsAppliedToAnyEndpointWithoutAnyPriorOutputTester.cs" />
+    <Compile Include="Registration\Conventions\PartialOnlyConventionTester.cs" />
+    <Compile Include="Registration\Querying\ChainSearchTester.cs" />
+    <Compile Include="Runtime\Formatters\XmlFormatterTester.cs" />
+    <Compile Include="CustomExceptionsTester.cs" />
+    <Compile Include="FubuRegistryImportingTester.cs" />
+    <Compile Include="Resources\PathBased\ResourcePathBinderTester.cs" />
+    <Compile Include="Resources\PathBased\ResourcePathIntegratedUrlCreationTester.cs" />
+    <Compile Include="Registration\attaching_behaviors_to_action_calls.cs" />
+    <Compile Include="Registration\BehaviorNodeTester.cs" />
+    <Compile Include="Registration\Conventions\AllowRoleAttributeTester.cs" />
+    <Compile Include="Registration\Conventions\AuthorizedByAttributeConventionTester.cs" />
+    <Compile Include="Registration\Conventions\MethodToUrlBuilderTester.cs" />
+    <Compile Include="Registration\Conventions\PartialRegistrationConventionTester.cs" />
+    <Compile Include="Registration\Conventions\RenderStatusCodeConventionTester.cs" />
+    <Compile Include="Registration\Conventions\ReorderBehaviorsPolicyTester.cs" />
+    <Compile Include="Registration\Conventions\UrlRegistryCategoryConventionTester.cs" />
+    <Compile Include="Registration\Conventions\WrapWithAttributeConventionTester.cs" />
+    <Compile Include="Registration\DSL\PoliciesExpressionTester.cs" />
+    <Compile Include="Registration\Nodes\BehaviorChain_building_an_object_def.cs" />
+    <Compile Include="Registration\Nodes\Behavior_node_ObjectDef_creation_Tester.cs" />
+    <Compile Include="Registration\Querying\ChainResolverTester.cs" />
+    <Compile Include="Registration\RouteInputTester.cs" />
+    <Compile Include="Registration\system_policy_for_authorization.cs" />
+    <Compile Include="Routing\StandardRoutePolicyTester.cs" />
+    <Compile Include="Runtime\AspNetPassthroughConverterTester.cs" />
+    <Compile Include="Runtime\BasicSessionTester.cs" />
+    <Compile Include="Runtime\BehaviorInvokerTester.cs" />
+    <Compile Include="Runtime\HeaderValueAttributeTester.cs" />
+    <Compile Include="Runtime\must_be_descriptions_on_important_things.cs" />
+    <Compile Include="Runtime\OutputWriterTester.cs" />
+    <Compile Include="Runtime\MimeTypeTester.cs" />
+    <Compile Include="Caching\RecordedOutputTester.cs" />
+    <Compile Include="Security\Authorization\AllowRoleTester.cs" />
+    <Compile Include="Security\Authorization\AuthorizationBehaviorTester.cs" />
+    <Compile Include="Security\Authorization\AuthorizationNodeTester.cs" />
+    <Compile Include="Security\Authorization\AuthorizationRightTester.cs" />
+    <Compile Include="Security\Authorization\DefaultAuthorizationFailureHandlerTester.cs" />
+    <Compile Include="Security\Authorization\PrincipalRolesTester.cs" />
+    <Compile Include="Security\Authorization\AuthorizationPolicyExecutorTester.cs" />
+    <Compile Include="SpecificationExtensions.cs" />
+    <Compile Include="StructureMap\Internals\AppSettingProviderRegistrySmokeTester.cs" />
+    <Compile Include="StructureMap\Internals\StructureMapServiceLocatorTester.cs" />
+    <Compile Include="StructureMap\Internals\StubActivator.cs" />
+    <Compile Include="StructureMap\Internals\TestController.cs" />
+    <Compile Include="StructureMap\Internals\UsesTheIsSingletonPropertyTester.cs" />
+    <Compile Include="StructureMap\Settings\SettingIntegrationTester.cs" />
+    <Compile Include="StructureMap\using_child_containers_for_isolated_overrides.cs" />
+    <Compile Include="TagAttributeTester.cs" />
+    <Compile Include="TestSupport\RhinoAutoMocker.cs" />
+    <Compile Include="TestSupport\RhinoMockRepositoryProxy.cs" />
+    <Compile Include="TestSupport\RhinoMocksAAAServiceLocator.cs" />
+    <Compile Include="TestSupport\SelfMockingServiceLocator.cs" />
+    <Compile Include="TestSupport\VoidMethod.cs" />
+    <Compile Include="TestSupport\Wait.cs" />
+    <Compile Include="View\Attachment\FakeViewToken.cs" />
+    <Compile Include="View\AuthorizationOnPageExtensionsTester.cs" />
+    <Compile Include="View\AuthorizedLinkExpressionsTester.cs" />
+    <Compile Include="View\FubuPageExtensionsTester.cs" />
+    <Compile Include="View\HtmlTagExtensionsTester.cs" />
+    <Compile Include="View\PartialInvokerTester.cs" />
+    <Compile Include="UrlAliasAttributeTester.cs" />
+    <Compile Include="UrlExtensionsTester.cs" />
+    <Compile Include="Behaviors\ActionInvokersTester.cs" />
+    <Compile Include="Behaviors\BehaviorTestContext.cs" />
+    <Compile Include="Continuations\ContinuationHandlerTester.cs" />
+    <Compile Include="Continuations\FubuContinuationTester.cs" />
+    <Compile Include="FubuBootstrapperIntegrationTester.cs" />
+    <Compile Include="FubuRegistryTester.cs" />
+    <Compile Include="HtmlGenerationTestExtensions.cs" />
+    <Compile Include="Registration\BehaviorGraphTester.cs">
+    </Compile>
+    <Compile Include="Registration\Conventions\ActionSourceTester.cs" />
+    <Compile Include="Registration\Conventions\ContinuationHandlerConventionTester.cs" />
+    <Compile Include="Registration\Conventions\CustomConventionIntegratedTester.cs" />
+    <Compile Include="Registration\Conventions\HtmlTagAndDocumentHandlerConventionTester.cs" />
+    <Compile Include="Registration\Conventions\OutputIntegratedAttachmentTester.cs" />
+    <Compile Include="Registration\Conventions\TypeScanningIntegratedTester.cs" />
+    <Compile Include="Registration\Expressions\ModelExpressionTester.cs" />
+    <Compile Include="Registration\Nodes\BehaviorChainTester.cs" />
+    <Compile Include="Registration\Utilities\ActionCallSpec.cs" />
+    <Compile Include="Registration\Utilities\BehaviorSpec.cs" />
+    <Compile Include="Registration\FuncBuilderTester.cs" />
+    <Compile Include="Registration\ActionCallTester.cs" />
+    <Compile Include="Registration\RouteBuilderTester.cs" />
+    <Compile Include="Registration\Utilities\BehaviorSpecCheck.cs" />
+    <Compile Include="Registration\WrapperTester.cs" />
+    <Compile Include="Registration\RouteDefinitionTester.cs" />
+    <Compile Include="Runtime\FubuRequestTester.cs" />
+    <Compile Include="Runtime\PartialFactoryTester.cs" />
+    <Compile Include="Runtime\SessionState\FlashProviderTester.cs" />
+    <Compile Include="Runtime\SessionState\RequestDataProviderTester.cs" />
+    <Compile Include="TestController.cs" />
+    <Compile Include="UrlPatternAttributeTester.cs" />
+    <Compile Include="UrlStringExtensionsTester.cs" />
+    <Compile Include="Urls\BasicUrlRegistrationScanningIntegrationTester.cs" />
+    <Compile Include="Urls\ChainUrlResolverTester.cs" />
+    <Compile Include="Urls\UrlRegistryIntegrationTester.cs" />
+    <Compile Include="View\Attachment\ViewExclusionTester.cs" />
+    <Compile Include="View\AutoImportModelNamespacesConventionTester.cs" />
+    <Compile Include="View\CommonViewNamespaces_is_registered.cs" />
+    <Compile Include="View\FakeViews\Folder1\A.aspx.cs">
+      <DependentUpon>A.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\FakeViews\Folder1\ViewModel3.aspx.cs">
+      <DependentUpon>ViewModel3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\FakeViews\ModelsAndControllers.cs" />
+    <Compile Include="View\OutputNodeExtensionsTester.cs" />
+    <Compile Include="View\Registration\GenericParserTester.cs" />
+    <Compile Include="View\SimplePage.cs" />
+    <Compile Include="View\ViewEngineSettingsTester.cs" />
+    <Compile Include="Security\WebAuthenticationContextTester.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AssemblyPackage\AssemblyPackage.csproj">
+      <Project>{99dba82a-e811-4da0-983c-12e8317f8642}</Project>
+      <Name>AssemblyPackage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FubuMVC.Core\FubuMVC.Core.csproj">
+      <Project>{e18fd922-0e7a-49cd-b89f-473826077b9d}</Project>
+      <Name>FubuMVC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleService\SampleService.csproj">
+      <Project>{eddd686c-2db1-411c-833f-abafcae5498d}</Project>
+      <Name>SampleService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestMessages\TestMessages.csproj">
+      <Project>{3735a25a-28b6-4da3-a4cf-7606538e0155}</Project>
+      <Name>TestMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestPackage1\TestPackage1.csproj">
+      <Project>{1f18d6eb-4d9c-407a-bd70-c5d525e377b6}</Project>
+      <Name>TestPackage1</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="public\1.0.1\d.js" />
+    <Content Include="public\1.0.1\e.js" />
+    <Content Include="public\1.0.1\f.js" />
+    <Content Include="public\javascript\a.js" />
+    <Content Include="public\javascript\b.js" />
+    <Content Include="public\javascript\c.js" />
+    <Content Include="Runtime\Files\Data\a.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Runtime\Files\Data\b.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Runtime\Files\Data\c.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Runtime\Files\Data\d.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\FakeViews\Folder1\A.aspx" />
+    <Content Include="View\FakeViews\Folder1\ViewModel3.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FubuMVC.Tests.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ripple.dependencies.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StructureMap\ripple.dependencies.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Diagnostics\Shared\" />
+    <Folder Include="Docs\Examples\" />
+    <Folder Include="Results\" />
+    <Folder Include="View\FakeViews\Folder1\Folder2\Folder3\" />
+    <Folder Include="View\Model\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+      <ItemGroup>
+        <Reference Include="Fixie">
+          <HintPath>..\..\packages\Fixie\lib\net45\Fixie.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="FubuCore">
+      <HintPath>..\..\packages\FubuCore\lib\FubuCore.dll</HintPath>
+      <Private>True</Private>
+      <Paket>True</Paket>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FubuLocalization">
+      <HintPath>..\..\packages\FubuLocalization\lib\FubuLocalization.dll</HintPath>
+      <Private>True</Private>
+      <Paket>True</Paket>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+      <ItemGroup>
+        <Reference Include="HtmlTags">
+          <HintPath>..\..\packages\HtmlTags\lib\4.0\HtmlTags.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETCore'">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\netcore45\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\net35\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\net20\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\net40\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkIdentifier) == 'Silverlight' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v5.0')) Or ($(TargetFrameworkIdentifier) == 'WindowsPhone' And ($(TargetFrameworkVersion) == 'v7.0' Or $(TargetFrameworkVersion) == 'v7.1')) Or ($(TargetFrameworkProfile) == 'Profile2') Or ($(TargetFrameworkProfile) == 'Profile3') Or ($(TargetFrameworkProfile) == 'Profile4') Or ($(TargetFrameworkProfile) == 'Profile5') Or ($(TargetFrameworkProfile) == 'Profile6') Or ($(TargetFrameworkProfile) == 'Profile14') Or ($(TargetFrameworkProfile) == 'Profile18') Or ($(TargetFrameworkProfile) == 'Profile19') Or ($(TargetFrameworkProfile) == 'Profile23') Or ($(TargetFrameworkProfile) == 'Profile24') Or ($(TargetFrameworkProfile) == 'Profile36') Or ($(TargetFrameworkProfile) == 'Profile37') Or ($(TargetFrameworkProfile) == 'Profile41') Or ($(TargetFrameworkProfile) == 'Profile42') Or ($(TargetFrameworkProfile) == 'Profile46') Or ($(TargetFrameworkProfile) == 'Profile47') Or ($(TargetFrameworkProfile) == 'Profile88') Or ($(TargetFrameworkProfile) == 'Profile95') Or ($(TargetFrameworkProfile) == 'Profile96') Or ($(TargetFrameworkProfile) == 'Profile104') Or ($(TargetFrameworkProfile) == 'Profile143') Or ($(TargetFrameworkProfile) == 'Profile147') Or ($(TargetFrameworkProfile) == 'Profile154') Or ($(TargetFrameworkProfile) == 'Profile158')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkIdentifier) == 'WindowsPhone' And ($(TargetFrameworkVersion) == 'v8.0' Or $(TargetFrameworkVersion) == 'v8.1')) Or ($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch') Or ($(TargetFrameworkIdentifier) == 'Xamarin.iOS') Or ($(TargetFrameworkIdentifier) == 'Xamarin.Mac') Or ($(TargetFrameworkProfile) == 'Profile7') Or ($(TargetFrameworkProfile) == 'Profile31') Or ($(TargetFrameworkProfile) == 'Profile44') Or ($(TargetFrameworkProfile) == 'Profile49') Or ($(TargetFrameworkProfile) == 'Profile78')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0' Or $(TargetFrameworkVersion) == 'v3.5' Or $(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+      <ItemGroup>
+        <Reference Include="Rhino.Mocks">
+          <HintPath>..\..\packages\RhinoMocks\lib\net\Rhino.Mocks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Shouldly">
+          <HintPath>..\..\packages\Shouldly\lib\net35\Shouldly.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+      <ItemGroup>
+        <Reference Include="Shouldly">
+          <HintPath>..\..\packages\Shouldly\lib\net40\Shouldly.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+      <ItemGroup>
+        <Reference Include="StructureMap.Net4">
+          <HintPath>..\..\packages\structuremap\lib\net40\StructureMap.Net4.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="StructureMap">
+          <HintPath>..\..\packages\structuremap\lib\net40\StructureMap.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'WindowsPhone' And ($(TargetFrameworkVersion) == 'v8.0' Or $(TargetFrameworkVersion) == 'v8.1')">
+      <ItemGroup>
+        <Reference Include="StructureMap">
+          <HintPath>..\..\packages\structuremap\lib\wp80\StructureMap.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETCore') Or ($(TargetFrameworkIdentifier) == 'Xamarin.iOS') Or ($(TargetFrameworkIdentifier) == 'Xamarin.Mac') Or ($(TargetFrameworkProfile) == 'Profile7') Or ($(TargetFrameworkProfile) == 'Profile44')">
+      <ItemGroup>
+        <Reference Include="StructureMap">
+          <HintPath>..\..\packages\structuremap\lib\portable-net45+win+wp81\StructureMap.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch')">
+      <ItemGroup>
+        <Reference Include="StructureMap">
+          <HintPath>..\..\packages\structuremap\lib\portable-net4+netcore45+MonoAndroid1+MonoTouch1\StructureMap.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkProfile) == 'Profile5') Or ($(TargetFrameworkProfile) == 'Profile6') Or ($(TargetFrameworkProfile) == 'Profile31') Or ($(TargetFrameworkProfile) == 'Profile49') Or ($(TargetFrameworkProfile) == 'Profile78')">
+      <ItemGroup>
+        <Reference Include="StructureMap">
+          <HintPath>..\..\packages\structuremap\lib\portable-win+net40+wp8\StructureMap.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+</Project>

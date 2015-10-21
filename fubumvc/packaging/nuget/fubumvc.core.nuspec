@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>FubuMVC.Core</id>
+    <version>0.0.0</version>
+    <authors>Jeremy D. Miller, Joshua Arnold, Corey Kaylor</authors>
+    <owners>Jeremy D. Miller, Corey Kaylor</owners>
+    <licenseUrl>https://github.com/DarthFubuMVC/fubumvc/raw/master/license.txt</licenseUrl>
+    <projectUrl>http://github.com/DarthFubuMVC/fubumvc</projectUrl>
+    <iconUrl>https://github.com/DarthFubuMVC/fubu-collateral/raw/master/Icons/FubuMvc_256.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>FubuMVC.Core Library</description>
+    <tags>web framework mvc fubumvc</tags>
+    <dependencies>
+      <dependency id="FubuCore" version="2.0" />
+      <dependency id="HtmlTags" version="3.0" />
+      <dependency id="FubuLocalization" version="1.1" />
+      <dependency id="structuremap" version="4.0" />
+	  <dependency id="Newtonsoft.Json" version="[4.5.9]" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web" />
+    </frameworkAssemblies>
+  </metadata>
+  <files xmlns="">
+    <file src="..\..\src\FubuMVC.Core\bin\release\FubuMVC.Core.*" target="lib\net45" />
+  </files>
+</package>
