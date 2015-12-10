@@ -116,7 +116,7 @@
   </Target>
 
   <!-- Provide default targets which can be hooked onto or overridden as necessary -->
-  <Target Name="BuildAndTest" DependsOnTargets="Build;Test" />
-  <Target Name="RebuildAndTest" DependsOnTargets="Rebuild;Test" />
+  <Target Name="BuildAndTest" DependsOnTargets="Build" />
+  <Target Name="RebuildAndTest" DependsOnTargets="Rebuild" />
   <Target Name="Test" />
 </Project>
